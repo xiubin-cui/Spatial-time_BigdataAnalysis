@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1200</width>
+    <height>731</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QComboBox" name="model_change">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>可视化类型选择</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>数据描述</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>深度学习模型</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>线性回归模型</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>决策树回归模型</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>随机森林回归模型</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>梯度提升回归树模型</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="picture_change">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>0</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>可视化图选择</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>630</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>可视化结果展示区</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="view_text_change">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>0</y>
+      <width>211</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>文本类型选择</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>中国地震目录</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>全球地震目录</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>强震动参数数据集</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>地震灾情数据列表</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QWidget" name="view_place_widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>70</y>
+      <width>1131</width>
+      <height>551</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1200</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

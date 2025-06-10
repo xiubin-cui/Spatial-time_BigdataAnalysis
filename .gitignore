@@ -1,9 +1,1 @@
-*
-!*/
-!.gitignore
-!*.c
-!*.h
-!*.md
-!Makefile
-!*.py
-!*.txt
+data/
