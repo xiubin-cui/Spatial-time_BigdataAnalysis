@@ -178,7 +178,7 @@ def main():
         data_dir = "./data" #bug
         target_root_dir = "./trash"#bug
         num_classes = 4
-        learning_rate = 0.1
+        learning_rate = 0.01
         num_epochs = 25
         batch_size = 64
 

@@ -145,7 +145,7 @@ class main_Window(QtWidgets.QMainWindow, Ui_MainWindow):
             ])
 
             # 加载整个模型
-            model = torch.load('./fuquqi_base_model_18_0.1_nolaji_source.pth')
+            model = torch.load('./fuquqi_base_model_18_0.1_nolaji_source.pth') #BUG
             model.to(DEVICE)
 
             # 加载并预处理图片

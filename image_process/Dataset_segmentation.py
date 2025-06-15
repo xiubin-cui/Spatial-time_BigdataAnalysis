@@ -125,7 +125,7 @@ def main() -> None:
     """
     try:
         # 定义路径和分割比例
-        source_directory = "./data/Cyclone_Wildfire_Flood_Earthquake_Database"
+        source_directory = "./data"
         destination_directory = "./data"
         train_ratio = 0.7
         val_ratio = 0.15

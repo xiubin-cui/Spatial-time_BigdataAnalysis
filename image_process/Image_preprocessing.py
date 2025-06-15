@@ -1,3 +1,4 @@
+# 图像数据预处理（如归一化、调整大小、去噪）。
 import os
 import random
 import numpy as np
@@ -156,37 +157,37 @@ def main():
         spark = create_spark_session()
 
         # 配置路径和参数
-        base_hdfs_path = "hdfs://master:9000/home/data/Cyclone_Wildfire_Flood_Earthquake_Database"
-        output_base_dir = Path("./data")
+        # hdfs_path = "hdfs://master:9000/home/data/Cyclone_Wildfire_Flood_Earthquake_Database/Wildfire"  # BUG
+        # output_base_dir = Path("./data/Wildfire")  # BUG
+        hdfs_path = "hdfs://master:9000/home/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone"  # BUG
+        output_base_dir = Path("./data/Cyclone")  # BUG
+        # hdfs_path = "hdfs://master:9000/home/data/Cyclone_Wildfire_Flood_Earthquake_Database/Earthquake"  # BUG
+        # output_base_dir = Path("./data/Earthquake")  # BUG
+        # hdfs_path = "hdfs://master:9000/home/data/Cyclone_Wildfire_Flood_Earthquake_Database/Flood"  # BUG
+        # output_base_dir = Path("./data/Flood")  # BUG
         channel_means = np.array([123.68, 116.78, 103.94])
         batch_size = 100
-        subfolders = ["Cyclone", "Earthquake", "Flood", "Wildfire"]
 
-        # 遍历所有子文件夹
-        for subfolder in subfolders:
-            hdfs_path = f"{base_hdfs_path}/{subfolder}"
-            output_dir = output_base_dir / subfolder
+        # 读取图像数据
+        image_df = spark.read.format("binaryFile").load(hdfs_path)
+        file_count = image_df.count()
 
-            # 读取图像数据
-            image_df = spark.read.format("binaryFile").load(hdfs_path)
-            file_count = image_df.count()
+        # 批量处理
+        for batch_start in range(0, file_count, batch_size):
+            batch_df = image_df.limit(batch_start + batch_size).collect()[batch_start:]
+            for row in batch_df:
+                file_path = row.path
+                filename = Path(file_path).stem
+                print(f"处理文件: {filename}")
 
-            # 批量处理
-            for batch_start in range(0, file_count, batch_size):
-                batch_df = image_df.limit(batch_start + batch_size).collect()[batch_start:]
-                for row in batch_df:
-                    file_path = row.path
-                    filename = Path(file_path).stem
-                    print(f"处理文件: {subfolder}/{filename}")
+                output_path = output_base_dir / f"{filename}.jpg"
+                if output_path.exists():
+                    print(f"跳过 {filename}，文件已存在")
+                    continue
 
-                    output_path = output_dir / f"{filename}.jpg"
-                    if output_path.exists():
-                        print(f"跳过 {subfolder}/{filename}，文件已存在")
-                        continue
-
-                    processed_images = preprocess_image(row.content, channel_means)
-                    if processed_images:
-                        save_images(processed_images, output_dir, filename)
+                processed_images = preprocess_image(row.content, channel_means)
+                if processed_images:
+                    save_images(processed_images, output_base_dir, filename)
 
     except Exception as e:
         print(f"处理过程中发生错误: {e}")
