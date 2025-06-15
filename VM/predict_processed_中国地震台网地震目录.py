@@ -1,112 +1,3 @@
-# from pyspark.sql import SparkSession
-#
-# # 创建SparkSession
-# spark = SparkSession.builder \
-#     .appName("PCAAndRegressionExample") \
-#     .getOrCreate()
-#
-# # 从HDFS读取处理后的数据
-# hdfs_path_processed = "hdfs://hadoop101:9000/user/lhr/big_data/processed_中国地震台网地震目录_1_normalized_MinMaxScaler.csv"
-# df = spark.read.csv(hdfs_path_processed, header=True, inferSchema=True)
-#
-# # 查看数据结构
-# df.printSchema()
-# df.show(5)
-#
-# from pyspark.ml.feature import VectorAssembler
-#
-# # 假设这些是你的标准化特征列
-# scaled_feature_columns = ["normalized_震源深度(Km)", "normalized_Ms7", "normalized_mL","normalized_mb7","normalized_mB8"]
-#
-# # 使用VectorAssembler将标准化特征列组合成一个向量
-# assembler = VectorAssembler(inputCols=scaled_feature_columns, outputCol="features")
-#
-# # 将数据转换为包含"features"列的DataFrame
-# df_assembled = assembler.transform(df)
-#
-# # 查看转换后的数据
-# df_assembled.select("features").show(truncate=False)
-#
-#
-#
-# from pyspark.ml.feature import PCA
-#
-# # 创建PCA模型，指定主成分数量（k）
-# pca = PCA(k=4, inputCol="features", outputCol="pca_features")
-#
-# # 训练PCA模型
-# pca_model = pca.fit(df_assembled)
-#
-# # 使用PCA模型对数据进行变换
-# df_pca = pca_model.transform(df_assembled)
-#
-# # 查看PCA后的数据
-# df_pca.select("pca_features").show(truncate=False)
-#
-#
-# from pyspark.ml.regression import LinearRegression
-# from pyspark.ml.evaluation import RegressionEvaluator
-#
-# # 创建线性回归模型
-# lr = LinearRegression(featuresCol="pca_features", labelCol="Ms")
-#
-# # 划分训练集和测试集
-# (training_data, test_data) = df_pca.randomSplit([0.8, 0.2])
-#
-# # 训练模型
-# lr_model = lr.fit(training_data)
-#
-# # 进行预测
-# lr_predictions = lr_model.transform(test_data)
-#
-# # 评估模型
-# evaluator = RegressionEvaluator(labelCol="Ms", predictionCol="prediction", metricName="rmse")
-# lr_rmse = evaluator.evaluate(lr_predictions)
-# print(f"Linear Regression RMSE: {lr_rmse}")
-# from pyspark.ml.regression import DecisionTreeRegressor
-#
-# # 创建决策树回归模型
-# dt = DecisionTreeRegressor(featuresCol="pca_features", labelCol="Ms")
-#
-# # 训练模型
-# dt_model = dt.fit(training_data)
-#
-# # 进行预测
-# dt_predictions = dt_model.transform(test_data)
-#
-# # 评估模型
-# dt_rmse = evaluator.evaluate(dt_predictions)
-# print(f"Decision Tree Regression RMSE: {dt_rmse}")
-# from pyspark.ml.regression import RandomForestRegressor
-#
-# # 创建随机森林回归模型
-# rf = RandomForestRegressor(featuresCol="pca_features", labelCol="Ms")
-#
-# # 训练模型
-# rf_model = rf.fit(training_data)
-#
-# # 进行预测
-# rf_predictions = rf_model.transform(test_data)
-#
-# # 评估模型
-# rf_rmse = evaluator.evaluate(rf_predictions)
-# print(f"Random Forest Regression RMSE: {rf_rmse}")
-# from pyspark.ml.regression import GBTRegressor
-#
-# # 创建梯度提升回归树模型
-# gbt = GBTRegressor(featuresCol="pca_features", labelCol="Ms")
-#
-# # 训练模型
-# gbt_model = gbt.fit(training_data)
-#
-# # 进行预测
-# gbt_predictions = gbt_model.transform(test_data)
-#
-# # 评估模型
-# gbt_rmse = evaluator.evaluate(gbt_predictions)
-# print(f"GBT Regression RMSE: {gbt_rmse}")
-
-
 from pyspark.sql import SparkSession
 from pyspark.ml.feature import VectorAssembler, PCA
 from pyspark.ml.regression import (
@@ -118,242 +9,192 @@ from pyspark.ml.regression import (
 from pyspark.ml.evaluation import RegressionEvaluator
 from pyspark.ml.tuning import CrossValidator, ParamGridBuilder
 from pyspark.sql.functions import col
-import pickle
-
-# 创建SparkSession
-spark = SparkSession.builder.appName("PCAAndRegressionExample").getOrCreate()
-
-# 从HDFS读取处理后的数据
-hdfs_path_processed = "hdfs://hadoop101:9000/user/lhr/big_data/processed_中国地震台网地震目录_1_normalized_MinMaxScaler.csv"
-df = spark.read.csv(hdfs_path_processed, header=True, inferSchema=True)
-
-# 查看数据结构
-df.printSchema()
-df.show(5)
-
-# 假设这些是你的标准化特征列
-scaled_feature_columns = [
-    "normalized_震源深度(Km)",
-    "normalized_Ms7",
-    "normalized_mL",
-    "normalized_mb7",
-    "normalized_mB8",
-]
-
-# 使用VectorAssembler将标准化特征列组合成一个向量
-assembler = VectorAssembler(inputCols=scaled_feature_columns, outputCol="features")
-
-# 将数据转换为包含"features"列的DataFrame
-df_assembled = assembler.transform(df)
-
-# 查看转换后的数据
-df_assembled.select("features").show(truncate=False)
-
-# 创建PCA模型，指定主成分数量（k）
-pca = PCA(k=4, inputCol="features", outputCol="pca_features")
-
-# 训练PCA模型
-pca_model = pca.fit(df_assembled)
-
-# 使用PCA模型对数据进行变换
-df_pca = pca_model.transform(df_assembled)
-
-# 查看PCA后的数据
-df_pca.select("pca_features").show(truncate=False)
-
-# 划分训练集和测试集
-(training_data, test_data) = df_pca.randomSplit([0.8, 0.2])
-
-# 创建回归评估器
-evaluator_rmse = RegressionEvaluator(
-    labelCol="Ms", predictionCol="prediction", metricName="rmse"
-)
 
 
-# 自定义准确率评估函数
-def compute_accuracy(predictions, labelCol, predictionCol, threshold=0.5):
-    predictions = predictions.withColumn(
-        "correct", (col(labelCol) - col(predictionCol)).between(-threshold, threshold)
-    )
-    accuracy = predictions.filter(col("correct")).count() / predictions.count()
-    return accuracy
+def initialize_spark(app_name="PCAAndRegressionExample"):
+    """
+    初始化 SparkSession
+
+    参数:
+        app_name (str): Spark 应用程序名称，默认为 "PCAAndRegressionExample"
+
+    返回:
+        SparkSession: 初始化后的 Spark 会话对象
+    """
+    return SparkSession.builder.appName(app_name).getOrCreate()
 
 
-# 定义一个函数来进行模型训练和评估
-def train_and_evaluate(model, train_data, test_data, evaluator_rmse, threshold=0.5):
-    model_fit = model.fit(train_data)
-    predictions = model_fit.transform(test_data)
-    rmse = evaluator_rmse.evaluate(predictions)
-    accuracy = compute_accuracy(predictions, "Ms", "prediction", threshold)
-    return rmse, accuracy
+def load_and_prepare_data(spark, hdfs_path, feature_columns, label_column="Ms"):
+    """
+    加载 HDFS 数据并进行特征组合和 PCA 降维
+
+    参数:
+        spark (SparkSession): Spark 会话对象
+        hdfs_path (str): HDFS 数据文件路径
+        feature_columns (list): 标准化特征列名称列表
+        label_column (str): 目标标签列名，默认为 "Ms"
+
+    返回:
+        tuple: (训练集 DataFrame, 测试集 DataFrame)
+    """
+    try:
+        # 读取数据
+        df = spark.read.csv(hdfs_path, header=True, inferSchema=True)
+        print("数据结构:")
+        df.printSchema()
+        df.show(5, truncate=False)
+
+        # 特征组合
+        assembler = VectorAssembler(inputCols=feature_columns, outputCol="features")
+        df_assembled = assembler.transform(df)
+        print("特征组合结果:")
+        df_assembled.select("features").show(5, truncate=False)
+
+        # PCA 降维
+        pca = PCA(k=4, inputCol="features", outputCol="pca_features")
+        pca_model = pca.fit(df_assembled)
+        df_pca = pca_model.transform(df_assembled)
+        print("PCA 降维结果:")
+        df_pca.select("pca_features").show(5, truncate=False)
+
+        # 划分训练集和测试集
+        return df_pca.randomSplit([0.8, 0.2], seed=42)
+    except Exception as e:
+        print(f"数据加载或处理失败: {e}")
+        raise
 
 
-# 定义一个函数来进行模型训练和评估
-def train_and_evaluate2(
-    model, param_grid, train_data, test_data, evaluator_rmse, threshold=0.5
-):
-    crossval = CrossValidator(
-        estimator=model,
-        estimatorParamMaps=param_grid,
-        evaluator=evaluator_rmse,
-        numFolds=3,
-    )
-    cv_model = crossval.fit(train_data)
-    predictions = cv_model.transform(test_data)
-    rmse = evaluator_rmse.evaluate(predictions)
-    accuracy = compute_accuracy(predictions, "Ms", "prediction", threshold)
-    return rmse, accuracy
+def compute_accuracy(predictions, label_col, prediction_col, threshold=0.5):
+    """
+    计算预测准确率（基于阈值）
+
+    参数:
+        predictions (pyspark.sql.DataFrame): 包含预测结果的 DataFrame
+        label_col (str): 标签列名
+        prediction_col (str): 预测列名
+        threshold (float): 误差阈值，默认为 0.5
+
+    返回:
+        float: 准确率
+    """
+    try:
+        predictions = predictions.withColumn(
+            "correct",
+            (col(label_col) - col(prediction_col)).between(-threshold, threshold),
+        )
+        return predictions.filter(col("correct")).count() / predictions.count()
+    except Exception as e:
+        print(f"准确率计算失败: {e}")
+        return 0.0
 
 
-# 线性回归
-lr = LinearRegression(featuresCol="pca_features", labelCol="Ms")
-param_grid_lr = (
-    ParamGridBuilder()
-    .addGrid(lr.regParam, [0.01, 0.1, 0.5])
-    .addGrid(lr.elasticNetParam, [0.0, 0.5, 1.0])
-    .build()
-)
-lr_rmse, lr_accuracy = train_and_evaluate2(
-    lr, param_grid_lr, training_data, test_data, evaluator_rmse
-)
-print(f"Linear Regression RMSE: {lr_rmse}, Accuracy: {lr_accuracy}")
+def train_and_evaluate_model(model, param_grid, train_data, test_data, label_col="Ms"):
+    """
+    训练并评估模型（使用交叉验证）
 
-# 决策树回归
-dt = DecisionTreeRegressor(featuresCol="pca_features", labelCol="Ms")
-param_grid_dt = (
-    ParamGridBuilder()
-    .addGrid(dt.maxDepth, [5, 10, 15])
-    .addGrid(dt.minInstancesPerNode, [1, 2, 4])
-    .build()
-)
-dt_rmse, dt_accuracy = train_and_evaluate2(
-    dt, param_grid_dt, training_data, test_data, evaluator_rmse
-)
-print(f"Decision Tree Regression RMSE: {dt_rmse}, Accuracy: {dt_accuracy}")
+    参数:
+        model: 回归模型实例
+        param_grid: 超参数网格
+        train_data (pyspark.sql.DataFrame): 训练集
+        test_data (pyspark.sql.DataFrame): 测试集
+        label_col (str): 标签列名，默认为 "Ms"
 
-# 随机森林回归
-rf = RandomForestRegressor(featuresCol="pca_features", labelCol="Ms")
-param_grid_rf = (
-    ParamGridBuilder()
-    .addGrid(rf.numTrees, [20, 50, 100])
-    .addGrid(rf.maxDepth, [5, 10, 15])
-    .build()
-)
-rf_rmse, rf_accuracy = train_and_evaluate2(
-    rf, param_grid_rf, training_data, test_data, evaluator_rmse
-)
-print(f"Random Forest Regression RMSE: {rf_rmse}, Accuracy: {rf_accuracy}")
+    返回:
+        tuple: (RMSE, 准确率, 训练后的模型)
+    """
+    try:
+        evaluator = RegressionEvaluator(
+            labelCol=label_col, predictionCol="prediction", metricName="rmse"
+        )
+        crossval = CrossValidator(
+            estimator=model,
+            estimatorParamMaps=param_grid,
+            evaluator=evaluator,
+            numFolds=3,
+            seed=42,
+        )
+        cv_model = crossval.fit(train_data)
+        predictions = cv_model.transform(test_data)
+        rmse = evaluator.evaluate(predictions)
+        accuracy = compute_accuracy(predictions, label_col, "prediction")
+        return rmse, accuracy, cv_model
+    except Exception as e:
+        print(f"模型训练或评估失败: {e}")
+        return float("inf"), 0.0, None
 
-# 梯度提升回归树
-gbt = GBTRegressor(featuresCol="pca_features", labelCol="Ms", maxIter=50, maxDepth=10)
-gbt_rmse, gbt_accuracy = train_and_evaluate(
-    gbt, training_data, test_data, evaluator_rmse
-)
-print(f"GBT Regression RMSE: {gbt_rmse}, Accuracy: {gbt_accuracy}")
 
-# 关闭SparkSession
-spark.stop()
+def main():
+    """
+    主函数：加载数据、训练并评估多种回归模型
+    """
+    # 初始化 Spark
+    spark = initialize_spark()
 
-# from pyspark.sql import SparkSession
-# from pyspark.ml.feature import VectorAssembler, PCA
-# from pyspark.ml.regression import LinearRegression, DecisionTreeRegressor, RandomForestRegressor, GBTRegressor
-# from pyspark.ml.evaluation import RegressionEvaluator
-# from pyspark.ml.tuning import CrossValidator, ParamGridBuilder
-# from pyspark.sql.functions import col
-#
-# # 创建SparkSession
-# spark = SparkSession.builder \
-#     .appName("PCAAndRegressionExample") \
-#     .getOrCreate()
-#
-# # 从HDFS读取处理后的数据
-# hdfs_path_processed = "hdfs://hadoop101:9000/user/lhr/big_data/processed_中国地震台网地震目录_1_normalized_MinMaxScaler.csv"
-# df = spark.read.csv(hdfs_path_processed, header=True, inferSchema=True)
-#
-# # 查看数据结构
-# df.printSchema()
-# df.show(5)
-#
-# # 假设这些是你的标准化特征列
-# scaled_feature_columns = ["normalized_震源深度(Km)", "normalized_Ms7", "normalized_mL", "normalized_mb7", "normalized_mB8"]
-#
-# # 使用VectorAssembler将标准化特征列组合成一个向量
-# assembler = VectorAssembler(inputCols=scaled_feature_columns, outputCol="features")
-#
-# # 将数据转换为包含"features"列的DataFrame
-# df_assembled = assembler.transform(df)
-#
-# # 查看转换后的数据
-# df_assembled.select("features").show(truncate=False)
-#
-# # 创建PCA模型，指定主成分数量（k）
-# pca = PCA(k=4, inputCol="features", outputCol="pca_features")
-#
-# # 训练PCA模型
-# pca_model = pca.fit(df_assembled)
-#
-# # 使用PCA模型对数据进行变换
-# df_pca = pca_model.transform(df_assembled)
-#
-# # 查看PCA后的数据
-# df_pca.select("pca_features").show(truncate=False)
-#
-# # 划分训练集和测试集
-# (training_data, test_data) = df_pca.randomSplit([0.8, 0.2])
-#
-# # 创建回归评估器
-# evaluator_rmse = RegressionEvaluator(labelCol="Ms", predictionCol="prediction", metricName="rmse")
-#
-# # 自定义准确率评估函数
-# def compute_accuracy(predictions, labelCol, predictionCol, threshold=0.5):
-#     predictions = predictions.withColumn("correct", (col(labelCol) - col(predictionCol)).between(-threshold, threshold))
-#     accuracy = predictions.filter(col("correct")).count() / predictions.count()
-#     return accuracy
-#
-# # 定义一个函数来进行模型训练和评估
-# def train_and_evaluate(model, param_grid, train_data, test_data, evaluator_rmse, threshold=0.5):
-#     crossval = CrossValidator(estimator=model, estimatorParamMaps=param_grid, evaluator=evaluator_rmse, numFolds=3)
-#     cv_model = crossval.fit(train_data)
-#     predictions = cv_model.transform(test_data)
-#     rmse = evaluator_rmse.evaluate(predictions)
-#     accuracy = compute_accuracy(predictions, "Ms", "prediction", threshold)
-#     return rmse, accuracy
-#
-# # 线性回归
-# lr = LinearRegression(featuresCol="pca_features", labelCol="Ms")
-# param_grid_lr = ParamGridBuilder() \
-#     .addGrid(lr.regParam, [0.01, 0.1, 0.5]) \
-#     .addGrid(lr.elasticNetParam, [0.0, 0.5, 1.0]) \
-#     .build()
-# lr_rmse, lr_accuracy = train_and_evaluate(lr, param_grid_lr, training_data, test_data, evaluator_rmse)
-# print(f"Linear Regression RMSE: {lr_rmse}, Accuracy: {lr_accuracy}")
-#
-# # 决策树回归
-# dt = DecisionTreeRegressor(featuresCol="pca_features", labelCol="Ms")
-# param_grid_dt = ParamGridBuilder() \
-#     .addGrid(dt.maxDepth, [5, 10, 15]) \
-#     .addGrid(dt.minInstancesPerNode, [1, 2, 4]) \
-#     .build()
-# dt_rmse, dt_accuracy = train_and_evaluate(dt, param_grid_dt, training_data, test_data, evaluator_rmse)
-# print(f"Decision Tree Regression RMSE: {dt_rmse}, Accuracy: {dt_accuracy}")
-#
-# # 随机森林回归
-# rf = RandomForestRegressor(featuresCol="pca_features", labelCol="Ms")
-# param_grid_rf = ParamGridBuilder() \
-#     .addGrid(rf.numTrees, [20, 50, 100]) \
-#     .addGrid(rf.maxDepth, [5, 10, 15]) \
-#     .build()
-# rf_rmse, rf_accuracy = train_and_evaluate(rf, param_grid_rf, training_data, test_data, evaluator_rmse)
-# print(f"Random Forest Regression RMSE: {rf_rmse}, Accuracy: {rf_accuracy}")
-#
-# # 梯度提升回归树
-# gbt = GBTRegressor(featuresCol="pca_features", labelCol="Ms")
-# param_grid_gbt = ParamGridBuilder() \
-#     .addGrid(gbt.maxIter, [20, 50, 100]) \
-#     .addGrid(gbt.maxDepth, [5, 10, 15]) \
-#     .build()
-# gbt_rmse, gbt_accuracy = train_and_evaluate(gbt, param_grid_gbt, training_data, test_data, evaluator_rmse)
-# print(f"GBT Regression RMSE: {gbt_rmse}, Accuracy: {gbt_accuracy}")
-#
-# # 关闭SparkSession
-# spark.stop()
+    # 数据路径和特征列
+    hdfs_path = "hdfs://hadoop101:9000/user/lhr/big_data/processed_中国地震台网地震目录_1_normalized_MinMaxScaler.csv"
+    feature_columns = [
+        "normalized_震源深度(Km)",
+        "normalized_Ms7",
+        "normalized_mL",
+        "normalized_mb7",
+        "normalized_mB8",
+    ]
+
+    try:
+        # 加载和准备数据
+        training_data, test_data = load_and_prepare_data(
+            spark, hdfs_path, feature_columns
+        )
+
+        # 定义模型和超参数网格
+        models = [
+            (
+                LinearRegression(featuresCol="pca_features", labelCol="Ms"),
+                ParamGridBuilder()
+                .addGrid(LinearRegression.regParam, [0.01, 0.1, 0.5])
+                .addGrid(LinearRegression.elasticNetParam, [0.0, 0.5, 1.0])
+                .build(),
+                "Linear Regression",
+            ),
+            (
+                DecisionTreeRegressor(featuresCol="pca_features", labelCol="Ms"),
+                ParamGridBuilder()
+                .addGrid(DecisionTreeRegressor.maxDepth, [5, 10, 15])
+                .addGrid(DecisionTreeRegressor.minInstancesPerNode, [1, 2, 4])
+                .build(),
+                "Decision Tree Regression",
+            ),
+            (
+                RandomForestRegressor(featuresCol="pca_features", labelCol="Ms"),
+                ParamGridBuilder()
+                .addGrid(RandomForestRegressor.numTrees, [20, 50, 100])
+                .addGrid(RandomForestRegressor.maxDepth, [5, 10, 15])
+                .build(),
+                "Random Forest Regression",
+            ),
+            (
+                GBTRegressor(featuresCol="pca_features", labelCol="Ms"),
+                ParamGridBuilder()
+                .addGrid(GBTRegressor.maxIter, [20, 50, 100])
+                .addGrid(GBTRegressor.maxDepth, [5, 10, 15])
+                .build(),
+                "GBT Regression",
+            ),
+        ]
+
+        # 训练并评估模型
+        for model, param_grid, name in models:
+            rmse, accuracy, _ = train_and_evaluate_model(
+                model, param_grid, training_data, test_data
+            )
+            print(f"{name} RMSE: {rmse:.4f}, Accuracy: {accuracy:.4f}")
+
+    except Exception as e:
+        print(f"程序执行失败: {e}")
+    finally:
+        # 关闭 SparkSession
+        spark.stop()
+
+
+if __name__ == "__main__":
+    main()
