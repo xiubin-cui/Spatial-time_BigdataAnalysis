@@ -39,29 +39,8 @@
 
 文本数据集的规模包括：中国地震台网地震目录（3716 行）、全球地震台网地震目录（28170 行）、强震动参数数据集（33960 行）和地震灾情数据列表（615 行），总计文本数据约 20 MB，所有数据均以 CSV 文件格式存储。
 
-### PySpark 数据预处理
+### 项目文件分析
 
-#### 文本数据预处理实现
-
-- code\VM\text_data_preprocessing.py
-- code\VM\data_handle_2.py
-
-#### 图像数据预处理实现
-
-- code\VM\image_data_processing.py
-- code\image_processing.py
-
-### PySpark 机器学习模型实现
-
-- `code\VM\predict_processed_中国地震台网地震目录.py`
-- `code\VM\predict_processed_全球地震台网地震目录.py`
-- `code\VM\predict_processed_强震动参数数据集.py`
-
-### 深度学习 Resnet 经典网络模型实现
-
-- code\base_achive.py
-- code\image_classification.py
-- code\image_prediction.py
 
 ### 项目结构分析
 

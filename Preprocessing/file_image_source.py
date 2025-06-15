@@ -3,6 +3,7 @@ import shutil
 import random
 from typing import Tuple
 
+
 def ensure_directory_exists(directory: str) -> None:
     """
     确保指定目录存在，如果不存在则创建
@@ -16,12 +17,13 @@ def ensure_directory_exists(directory: str) -> None:
         print(f"创建目录 {directory} 失败: {e}")
         raise
 
+
 def split_data(
     source_dir: str,
     dest_dir: str,
     train_ratio: float,
     val_ratio: float,
-    test_ratio: float = None
+    test_ratio: float = None,
 ) -> None:
     """
     将数据集按指定比例分割为训练集、验证集和测试集，并复制到目标目录
@@ -64,7 +66,11 @@ def split_data(
             print(f"处理类别: {category}")
 
             # 获取并随机打乱文件列表
-            files = [f for f in os.listdir(category_dir) if os.path.isfile(os.path.join(category_dir, f))]
+            files = [
+                f
+                for f in os.listdir(category_dir)
+                if os.path.isfile(os.path.join(category_dir, f))
+            ]
             if not files:
                 print(f"类别 {category} 中未找到文件")
                 continue
@@ -107,22 +113,26 @@ def split_data(
         print(f"数据集分割失败: {e}")
         raise
 
+
 def main() -> None:
     """
     主函数：执行数据集分割
     """
     # 配置路径和分割比例
-    source_directory = "./Cyclone_Wildfire_Flood_Earthquake_Database"
-    destination_directory = "./data_source2"
+    source_directory = "../data/Cyclone_Wildfire_Flood_Earthquake_Database"
+    destination_directory = "./data"
     train_ratio = 0.7
     val_ratio = 0.15
     test_ratio = 0.15
 
     try:
-        split_data(source_directory, destination_directory, train_ratio, val_ratio, test_ratio)
+        split_data(
+            source_directory, destination_directory, train_ratio, val_ratio, test_ratio
+        )
         print("数据集分割完成")
     except Exception as e:
         print(f"程序执行失败: {e}")
+
 
 if __name__ == "__main__":
     main()

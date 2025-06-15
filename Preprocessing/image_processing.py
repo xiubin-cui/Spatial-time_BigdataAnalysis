@@ -8,6 +8,7 @@ from pyspark.sql import SparkSession
 from pathlib import Path
 from typing import List, Optional
 
+
 def create_spark_session(app_name: str = "ImageProcessing") -> SparkSession:
     """
     创建并配置 SparkSession。
@@ -19,13 +20,13 @@ def create_spark_session(app_name: str = "ImageProcessing") -> SparkSession:
         SparkSession: 配置好的 SparkSession 对象
     """
     return (
-        SparkSession.builder
-        .appName(app_name)
+        SparkSession.builder.appName(app_name)
         .config("spark.sql.shuffle.partitions", "8")
         .config("spark.network.timeout", "600s")
         .config("spark.executor.heartbeatInterval", "60s")
         .getOrCreate()
     )
+
 
 def color_shifting(image: np.ndarray) -> np.ndarray:
     """
@@ -49,7 +50,10 @@ def color_shifting(image: np.ndarray) -> np.ndarray:
         print(f"颜色抖动处理失败: {e}")
         return image
 
-def wavelet_denoise(image: np.ndarray, wavelet: str = "haar", level: int = 1) -> np.ndarray:
+
+def wavelet_denoise(
+    image: np.ndarray, wavelet: str = "haar", level: int = 1
+) -> np.ndarray:
     """
     对图像应用小波去噪。
 
@@ -70,7 +74,10 @@ def wavelet_denoise(image: np.ndarray, wavelet: str = "haar", level: int = 1) ->
         print(f"小波去噪失败: {e}")
         return image
 
-def preprocess_image(image_content: bytes, channel_means: np.ndarray) -> Optional[List[np.ndarray]]:
+
+def preprocess_image(
+    image_content: bytes, channel_means: np.ndarray
+) -> Optional[List[np.ndarray]]:
     """
     预处理图像，包括调整大小、归一化、颜色抖动、光照校正、滤波和去噪。
 
@@ -122,6 +129,7 @@ def preprocess_image(image_content: bytes, channel_means: np.ndarray) -> Optiona
         print(f"图像预处理失败: {e}")
         return None
 
+
 def save_images(images: List[np.ndarray], output_dir: Path, base_filename: str) -> None:
     """
     保存处理后的图像到指定目录。
@@ -139,6 +147,7 @@ def save_images(images: List[np.ndarray], output_dir: Path, base_filename: str) 
         except Exception as e:
             print(f"保存图像 {output_path} 失败: {e}")
 
+
 def main():
     """
     主函数，执行图像处理和保存流程。
@@ -148,8 +157,8 @@ def main():
         spark = create_spark_session()
 
         # 配置路径和参数
-        hdfs_path = r"D:\source\python\torch_big_data\Cyclone_Wildfire_Flood_Earthquake_Database\Wildfire"
-        output_base_dir = Path("./Wildfire")
+        hdfs_path = "../data/Cyclone_Wildfire_Flood_Earthquake_Database/Wildfire"  # BUG
+        output_base_dir = Path("./data/Wildfire")  # BUG
         channel_means = np.array([123.68, 116.78, 103.94])
         batch_size = 100
 
@@ -179,6 +188,7 @@ def main():
     finally:
         spark.stop()
         print("SparkSession 已停止")
+
 
 if __name__ == "__main__":
     main()
