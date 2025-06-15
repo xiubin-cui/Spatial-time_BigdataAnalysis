@@ -7,8 +7,10 @@ import numpy as np
 from pathlib import Path
 from typing import Tuple, List
 
+
 class CustomImageFolder(datasets.ImageFolder):
     """扩展 ImageFolder 类以获取图像路径"""
+
     def __getitem__(self, index: int) -> Tuple[torch.Tensor, int, str]:
         """
         获取图像、标签和路径
@@ -23,11 +25,13 @@ class CustomImageFolder(datasets.ImageFolder):
         path = self.imgs[index][0]
         return image, label, path
 
+
 def setup_device() -> torch.device:
     """设置计算设备（GPU或CPU）"""
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     print(f"使用设备: {device}")
     return device
+
 
 def load_model(model_path: str, device: torch.device) -> nn.Module:
     """
@@ -48,6 +52,7 @@ def load_model(model_path: str, device: torch.device) -> nn.Module:
     except Exception as e:
         raise RuntimeError(f"加载模型失败: {e}")
 
+
 def create_data_loader(data_dir: str, batch_size: int = 64) -> DataLoader:
     """
     创建测试数据加载器
@@ -59,11 +64,13 @@ def create_data_loader(data_dir: str, batch_size: int = 64) -> DataLoader:
     Returns:
         DataLoader: 测试数据加载器
     """
-    transform = transforms.Compose([
-        transforms.Resize((128, 128)),
-        transforms.ToTensor(),
-        transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
-    ])
+    transform = transforms.Compose(
+        [
+            transforms.Resize((128, 128)),
+            transforms.ToTensor(),
+            transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5]),
+        ]
+    )
 
     try:
         test_dataset = CustomImageFolder(root=f"{data_dir}/val", transform=transform)
@@ -71,10 +78,9 @@ def create_data_loader(data_dir: str, batch_size: int = 64) -> DataLoader:
     except Exception as e:
         raise ValueError(f"加载数据集失败: {e}")
 
+
 def predict(
-    model: nn.Module,
-    test_loader: DataLoader,
-    device: torch.device
+    model: nn.Module, test_loader: DataLoader, device: torch.device
 ) -> Tuple[np.ndarray, np.ndarray, List[str]]:
     """
     对测试数据集进行预测并记录错误预测的图像路径
@@ -112,12 +118,13 @@ def predict(
 
     return np.array(true_labels), np.array(predictions), incorrect_ids
 
+
 def save_results(
     true_labels: np.ndarray,
     predictions: np.ndarray,
     incorrect_ids: List[str],
     output_file: str = "image_batch_results.txt",
-    incorrect_file: str = "incorrect_images.txt"
+    incorrect_file: str = "incorrect_images.txt",
 ) -> float:
     """
     保存预测结果和错误图像路径，并计算准确率
@@ -137,7 +144,7 @@ def save_results(
 
     # 保存预测结果
     try:
-        with open(output_file, 'w', encoding='utf-8') as f:
+        with open(output_file, "w", encoding="utf-8") as f:
             f.write("真实值\t预测值\n")
             for true, pred in zip(true_labels, predictions):
                 true_name = label_map.get(true, "未知")
@@ -148,7 +155,7 @@ def save_results(
 
     # 保存错误图像路径
     try:
-        with open(incorrect_file, 'w', encoding='utf-8') as f:
+        with open(incorrect_file, "w", encoding="utf-8") as f:
             for path in incorrect_ids:
                 f.write(f"{path}\n")
     except Exception as e:
@@ -156,14 +163,15 @@ def save_results(
 
     return accuracy
 
+
 def main():
     """主函数，执行模型预测和结果保存"""
     try:
         # 配置参数
-        data_dir = "./data_source2"
-        model_path = r"D:\source\python\torch_big_data\data_vision\fuquqi_base_model_18_0.1_nolaji_source.pth"
-        output_file = "image_batch_results.txt"
-        incorrect_file = "./深度学习模型/incorrect_images.txt"
+        data_dir = "./data"  # BUG
+        model_path = "./base_model_18_0.1_source.pth"  # BUG
+        output_file = "./result/image_batch_results.txt"  # BUG
+        incorrect_file = "./result/incorrect_images.txt"  # BUG
 
         # 初始化
         device = setup_device()
@@ -174,14 +182,19 @@ def main():
         true_labels, predictions, incorrect_ids = predict(model, test_loader, device)
 
         # 保存结果并计算准确率
-        accuracy = save_results(true_labels, predictions, incorrect_ids, output_file, incorrect_file)
-        print(f"预测完成，结果已写入 {output_file}，错误图像路径已写入 {incorrect_file}")
+        accuracy = save_results(
+            true_labels, predictions, incorrect_ids, output_file, incorrect_file
+        )
+        print(
+            f"预测完成，结果已写入 {output_file}，错误图像路径已写入 {incorrect_file}"
+        )
         print(f"测试集准确率: {accuracy:.4f}")
 
     except Exception as e:
         print(f"程序执行出错: {e}")
     finally:
         torch.cuda.empty_cache() if torch.cuda.is_available() else None
+
 
 if __name__ == "__main__":
     main()

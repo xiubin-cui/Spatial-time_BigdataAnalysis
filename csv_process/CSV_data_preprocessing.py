@@ -69,21 +69,21 @@ def main():
     # 创建 SparkSession
     spark = (
         SparkSession.builder.appName("ReadAndProcessMultipleCSVs")
-        .config("spark.hadoop.fs.defaultFS", "hdfs://hadoop101:9000")
+        .config("spark.hadoop.fs.defaultFS", "hdfs://master:9000")  # BUG
         .getOrCreate()
     )
 
     # CSV 文件列表
     csv_files = [
-        "中国地震台网地震目录",
-        "全球地震台网地震目录_2",
-        "地震灾情数据列表",
-        "强震动参数数据集_2",
+        "CEN_Center_Earthquake_Catalog",
+        "GSN_Earthquake_Catalog",
+        "Earthquake_disaster_data_list",
+        "Strong_Motion_Parameters_Dataset",
     ]
 
     # 定义 HDFS 和本地路径
-    base_hdfs_path = "hdfs://hadoop101:9000/user/lhr/big_data/"
-    base_local_path = base_hdfs_path  # 注意：这里使用了相同的 HDFS 路径
+    base_hdfs_path = "hdfs://master:9000/home/data/"  # BUG
+    base_local_path = "./data"  # BUG
 
     # 批量处理 CSV 文件
     for csv_file in csv_files:

@@ -175,8 +175,8 @@ def main():
     """主函数，执行模型训练、验证和错误图像处理"""
     try:
         # 配置参数
-        data_dir = "./data_source"
-        target_root_dir = "./source_lajidata"
+        data_dir = "./data" #bug
+        target_root_dir = "./trash"#bug
         num_classes = 4
         learning_rate = 0.1
         num_epochs = 25
@@ -194,7 +194,7 @@ def main():
         error_images = test_model(model, val_loader, device)
 
         # 保存模型
-        model_path = f"base_model_18_{learning_rate}_nolaji_source.pth"
+        model_path = f"./base_model_18_{learning_rate}_source.pth" #bug
         torch.save(model.state_dict(), model_path)
         print(f"模型已保存至 {model_path}")
 

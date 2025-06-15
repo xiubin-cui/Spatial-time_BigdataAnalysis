@@ -132,13 +132,13 @@ def main():
     spark = initialize_spark()
 
     # 数据路径和特征列
-    hdfs_path = "hdfs://hadoop101:9000/user/lhr/big_data/processed_全球地震台网地震目录_2_1_normalized_MinMaxScaler.csv"
+    hdfs_path = "hdfs://master:9000/home/data/processed_GSN_Earthquake_Catalog_normalized_MinMaxScaler.csv" #BUG
     feature_columns = [
         "normalized_震源深度(Km)",
         "normalized_Ms7",
         "normalized_mL",
-        "normalized_mb7",
-        "normalized_mB8"
+        "normalized_mb",
+        "normalized_mB"
     ]
 
     try:

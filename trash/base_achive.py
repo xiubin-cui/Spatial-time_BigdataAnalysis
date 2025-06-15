@@ -173,15 +173,15 @@ def main():
     global DEVICE, train_loader, val_loader, criterion
     # 初始化设备和数据
     DEVICE = initialize_device()
-    data_dir = r"D:\source\python\MNIST_torch\deep_learn_class_devise\afhq"
-    train_loader, val_loader, num_classes = create_data_loaders(data_dir)
+    data_dir = "" #BUG
+    train_loader, val_loader, num_classes = create_data_loaders(data_dir) 
 
     # 定义损失函数
     criterion = nn.CrossEntropyLoss()
 
     # 定义模型配置
     models_config = [
-        {"name": "resnet18", "lr": 0.1},
+        {"name": "resnet18", "lr": 0.1}, 
         {"name": "resnet34", "lr": 0.01}
     ]
 

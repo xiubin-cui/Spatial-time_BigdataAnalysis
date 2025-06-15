@@ -39,9 +39,6 @@
 
 文本数据集的规模包括：中国地震台网地震目录（3716 行）、全球地震台网地震目录（28170 行）、强震动参数数据集（33960 行）和地震灾情数据列表（615 行），总计文本数据约 20 MB，所有数据均以 CSV 文件格式存储。
 
-### 项目文件分析
-
-
 ### 项目结构分析
 
 #### 1. 顶层结构
@@ -102,85 +99,21 @@
 - 许多脚本通过 `pandas.read_csv` 或 `spark.read.csv` 读取中间处理结果或预测结果。
 - 结果文件（如 `*_predictions.csv`、`*_MinMaxScaler.csv`）在不同脚本间流转，用于后续分析或展示。
 
----
+图像数据
 
-### 总结
-
-- **code/** 负责数据处理、模型训练与预测，VM 子目录偏重于 Spark 分布式处理和机器学习，主目录偏重于深度学习图像处理。
-- **data_vision/** 负责数据可视化和用户交互，集成了数据读取、Spark 处理、结果展示等功能。
-- **数据流** 从原始数据（图像/文本）→ 预处理 → 模型训练/预测 → 结果保存 → 可视化展示，形成完整的分析闭环。
-- **文档**（docx、pptx）为项目说明和成果展示。
-
-如需进一步分析某一部分的具体实现或代码细节，请告知具体文件或功能点！
-
-### 执行步骤
-
-#### 步骤 1: 数据预处理
-
-1. 图像数据预处理：
-
-```bash
-python code/VM/image_data_processing.py
+```shell
+spark-submit Image_preprocessing.py
+python Dataset_segmentation.py
+python Model_training.py
+python Model_prediction.py
 ```
 
-2. 文本数据预处理：
+文本数据
 
-```bash
-python code/VM/text_data_preprocessing.py
+```shell
+spark-submit CSV_data_preprocessing.csv
+spark-submit CSV_data_standardization_and_regularization.py
+spark-submit china_model_trainning.py
+spark-submit global_model_trainning.py
+spark-submit strong_model_trainning.py
 ```
-
-#### 步骤 2: 模型训练
-
-1. 图像分类模型训练（ResNet-18）：
-
-```bash
-python code/image_classification.py
-```
-
-2. 文本预测模型训练：
-
-```bash
-# 中国地震台网地震目录预测
-python code/VM/predict_processed_中国地震台网地震目录.py
-
-# 全球地震台网地震目录预测
-python code/VM/predict_processed_全球地震台网地震目录.py
-
-# 强震动参数数据集预测
-python code/VM/predict_processed_强震动参数数据集.py
-```
-
-#### 步骤 3: 模型预测
-
-1. 图像预测：
-
-```bash
-python code/image_prediction.py
-```
-
-#### 步骤 4: 可视化展示
-
-启动可视化界面：
-
-```bash
-python code/data_vision/wed_data.py
-```
-
-### 4. 预期结果
-
-- 图像分类准确率：85%-91%
-- 文本预测模型准确率：70%以上（随机森林和决策树模型可达 80%以上）
-- 可视化界面将展示：
-  - 柱状图
-  - 折线图
-  - 热力地图
-  - 混淆矩阵等
-
-### 注意事项：
-
-1. 确保所有依赖包都已正确安装
-2. 数据文件需要放在正确的目录下
-3. 如果使用 HDFS，需要确保 Hadoop 环境正确配置
-4. 运行顺序建议按照上述步骤进行，因为后续步骤可能依赖于前面步骤的输出结果
-
-如果您需要运行特定部分或者需要更详细的说明，请告诉我，我可以为您提供更具体的指导。

@@ -10,9 +10,10 @@ from pyspark.ml.evaluation import RegressionEvaluator
 from pyspark.ml.tuning import CrossValidator, ParamGridBuilder
 from pyspark.sql.functions import col
 
+
 def initialize_spark(app_name="PCAAndRegressionExample"):
     """
-    初始化 SparkSession，配置执行器和驱动器资源
+    初始化 SparkSession
 
     参数:
         app_name (str): Spark 应用程序名称，默认为 "PCAAndRegressionExample"
@@ -20,26 +21,18 @@ def initialize_spark(app_name="PCAAndRegressionExample"):
     返回:
         SparkSession: 初始化后的 Spark 会话对象
     """
-    return (
-        SparkSession.builder
-        .appName(app_name)
-        .config("spark.executor.instances", "4")
-        .config("spark.executor.cores", "4")
-        .config("spark.executor.memory", "8g")
-        .config("spark.driver.memory", "8g")
-        .getOrCreate()
-    )
+    return SparkSession.builder.appName(app_name).getOrCreate()
 
-def load_and_prepare_data(spark, hdfs_path, feature_columns, label_column="震级", pca_k=9):
+
+def load_and_prepare_data(spark, hdfs_path, feature_columns, label_column="Ms"):
     """
-    加载 HDFS 数据并进行特征组合、PCA 降维和数据打乱
+    加载 HDFS 数据并进行特征组合和 PCA 降维
 
     参数:
         spark (SparkSession): Spark 会话对象
         hdfs_path (str): HDFS 数据文件路径
         feature_columns (list): 标准化特征列名称列表
-        label_column (str): 目标标签列名，默认为 "震级"
-        pca_k (int): PCA 主成分数量，默认为 9
+        label_column (str): 目标标签列名，默认为 "Ms"
 
     返回:
         tuple: (训练集 DataFrame, 测试集 DataFrame)
@@ -58,20 +51,18 @@ def load_and_prepare_data(spark, hdfs_path, feature_columns, label_column="震�
         df_assembled.select("features").show(5, truncate=False)
 
         # PCA 降维
-        pca = PCA(k=pca_k, inputCol="features", outputCol="pca_features")
+        pca = PCA(k=4, inputCol="features", outputCol="pca_features")
         pca_model = pca.fit(df_assembled)
         df_pca = pca_model.transform(df_assembled)
         print("PCA 降维结果:")
         df_pca.select("pca_features").show(5, truncate=False)
 
-        # 数据打乱
-        df_pca = df_pca.sample(withReplacement=False, fraction=1.0, seed=1234)
-
         # 划分训练集和测试集
-        return df_pca.randomSplit([0.8, 0.2], seed=1234)
+        return df_pca.randomSplit([0.8, 0.2], seed=42)
     except Exception as e:
         print(f"数据加载或处理失败: {e}")
         raise
+
 
 def compute_accuracy(predictions, label_col, prediction_col, threshold=0.5):
     """
@@ -88,23 +79,25 @@ def compute_accuracy(predictions, label_col, prediction_col, threshold=0.5):
     """
     try:
         predictions = predictions.withColumn(
-            "correct", (col(label_col) - col(prediction_col)).between(-threshold, threshold)
+            "correct",
+            (col(label_col) - col(prediction_col)).between(-threshold, threshold),
         )
         return predictions.filter(col("correct")).count() / predictions.count()
     except Exception as e:
         print(f"准确率计算失败: {e}")
         return 0.0
 
-def train_and_evaluate_model(model, train_data, test_data, label_col="震级", num_folds=5):
+
+def train_and_evaluate_model(model, param_grid, train_data, test_data, label_col="Ms"):
     """
     训练并评估模型（使用交叉验证）
 
     参数:
         model: 回归模型实例
+        param_grid: 超参数网格
         train_data (pyspark.sql.DataFrame): 训练集
         test_data (pyspark.sql.DataFrame): 测试集
-        label_col (str): 标签列名，默认为 "震级"
-        num_folds (int): 交叉验证折数，默认为 5
+        label_col (str): 标签列名，默认为 "Ms"
 
     返回:
         tuple: (RMSE, 准确率, 训练后的模型)
@@ -115,10 +108,10 @@ def train_and_evaluate_model(model, train_data, test_data, label_col="震级", n
         )
         crossval = CrossValidator(
             estimator=model,
-            estimatorParamMaps=ParamGridBuilder().build(),
+            estimatorParamMaps=param_grid,
             evaluator=evaluator,
-            numFolds=num_folds,
-            seed=42
+            numFolds=3,
+            seed=42,
         )
         cv_model = crossval.fit(train_data)
         predictions = cv_model.transform(test_data)
@@ -129,6 +122,7 @@ def train_and_evaluate_model(model, train_data, test_data, label_col="震级", n
         print(f"模型训练或评估失败: {e}")
         return float("inf"), 0.0, None
 
+
 def main():
     """
     主函数：加载数据、训练并评估多种回归模型
@@ -137,70 +131,61 @@ def main():
     spark = initialize_spark()
 
     # 数据路径和特征列
-    hdfs_path = "hdfs://hadoop101:9000/user/lhr/big_data/processed_强震动参数数据集_2_1_normalized_MinMaxScaler.csv"
+    hdfs_path = "hdfs://master:9000/home/data/processed_CEN_Center_Earthquake_Catalog_normalized_MinMaxScaler.csv" #BUG
     feature_columns = [
-        "normalized_震源深度",
-        "normalized_震中距",
-        "normalized_仪器烈度",
-        "normalized_总峰值加速度PGA",
-        "normalized_总峰值速度PGV",
-        "normalized_参考Vs30",
-        "normalized_东西分量PGA",
-        "normalized_南北分量PGA",
-        "normalized_竖向分量PGA",
-        "normalized_东西分量PGV",
-        "normalized_南北分量PGV",
-        "normalized_竖向分量PGV"
+        "normalized_震源深度(Km)",
+        "normalized_Ms7",
+        "normalized_mL",
+        "normalized_mb",
+        "normalized_mB"
     ]
 
     try:
         # 加载和准备数据
-        training_data, test_data = load_and_prepare_data(spark, hdfs_path, feature_columns)
+        training_data, test_data = load_and_prepare_data(
+            spark, hdfs_path, feature_columns
+        )
 
-        # 定义模型（使用固定超参数，符合原代码逻辑）
+        # 定义模型和超参数网格
         models = [
             (
-                LinearRegression(
-                    featuresCol="pca_features",
-                    labelCol="震级",
-                    regParam=0.1,
-                    elasticNetParam=0.5
-                ),
-                "Linear Regression"
+                LinearRegression(featuresCol="pca_features", labelCol="Ms"),
+                ParamGridBuilder()
+                .addGrid(LinearRegression.regParam, [0.01, 0.1, 0.5])
+                .addGrid(LinearRegression.elasticNetParam, [0.0, 0.5, 1.0])
+                .build(),
+                "Linear Regression",
             ),
             (
-                DecisionTreeRegressor(
-                    featuresCol="pca_features",
-                    labelCol="震级",
-                    maxDepth=10,
-                    minInstancesPerNode=2
-                ),
-                "Decision Tree Regression"
+                DecisionTreeRegressor(featuresCol="pca_features", labelCol="Ms"),
+                ParamGridBuilder()
+                .addGrid(DecisionTreeRegressor.maxDepth, [5, 10, 15])
+                .addGrid(DecisionTreeRegressor.minInstancesPerNode, [1, 2, 4])
+                .build(),
+                "Decision Tree Regression",
             ),
             (
-                RandomForestRegressor(
-                    featuresCol="pca_features",
-                    labelCol="震级",
-                    numTrees=50,
-                    maxDepth=10
-                ),
-                "Random Forest Regression"
+                RandomForestRegressor(featuresCol="pca_features", labelCol="Ms"),
+                ParamGridBuilder()
+                .addGrid(RandomForestRegressor.numTrees, [20, 50, 100])
+                .addGrid(RandomForestRegressor.maxDepth, [5, 10, 15])
+                .build(),
+                "Random Forest Regression",
             ),
             (
-                GBTRegressor(
-                    featuresCol="pca_features",
-                    labelCol="震级",
-                    maxIter=50,
-                    maxDepth=10
-                ),
-                "GBT Regression"
-            )
+                GBTRegressor(featuresCol="pca_features", labelCol="Ms"),
+                ParamGridBuilder()
+                .addGrid(GBTRegressor.maxIter, [20, 50, 100])
+                .addGrid(GBTRegressor.maxDepth, [5, 10, 15])
+                .build(),
+                "GBT Regression",
+            ),
         ]
 
         # 训练并评估模型
-        for model, name in models:
+        for model, param_grid, name in models:
             rmse, accuracy, _ = train_and_evaluate_model(
-                model, training_data, test_data, num_folds=5
+                model, param_grid, training_data, test_data
             )
             print(f"{name} RMSE: {rmse:.4f}, Accuracy: {accuracy:.4f}")
 
@@ -209,6 +194,7 @@ def main():
     finally:
         # 关闭 SparkSession
         spark.stop()
+
 
 if __name__ == "__main__":
     main()
