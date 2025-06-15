@@ -6,12 +6,8 @@ import os
 def preprocess_data(df):
     """
     数据预处理函数：清洗数据并处理空缺值
-
-    参数:
-        df (pyspark.sql.DataFrame): 输入的 Spark DataFrame
-
-    返回:
-        pyspark.sql.DataFrame: 清洗后的 DataFrame
+    参数: df (pyspark.sql.DataFrame): 输入的 Spark DataFrame
+    返回: pyspark.sql.DataFrame: 清洗后的 DataFrame
     """
     # 打印数据概览
     print("数据概览:")
@@ -31,11 +27,9 @@ def preprocess_data(df):
 def read_and_preprocess_hdfs_csv(file_path, spark):
     """
     读取并预处理 HDFS 上的 CSV 文件
-
     参数:
         file_path (str): HDFS 文件路径
         spark (SparkSession): Spark 会话对象
-
     返回:
         pyspark.sql.DataFrame: 预处理后的 DataFrame，或在出错时返回 None
     """
