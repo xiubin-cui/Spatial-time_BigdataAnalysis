@@ -111,7 +111,7 @@ python Model_prediction.py
 文本数据
 
 ```shell
-spark-submit CSV_data_preprocessing.csv
+spark-submit CSV_data_preprocessing.py
 spark-submit CSV_data_standardization_and_regularization.py
 spark-submit china_model_trainning.py
 spark-submit global_model_trainning.py
