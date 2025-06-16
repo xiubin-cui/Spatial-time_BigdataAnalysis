@@ -5,7 +5,7 @@
 """
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from config import TEXT_TYPES
+from .config import TEXT_TYPES
 
 
 class Ui_MainWindow:

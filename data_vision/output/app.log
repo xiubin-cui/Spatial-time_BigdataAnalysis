@@ -1,0 +1,281 @@
+2025-06-16 20:00:22,763 - INFO - 主窗口初始化完成
+2025-06-16 20:00:23,528 - INFO - 应用程序启动成功
+2025-06-16 20:00:42,341 - INFO - 成功显示图像: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\Cyclone_Wildfire_Flood_Earthquake_Database\Cyclone\0.jpg
+2025-06-16 20:00:42,343 - INFO - 成功加载图片: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone/0.jpg
+2025-06-16 20:01:33,421 - INFO - 图像预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone/0.jpg
+2025-06-16 20:01:42,096 - INFO - 图像预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone/0.jpg
+2025-06-16 20:02:18,436 - INFO - 成功显示图像: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\Cyclone_Wildfire_Flood_Earthquake_Database\Wildfire\0.jpg
+2025-06-16 20:02:18,436 - INFO - 成功加载图片: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/Cyclone_Wildfire_Flood_Earthquake_Database/Wildfire/0.jpg
+2025-06-16 20:02:22,278 - INFO - 图像预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/Cyclone_Wildfire_Flood_Earthquake_Database/Wildfire/0.jpg
+2025-06-16 20:02:27,533 - INFO - 图像预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/Cyclone_Wildfire_Flood_Earthquake_Database/Wildfire/0.jpg
+2025-06-16 20:02:32,112 - INFO - 选择文本类型: 中国地震目录
+2025-06-16 20:02:48,590 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\中国地震台网地震目录.csv
+2025-06-16 20:02:48,684 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/中国地震台网地震目录.csv
+2025-06-16 20:02:52,796 - INFO - 文本预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/中国地震台网地震目录.csv
+2025-06-16 20:17:29,574 - ERROR - 加载图像模型失败: Error(s) in loading state_dict for ResNet:
+	size mismatch for fc.weight: copying a param with shape torch.Size([4, 512]) from checkpoint, the shape in current model is torch.Size([2, 512]).
+	size mismatch for fc.bias: copying a param with shape torch.Size([4]) from checkpoint, the shape in current model is torch.Size([2]).
+2025-06-16 20:17:34,727 - INFO - 主窗口初始化完成
+2025-06-16 20:17:34,763 - INFO - 应用程序启动成功
+2025-06-16 20:17:48,784 - INFO - 成功显示图像: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\Cyclone_Wildfire_Flood_Earthquake_Database\Cyclone\0.jpg
+2025-06-16 20:17:48,787 - INFO - 成功加载图片: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone/0.jpg
+2025-06-16 20:18:48,146 - ERROR - 加载图像模型失败: [Errno 2] No such file or directory: '../image_process/resnet18_0.01_source.pth'
+2025-06-16 20:18:50,969 - INFO - 主窗口初始化完成
+2025-06-16 20:18:51,006 - INFO - 应用程序启动成功
+2025-06-16 20:19:19,008 - ERROR - 加载图像模型失败: [Errno 2] No such file or directory: './resnet18_0.01_source.pth'
+2025-06-16 20:19:21,980 - INFO - 主窗口初始化完成
+2025-06-16 20:19:22,017 - INFO - 应用程序启动成功
+2025-06-16 20:25:06,616 - ERROR - 模型文件未找到: 模型文件 '..\image_process\resnet18_0.01_source.pth' 不存在
+2025-06-16 20:25:10,295 - INFO - 主窗口初始化完成
+2025-06-16 20:25:10,332 - INFO - 应用程序启动成功
+2025-06-16 20:25:46,873 - ERROR - 模型文件未找到: 模型文件 '..\image_processesnet18_0.01_source.pth' 不存在
+2025-06-16 20:25:49,605 - INFO - 主窗口初始化完成
+2025-06-16 20:25:49,646 - INFO - 应用程序启动成功
+2025-06-16 20:25:59,620 - ERROR - 模型文件未找到: 模型文件 '..\image_process\resnet18_0.01_source.pth' 不存在
+2025-06-16 20:26:01,551 - INFO - 主窗口初始化完成
+2025-06-16 20:26:01,586 - INFO - 应用程序启动成功
+2025-06-16 20:26:17,594 - ERROR - 加载模型失败: [Errno 13] Permission denied: 'E:\\CUG\\Spatial_time_BigdataAnalysis\\project\\spatial_time_bigdata_analysis'
+2025-06-16 20:26:36,788 - INFO - 主窗口初始化完成
+2025-06-16 20:26:36,830 - INFO - 应用程序启动成功
+2025-06-16 20:28:12,411 - ERROR - 模型文件未找到: 模型文件 'spatial_time_bigdata_analysis' 不存在
+2025-06-16 20:28:17,083 - INFO - 主窗口初始化完成
+2025-06-16 20:28:17,120 - INFO - 应用程序启动成功
+2025-06-16 20:28:39,813 - ERROR - 模型文件未找到: 模型文件 'resnet18_0.01_source.pth' 不存在
+2025-06-16 20:28:43,039 - INFO - 主窗口初始化完成
+2025-06-16 20:28:43,078 - INFO - 应用程序启动成功
+2025-06-16 20:29:11,718 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 20:29:11,718 - INFO - 主窗口初始化完成
+2025-06-16 20:29:12,144 - INFO - 应用程序启动成功
+2025-06-16 20:29:23,047 - INFO - 成功显示图像: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\Cyclone_Wildfire_Flood_Earthquake_Database\Cyclone\0.jpg
+2025-06-16 20:29:23,049 - INFO - 成功加载图片: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone/0.jpg
+2025-06-16 20:29:24,229 - ERROR - 预测单张图像 E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone/0.jpg 失败: name 'Image' is not defined
+2025-06-16 20:29:24,231 - ERROR - 图像预测失败: name 'Image' is not defined
+2025-06-16 20:31:16,972 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 20:31:16,973 - INFO - 主窗口初始化完成
+2025-06-16 20:31:17,417 - INFO - 应用程序启动成功
+2025-06-16 20:31:42,850 - INFO - 成功显示图像: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\Cyclone_Wildfire_Flood_Earthquake_Database\Cyclone\0.jpg
+2025-06-16 20:31:42,852 - INFO - 成功加载图片: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone/0.jpg
+2025-06-16 20:31:45,593 - INFO - 单张图像预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone/0.jpg, 预测: Cyclone, 置信度: 84.45%
+2025-06-16 20:31:50,856 - INFO - 选择文本类型: 中国地震目录
+2025-06-16 20:32:05,888 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\中国地震台网地震目录.csv
+2025-06-16 20:32:05,989 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/中国地震台网地震目录.csv
+2025-06-16 20:32:08,692 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\中国地震台网地震目录.csv
+2025-06-16 20:32:21,976 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\中国地震台网地震目录.csv
+2025-06-16 20:35:19,733 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 20:35:19,734 - INFO - 主窗口初始化完成
+2025-06-16 20:35:20,176 - INFO - 应用程序启动成功
+2025-06-16 20:35:26,484 - INFO - 选择文本类型: 中国地震目录
+2025-06-16 20:35:39,866 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\地震灾情数据列表.csv
+2025-06-16 20:35:39,882 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/地震灾情数据列表.csv
+2025-06-16 20:35:41,207 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\地震灾情数据列表.csv
+2025-06-16 20:47:35,314 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 20:47:35,315 - INFO - 主窗口初始化完成
+2025-06-16 20:47:35,744 - INFO - 应用程序启动成功
+2025-06-16 20:47:37,819 - INFO - 选择文本类型: 中国地震目录
+2025-06-16 20:47:51,592 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\中国地震台网地震目录.csv
+2025-06-16 20:47:51,693 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/中国地震台网地震目录.csv
+2025-06-16 20:47:53,096 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\中国地震台网地震目录.csv
+2025-06-16 20:51:54,203 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\中国地震台网地震目录.csv
+2025-06-16 20:57:26,382 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 20:57:26,383 - INFO - 主窗口初始化完成
+2025-06-16 20:57:27,068 - INFO - 应用程序启动成功
+2025-06-16 20:57:30,553 - INFO - 选择文本类型: 中国地震目录
+2025-06-16 20:57:50,662 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\中国地震台网地震目录.csv
+2025-06-16 20:57:50,752 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/中国地震台网地震目录.csv
+2025-06-16 20:57:52,338 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\中国地震台网地震目录.csv
+2025-06-16 20:57:52,338 - ERROR - 数据处理错误: 不支持的文本类型: 中国地震目录！
+2025-06-16 20:58:36,414 - INFO - 选择文本类型: 文本类型选择
+2025-06-16 20:58:38,254 - INFO - 选择文本类型: 强震动参数数据集
+2025-06-16 20:59:37,026 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\强震动参数数据集.csv
+2025-06-16 20:59:37,436 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/强震动参数数据集.csv
+2025-06-16 20:59:38,959 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\强震动参数数据集.csv
+2025-06-16 20:59:38,960 - ERROR - 数据处理错误: 不支持的文本类型: 强震动参数数据集！
+2025-06-16 21:00:11,905 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 21:00:11,906 - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:00:11,906 - INFO - 主窗口初始化完成
+2025-06-16 21:00:12,315 - INFO - 应用程序启动成功
+2025-06-16 21:00:13,973 - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 21:00:20,646 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:00:20,752 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/中国地震台网地震目录.csv
+2025-06-16 21:00:23,136 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:00:23,139 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度(Km), mL, mb, mB, Ms7
+2025-06-16 21:00:45,759 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:00:45,759 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度(Km), mL, mb, mB, Ms7
+2025-06-16 21:04:38,354 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 21:04:38,354 - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:04:38,354 - INFO - 主窗口初始化完成
+2025-06-16 21:04:38,768 - INFO - 应用程序启动成功
+2025-06-16 21:04:41,239 - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 21:04:44,673 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:04:44,674 - ERROR - 打开文本文件失败: arguments did not match any overloaded call:
+  setItem(self, row: int, column: int, item: Optional[QStandardItem]): argument 1 has unexpected type 'str'
+  setItem(self, arow: int, aitem: Optional[QStandardItem]): argument 1 has unexpected type 'str'
+2025-06-16 21:07:42,142 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 21:07:42,142 - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:07:42,143 - INFO - 主窗口初始化完成
+2025-06-16 21:07:42,545 - INFO - 应用程序启动成功
+2025-06-16 21:07:44,506 - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 21:07:53,472 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:07:53,570 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/中国地震台网地震目录.csv
+2025-06-16 21:07:54,547 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:07:54,548 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度(Km), mL, mb, mB, Ms7
+2025-06-16 21:10:02,093 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 21:10:02,093 - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:10:02,093 - INFO - 主窗口初始化完成
+2025-06-16 21:10:02,487 - INFO - 应用程序启动成功
+2025-06-16 21:10:04,575 - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 21:10:12,066 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:10:12,167 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/中国地震台网地震目录.csv
+2025-06-16 21:10:12,983 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:10:12,983 - INFO - 为 '中国地震台网地震目录数据集训练' 数据集准备数据。期望的特征列: ['震源深度(Km)', 'mL', 'mb', 'mB']，标签列: Ms7
+2025-06-16 21:10:12,983 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度(Km), mL, mb, mB, Ms7
+2025-06-16 21:10:55,786 - INFO - 成功显示图像: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\Cyclone_Wildfire_Flood_Earthquake_Database\Cyclone\0.jpg
+2025-06-16 21:10:55,786 - INFO - 成功加载图片: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone/0.jpg
+2025-06-16 21:10:58,513 - INFO - 单张图像预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone/0.jpg, 预测: Cyclone, 置信度: 84.45%
+2025-06-16 21:10:59,437 - INFO - 可视化窗口 UI 设置完成
+2025-06-16 21:10:59,438 - INFO - 可视化窗口初始化完成
+2025-06-16 21:10:59,719 - INFO - 打开数据可视化窗口
+2025-06-16 21:11:06,459 - INFO - 尝试渲染未实现的图表: 
+2025-06-16 21:11:07,543 - INFO - 选择可视化类型: 线性回归模型
+2025-06-16 21:11:09,246 - INFO - 选择文本类型: 全球地震目录
+2025-06-16 21:11:12,173 - INFO - 尝试渲染未实现的图表: 折线图
+2025-06-16 21:11:24,663 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:11:24,663 - INFO - 为 '中国地震台网地震目录数据集训练' 数据集准备数据。期望的特征列: ['震源深度(Km)', 'mL', 'mb', 'mB']，标签列: Ms7
+2025-06-16 21:11:24,663 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度(Km), mL, mb, mB, Ms7
+2025-06-16 21:14:05,797 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 21:14:05,798 - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:14:05,798 - INFO - 主窗口初始化完成
+2025-06-16 21:14:06,204 - INFO - 应用程序启动成功
+2025-06-16 21:14:07,724 - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 21:14:13,367 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:14:13,461 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/中国地震台网地震目录.csv
+2025-06-16 21:14:14,361 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:14:14,361 - INFO - 为 '中国地震台网地震目录数据集训练' 数据集准备数据。期望的特征列: ['震源深度(Km)', 'mL', 'mb', 'mB']，标签列: Ms7
+2025-06-16 21:14:14,361 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度(Km), mL, mb, mB, Ms7
+2025-06-16 21:16:19,571 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 21:16:19,572 - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:16:19,572 - INFO - 主窗口初始化完成
+2025-06-16 21:16:19,997 - INFO - 应用程序启动成功
+2025-06-16 21:16:21,408 - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 21:16:27,409 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:16:27,503 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/中国地震台网地震目录.csv
+2025-06-16 21:16:28,454 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:16:28,454 - INFO - 为 '中国地震台网地震目录数据集训练' 数据集准备数据。期望的特征列: ['震源深度(Km)', 'mL', 'mb', 'mB']，标签列: Ms7
+2025-06-16 21:16:28,455 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度(Km), mL, mb, mB, Ms7
+2025-06-16 21:17:12,418 - INFO - 选择文本类型: 文本类型选择
+2025-06-16 21:17:14,107 - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 21:17:16,205 - INFO - 选择文本类型: 强震动参数数据集训练
+2025-06-16 21:17:23,302 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\强震动参数数据集.csv
+2025-06-16 21:17:23,621 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/强震动参数数据集.csv
+2025-06-16 21:17:24,675 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\强震动参数数据集.csv
+2025-06-16 21:17:24,675 - INFO - 为 '强震动参数数据集训练' 数据集准备数据。期望的特征列: ['震源深度', '震中距', '仪器烈度', '总峰值加速度PGA', '总峰值速度PGV', '参考Vs30', '东西分量PGA', '南北分量PGA', '竖向分量PGA', '东西分量PGV', '南北分量PGV', '竖向分量PGV']，标签列: 震级
+2025-06-16 21:17:24,675 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度, 震中距, 仪器烈度, 总峰值加速度PGA, 总峰值速度PGV, 参考Vs30, 东西分量PGA, 南北分量PGA, 竖向分量PGA, 东西分量PGV, 南北分量PGV, 竖向分量PGV, 震级
+2025-06-16 21:19:16,429 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 21:19:16,429 - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:19:16,429 - INFO - 主窗口初始化完成
+2025-06-16 21:19:16,861 - INFO - 应用程序启动成功
+2025-06-16 21:19:18,189 - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 21:19:23,726 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:19:23,726 - INFO - Loaded and normalized columns: ['序号,发震时刻(国际时),经度(°),纬度(°),震源深度(Km),Ms,Ms7,mL,mb,mB,地点']
+2025-06-16 21:19:23,826 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/中国地震台网地震目录.csv
+2025-06-16 21:19:24,861 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:19:24,861 - INFO - Loaded and normalized columns: ['序号,发震时刻(国际时),经度(°),纬度(°),震源深度(Km),Ms,Ms7,mL,mb,mB,地点']
+2025-06-16 21:19:24,862 - INFO - 为 '中国地震台网地震目录数据集训练' 数据集准备数据。期望的特征列: ['震源深度(Km)', 'mL', 'mb', 'mB']，标签列: Ms7
+2025-06-16 21:19:24,862 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度(Km), mL, mb, mB, Ms7
+2025-06-16 21:19:46,556 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:19:46,556 - INFO - Loaded and normalized columns: ['序号,发震时刻(国际时),经度(°),纬度(°),震源深度(Km),Ms,Ms7,mL,mb,mB,地点']
+2025-06-16 21:19:46,556 - INFO - 为 '中国地震台网地震目录数据集训练' 数据集准备数据。期望的特征列: ['震源深度(Km)', 'mL', 'mb', 'mB']，标签列: Ms7
+2025-06-16 21:19:46,556 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度(Km), mL, mb, mB, Ms7
+2025-06-16 21:22:50,961 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 21:22:50,961 - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:22:50,961 - INFO - 主窗口初始化完成
+2025-06-16 21:22:51,381 - INFO - 应用程序启动成功
+2025-06-16 21:22:52,780 - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 21:22:57,431 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:22:57,431 - INFO - Loaded and normalized columns: ['序号,发震时刻(国际时),经度(°),纬度(°),震源深度(Km),Ms,Ms7,mL,mb,mB,地点']
+2025-06-16 21:22:57,523 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/中国地震台网地震目录.csv
+2025-06-16 21:22:58,627 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:22:58,627 - INFO - Loaded and normalized columns: ['序号,发震时刻(国际时),经度(°),纬度(°),震源深度(Km),Ms,Ms7,mL,mb,mB,地点']
+2025-06-16 21:22:58,627 - INFO - 为 '中国地震台网地震目录数据集训练' 数据集准备数据。期望的特征列: ['震源深度(Km)', 'mL', 'mb', 'mB']，标签列: Ms7
+2025-06-16 21:22:58,629 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度(Km), mL, mb, mB, Ms7
+2025-06-16 21:24:05,117 - INFO - 选择文本类型: 强震动参数数据集训练
+2025-06-16 21:24:10,950 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\强震动参数数据集.csv
+2025-06-16 21:24:10,951 - INFO - Loaded and normalized columns: ['事件编号,发震时间,震中纬度,震中经度,震源深度,发震地点,震级,台网代码,台站编码,台站名称,台站纬度,台站经度,震中距,仪器烈度,总峰值加速度PGA,总峰值速度PGV,场地标签,参考Vs30,东西分量PGA,南北分量PGA,竖向分量PGA,东西分量PGV,南北分量PGV,竖向分量PGV']
+2025-06-16 21:24:11,266 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/强震动参数数据集.csv
+2025-06-16 21:24:12,343 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\强震动参数数据集.csv
+2025-06-16 21:24:12,343 - INFO - Loaded and normalized columns: ['事件编号,发震时间,震中纬度,震中经度,震源深度,发震地点,震级,台网代码,台站编码,台站名称,台站纬度,台站经度,震中距,仪器烈度,总峰值加速度PGA,总峰值速度PGV,场地标签,参考Vs30,东西分量PGA,南北分量PGA,竖向分量PGA,东西分量PGV,南北分量PGV,竖向分量PGV']
+2025-06-16 21:24:12,343 - INFO - 为 '强震动参数数据集训练' 数据集准备数据。期望的特征列: ['震源深度', '震中距', '仪器烈度', '总峰值加速度PGA', '总峰值速度PGV', '参考Vs30', '东西分量PGA', '南北分量PGA', '竖向分量PGA', '东西分量PGV', '南北分量PGV', '竖向分量PGV']，标签列: 震级
+2025-06-16 21:24:12,345 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度, 震中距, 仪器烈度, 总峰值加速度PGA, 总峰值速度PGV, 参考Vs30, 东西分量PGA, 南北分量PGA, 竖向分量PGA, 东西分量PGV, 南北分量PGV, 竖向分量PGV, 震级
+2025-06-16 21:24:44,181 - INFO - 选择文本类型: 全球地震台网地震目录数据集训练
+2025-06-16 21:24:48,404 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\全球地震台网地震目录.csv
+2025-06-16 21:24:48,405 - INFO - Loaded and normalized columns: ['序号,发震时刻(国际时),经度(°),纬度(°),震源深度(Km),Ms,Ms7,mL,mb,mB,地点']
+2025-06-16 21:24:48,786 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/全球地震台网地震目录.csv
+2025-06-16 21:24:49,613 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\全球地震台网地震目录.csv
+2025-06-16 21:24:49,613 - INFO - Loaded and normalized columns: ['序号,发震时刻(国际时),经度(°),纬度(°),震源深度(Km),Ms,Ms7,mL,mb,mB,地点']
+2025-06-16 21:24:49,613 - INFO - 为 '全球地震台网地震目录数据集训练' 数据集准备数据。期望的特征列: ['震源深度(Km)', 'Ms7', 'mL', 'mb', 'mB']，标签列: Ms
+2025-06-16 21:24:49,613 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度(Km), Ms7, mL, mb, mB, Ms
+2025-06-16 21:29:06,885 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 21:29:06,885 - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:29:06,885 - INFO - 主窗口初始化完成
+2025-06-16 21:29:07,312 - INFO - 应用程序启动成功
+2025-06-16 21:29:08,516 - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 21:29:12,758 - INFO - Loaded and normalized columns: ['序号', '发震时刻(国际时)', '经度(°)', '纬度(°)', '震源深度(Km)', 'Ms', 'Ms7', 'mL', 'mb', 'mB', '地点']
+2025-06-16 21:29:13,736 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/中国地震台网地震目录.csv
+2025-06-16 21:29:15,142 - INFO - Loaded and normalized columns: ['序号', '发震时刻(国际时)', '经度(°)', '纬度(°)', '震源深度(Km)', 'Ms', 'Ms7', 'mL', 'mb', 'mB', '地点']
+2025-06-16 21:29:15,143 - INFO - 为 '中国地震台网地震目录数据集训练' 数据集准备数据。期望的特征列: ['震源深度(Km)', 'mL', 'mb', 'mB']，标签列: Ms7
+2025-06-16 21:29:15,820 - INFO - 随机森林回归模型训练完成
+2025-06-16 21:29:15,846 - ERROR - 文本预测失败: got an unexpected keyword argument 'squared'
+2025-06-16 21:33:00,666 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 21:33:00,666 - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:33:00,666 - INFO - 主窗口初始化完成
+2025-06-16 21:33:01,109 - INFO - 应用程序启动成功
+2025-06-16 21:33:02,581 - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 21:33:07,159 - INFO - Loaded and normalized columns: ['序号', '发震时刻(国际时)', '经度(°)', '纬度(°)', '震源深度(Km)', 'Ms', 'Ms7', 'mL', 'mb', 'mB', '地点']
+2025-06-16 21:33:08,083 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/中国地震台网地震目录.csv
+2025-06-16 21:33:08,923 - INFO - Loaded and normalized columns: ['序号', '发震时刻(国际时)', '经度(°)', '纬度(°)', '震源深度(Km)', 'Ms', 'Ms7', 'mL', 'mb', 'mB', '地点']
+2025-06-16 21:33:08,923 - INFO - 为 '中国地震台网地震目录数据集训练' 数据集准备数据。期望的特征列: ['震源深度(Km)', 'mL', 'mb', 'mB']，标签列: Ms7
+2025-06-16 21:33:09,591 - INFO - 随机森林回归模型训练完成
+2025-06-16 21:33:09,617 - ERROR - 文本预测失败: got an unexpected keyword argument 'squared'
+2025-06-16 21:35:42,645 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 21:35:42,645 - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:35:42,645 - INFO - 主窗口初始化完成
+2025-06-16 21:35:43,062 - INFO - 应用程序启动成功
+2025-06-16 21:35:45,269 - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 21:35:51,212 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:35:51,212 - INFO - Loaded and normalized columns: ['序号,发震时刻(国际时),经度(°),纬度(°),震源深度(Km),Ms,Ms7,mL,mb,mB,地点']
+2025-06-16 21:35:51,307 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/中国地震台网地震目录.csv
+2025-06-16 21:35:52,569 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:35:52,569 - INFO - Loaded and normalized columns: ['序号,发震时刻(国际时),经度(°),纬度(°),震源深度(Km),Ms,Ms7,mL,mb,mB,地点']
+2025-06-16 21:35:52,569 - INFO - 为 '中国地震台网地震目录数据集训练' 数据集准备数据。期望的特征列: ['震源深度(Km)', 'mL', 'mb', 'mB']，标签列: Ms7
+2025-06-16 21:35:52,570 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度(Km), mL, mb, mB, Ms7
+2025-06-16 21:40:35,584 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 21:40:35,584 - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:40:35,584 - INFO - 主窗口初始化完成
+2025-06-16 21:40:36,010 - INFO - 应用程序启动成功
+2025-06-16 21:40:44,470 - INFO - 成功显示图像: E:\CUG\Spatial_time_BigdataAnalysis\project\code\data\Cyclone_Wildfire_Flood_Earthquake_Database\Cyclone\0.jpg
+2025-06-16 21:40:44,472 - INFO - 成功加载图片: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone/0.jpg
+2025-06-16 21:40:47,249 - INFO - 单张图像预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/code/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone/0.jpg, 预测: Cyclone, 置信度: 84.45%
+2025-06-16 21:41:52,555 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 21:41:52,555 - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:41:52,555 - INFO - 主窗口初始化完成
+2025-06-16 21:41:52,949 - INFO - 应用程序启动成功
+2025-06-16 21:41:54,570 - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 21:42:11,852 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:42:11,852 - INFO - Loaded and normalized columns: ['序号,发震时刻(国际时),经度(°),纬度(°),震源深度(Km),Ms,Ms7,mL,mb,mB,地点']
+2025-06-16 21:42:11,945 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/中国地震台网地震目录.csv
+2025-06-16 21:42:14,017 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:42:14,017 - INFO - Loaded and normalized columns: ['序号,发震时刻(国际时),经度(°),纬度(°),震源深度(Km),Ms,Ms7,mL,mb,mB,地点']
+2025-06-16 21:42:14,017 - INFO - 为 '中国地震台网地震目录数据集训练' 数据集准备数据。期望的特征列: ['震源深度(Km)', 'mL', 'mb', 'mB']，标签列: Ms7
+2025-06-16 21:42:14,017 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度(Km), mL, mb, mB, Ms7
+2025-06-16 21:42:43,409 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 21:42:43,410 - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:42:43,410 - INFO - 主窗口初始化完成
+2025-06-16 21:42:43,823 - INFO - 应用程序启动成功
+2025-06-16 21:42:45,326 - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 21:42:50,935 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:42:50,936 - INFO - Loaded and normalized columns: ['序号,发震时刻(国际时),经度(°),纬度(°),震源深度(Km),Ms,Ms7,mL,mb,mB,地点']
+2025-06-16 21:42:51,028 - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/中国地震台网地震目录.csv
+2025-06-16 21:42:52,238 - INFO - 成功加载数据文件: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\中国地震台网地震目录.csv
+2025-06-16 21:42:52,238 - INFO - Loaded and normalized columns: ['序号,发震时刻(国际时),经度(°),纬度(°),震源深度(Km),Ms,Ms7,mL,mb,mB,地点']
+2025-06-16 21:42:52,238 - INFO - 为 '中国地震台网地震目录数据集训练' 数据集准备数据。期望的特征列: ['震源深度(Km)', 'mL', 'mb', 'mB']，标签列: Ms7
+2025-06-16 21:42:52,238 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度(Km), mL, mb, mB, Ms7

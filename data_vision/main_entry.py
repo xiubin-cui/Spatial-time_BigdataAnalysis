@@ -6,7 +6,7 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
 from data_vision.Main_window_logic import MainWindow
-from utils import logger
+from .utils import logger
 
 
 def main():

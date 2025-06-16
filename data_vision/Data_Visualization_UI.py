@@ -4,8 +4,8 @@
 """
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from config import VISUALIZATION_TYPES, TEXT_TYPES
-from utils import logger
+from .config import VISUALIZATION_TYPES, TEXT_TYPES
+from .utils import logger
 
 
 class Ui_MainWindow:

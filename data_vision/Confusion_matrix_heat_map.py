@@ -7,8 +7,8 @@ import pandas as pd
 from pyecharts import options as opts
 from pyecharts.charts import HeatMap
 from pathlib import Path
-from utils import safe_read_csv, logger
-from config import BATCH_RESULT_PATH, CONFUSION_MATRIX_PATH
+from .utils import safe_read_csv, logger
+from .config import BATCH_RESULT_PATH, CONFUSION_MATRIX_PATH
 from typing import Tuple, List
 
 def create_confusion_matrix(df: pd.DataFrame) -> Tuple[pd.DataFrame, List, List]:

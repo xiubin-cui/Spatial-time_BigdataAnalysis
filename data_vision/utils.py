@@ -12,7 +12,7 @@ from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWidgets import QMessageBox
 from pathlib import Path
 from typing import Optional, Tuple
-from config import LOGGING_CONFIG
+from .config import LOGGING_CONFIG
 
 # 配置日志
 logging.basicConfig(**LOGGING_CONFIG)
