@@ -1,0 +1,28 @@
+2025-06-16 18:47:34,591 - INFO - 配置: Namespace(batch_size=32, data_dir='./data', incorrect_file='./incorrect_images.txt', model_path='./resnet18_0.01_source.pth', num_classes=4, output_file='./image_batch_results.txt')
+2025-06-16 18:47:34,591 - INFO - 使用设备: cpu
+2025-06-16 18:47:34,592 - ERROR - 加载模型失败: __init__() got an unexpected keyword argument 'weights'
+2025-06-16 18:47:34,592 - ERROR - 程序执行出错: 无法加载模型: __init__() got an unexpected keyword argument 'weights'
+Traceback (most recent call last):
+  File "Model_prediction.py", line 57, in load_model
+    model = models.resnet18(weights=None)
+  File "/usr/local/lib64/python3.6/site-packages/torchvision/models/resnet.py", line 277, in resnet18
+    **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/torchvision/models/resnet.py", line 260, in _resnet
+    model = ResNet(block, layers, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'weights'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "Model_prediction.py", line 171, in main
+    model = load_model(args.model_path, args.num_classes, device)
+  File "Model_prediction.py", line 69, in load_model
+    raise RuntimeError(f"无法加载模型: {e}")
+RuntimeError: 无法加载模型: __init__() got an unexpected keyword argument 'weights'
+2025-06-16 18:52:07,576 - INFO - 当前预测配置: Namespace(batch_size=32, data_dir='./data', incorrect_file='./incorrect_images.txt', model_path='./resnet18_0.01_source.pth', num_classes=4, output_file='./image_batch_results.txt')
+2025-06-16 18:52:07,576 - INFO - 正在使用设备: cpu
+2025-06-16 18:52:07,735 - INFO - 成功加载模型: 'resnet18_0.01_source.pth' 到设备: cpu
+2025-06-16 18:52:07,961 - INFO - 预测完成。发现 0 张预测错误的图像。
+2025-06-16 18:52:07,961 - INFO - 预测结果已保存至: './image_batch_results.txt'
+2025-06-16 18:52:07,961 - INFO - 没有预测错误的图像，未生成错误图像路径文件。
+2025-06-16 18:52:07,961 - INFO - 预测流程完成！总准确率: 1.0000。 详细结果请查看 './image_batch_results.txt'，错误预测图像路径请查看 './incorrect_images.txt'。

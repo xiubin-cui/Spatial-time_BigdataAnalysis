@@ -1,118 +1,770 @@
-2025-06-16 07:58:44,406 - INFO - 训练配置: Config(data_dir='./data', target_root_dir='./trash', model_save_path='./models/resnet18_0.01_source.pth', num_classes=4, learning_rate=0.01, num_epochs=25, batch_size=32, num_workers=0, pretrained=False, device='cpu')
-2025-06-16 07:58:44,406 - INFO - 使用设备: cpu
-2025-06-16 07:58:44,412 - INFO - 训练集大小: 2233, 验证集大小: 604
-2025-06-16 07:58:44,543 - INFO - 初始化模型 ResNet18，类别数: 4, 预训练: False
-2025-06-16 07:58:58,079 - INFO - 训练 Epoch: 0 [1600/2233 (71%)] 损失: 1.184141
-2025-06-16 07:59:03,499 - INFO - Epoch 0/24, 平均损失: 1.2585
-2025-06-16 07:59:06,450 - INFO - 验证集: 平均损失: 2.0199, 准确率: 364/604 (60%)
-2025-06-16 07:59:21,767 - INFO - 训练 Epoch: 1 [1600/2233 (71%)] 损失: 1.060590
-2025-06-16 07:59:27,694 - INFO - Epoch 1/24, 平均损失: 0.9059
-2025-06-16 07:59:30,189 - INFO - 验证集: 平均损失: 0.6070, 准确率: 473/604 (78%)
-2025-06-16 07:59:44,999 - INFO - 训练 Epoch: 2 [1600/2233 (71%)] 损失: 0.881014
-2025-06-16 07:59:50,902 - INFO - Epoch 2/24, 平均损失: 0.7267
-2025-06-16 07:59:53,369 - INFO - 验证集: 平均损失: 0.5264, 准确率: 489/604 (81%)
-2025-06-16 08:00:07,946 - INFO - 训练 Epoch: 3 [1600/2233 (71%)] 损失: 0.640905
-2025-06-16 08:00:14,113 - INFO - Epoch 3/24, 平均损失: 0.6085
-2025-06-16 08:00:16,627 - INFO - 验证集: 平均损失: 0.9736, 准确率: 398/604 (66%)
-2025-06-16 08:00:31,840 - INFO - 训练 Epoch: 4 [1600/2233 (71%)] 损失: 0.299481
-2025-06-16 08:00:37,774 - INFO - Epoch 4/24, 平均损失: 0.4483
-2025-06-16 08:00:40,737 - INFO - 验证集: 平均损失: 0.5583, 准确率: 487/604 (81%)
-2025-06-16 08:00:58,171 - INFO - 训练 Epoch: 5 [1600/2233 (71%)] 损失: 0.644820
-2025-06-16 08:01:05,179 - INFO - Epoch 5/24, 平均损失: 0.5370
-2025-06-16 08:01:08,391 - INFO - 验证集: 平均损失: 1.3232, 准确率: 408/604 (68%)
-2025-06-16 08:01:25,882 - INFO - 训练 Epoch: 6 [1600/2233 (71%)] 损失: 0.165646
-2025-06-16 08:01:32,975 - INFO - Epoch 6/24, 平均损失: 0.3654
-2025-06-16 08:01:36,160 - INFO - 验证集: 平均损失: 0.3057, 准确率: 547/604 (91%)
-2025-06-16 08:01:53,419 - INFO - 训练 Epoch: 7 [1600/2233 (71%)] 损失: 0.163681
-2025-06-16 08:02:00,270 - INFO - Epoch 7/24, 平均损失: 0.2690
-2025-06-16 08:02:03,379 - INFO - 验证集: 平均损失: 0.4195, 准确率: 521/604 (86%)
-2025-06-16 08:02:21,611 - INFO - 训练 Epoch: 8 [1600/2233 (71%)] 损失: 0.252536
-2025-06-16 08:02:28,961 - INFO - Epoch 8/24, 平均损失: 0.1735
-2025-06-16 08:02:32,066 - INFO - 验证集: 平均损失: 0.2847, 准确率: 562/604 (93%)
-2025-06-16 08:02:49,748 - INFO - 训练 Epoch: 9 [1600/2233 (71%)] 损失: 0.095468
-2025-06-16 08:02:55,648 - INFO - Epoch 9/24, 平均损失: 0.1986
-2025-06-16 08:02:58,183 - INFO - 验证集: 平均损失: 0.2660, 准确率: 559/604 (93%)
-2025-06-16 08:03:12,915 - INFO - 训练 Epoch: 10 [1600/2233 (71%)] 损失: 0.010581
-2025-06-16 08:03:18,892 - INFO - Epoch 10/24, 平均损失: 0.1261
-2025-06-16 08:03:21,398 - INFO - 验证集: 平均损失: 0.3748, 准确率: 547/604 (91%)
-2025-06-16 08:03:36,741 - INFO - 训练 Epoch: 11 [1600/2233 (71%)] 损失: 0.133072
-2025-06-16 08:03:42,731 - INFO - Epoch 11/24, 平均损失: 0.1251
-2025-06-16 08:03:45,193 - INFO - 验证集: 平均损失: 0.2849, 准确率: 554/604 (92%)
-2025-06-16 08:04:01,198 - INFO - 训练 Epoch: 12 [1600/2233 (71%)] 损失: 0.046664
-2025-06-16 08:04:07,782 - INFO - Epoch 12/24, 平均损失: 0.0974
-2025-06-16 08:04:10,447 - INFO - 验证集: 平均损失: 0.5582, 准确率: 512/604 (85%)
-2025-06-16 08:04:27,233 - INFO - 训练 Epoch: 13 [1600/2233 (71%)] 损失: 0.048910
-2025-06-16 08:04:34,294 - INFO - Epoch 13/24, 平均损失: 0.1251
-2025-06-16 08:04:37,711 - INFO - 验证集: 平均损失: 0.2982, 准确率: 552/604 (91%)
-2025-06-16 08:04:55,749 - INFO - 训练 Epoch: 14 [1600/2233 (71%)] 损失: 0.066413
-2025-06-16 08:05:06,219 - INFO - Epoch 14/24, 平均损失: 0.0722
-2025-06-16 08:05:10,386 - INFO - 验证集: 平均损失: 0.3446, 准确率: 565/604 (94%)
-2025-06-16 08:05:32,003 - INFO - 训练 Epoch: 15 [1600/2233 (71%)] 损失: 0.186218
-2025-06-16 08:05:40,261 - INFO - Epoch 15/24, 平均损失: 0.1052
-2025-06-16 08:05:43,551 - INFO - 验证集: 平均损失: 0.3493, 准确率: 559/604 (93%)
-2025-06-16 08:06:01,526 - INFO - 训练 Epoch: 16 [1600/2233 (71%)] 损失: 0.168457
-2025-06-16 08:06:08,294 - INFO - Epoch 16/24, 平均损失: 0.1218
-2025-06-16 08:06:10,960 - INFO - 验证集: 平均损失: 0.2796, 准确率: 562/604 (93%)
-2025-06-16 08:06:27,772 - INFO - 训练 Epoch: 17 [1600/2233 (71%)] 损失: 0.028240
-2025-06-16 08:06:34,558 - INFO - Epoch 17/24, 平均损失: 0.0729
-2025-06-16 08:06:37,279 - INFO - 验证集: 平均损失: 0.4006, 准确率: 557/604 (92%)
-2025-06-16 08:06:54,317 - INFO - 训练 Epoch: 18 [1600/2233 (71%)] 损失: 0.031795
-2025-06-16 08:07:00,814 - INFO - Epoch 18/24, 平均损失: 0.0877
-2025-06-16 08:07:03,730 - INFO - 验证集: 平均损失: 0.3557, 准确率: 565/604 (94%)
-2025-06-16 08:07:20,895 - INFO - 训练 Epoch: 19 [1600/2233 (71%)] 损失: 0.110378
-2025-06-16 08:07:27,524 - INFO - Epoch 19/24, 平均损失: 0.0636
-2025-06-16 08:07:30,254 - INFO - 验证集: 平均损失: 0.2923, 准确率: 564/604 (93%)
-2025-06-16 08:07:47,364 - INFO - 训练 Epoch: 20 [1600/2233 (71%)] 损失: 0.014065
-2025-06-16 08:07:54,081 - INFO - Epoch 20/24, 平均损失: 0.0341
-2025-06-16 08:07:56,763 - INFO - 验证集: 平均损失: 0.3037, 准确率: 570/604 (94%)
-2025-06-16 08:08:12,674 - INFO - 训练 Epoch: 21 [1600/2233 (71%)] 损失: 0.005806
-2025-06-16 08:08:20,571 - INFO - Epoch 21/24, 平均损失: 0.0346
-2025-06-16 08:08:23,336 - INFO - 验证集: 平均损失: 0.3339, 准确率: 572/604 (95%)
-2025-06-16 08:08:40,850 - INFO - 训练 Epoch: 22 [1600/2233 (71%)] 损失: 0.049830
-2025-06-16 08:08:47,522 - INFO - Epoch 22/24, 平均损失: 0.0311
-2025-06-16 08:08:50,204 - INFO - 验证集: 平均损失: 0.3182, 准确率: 573/604 (95%)
-2025-06-16 08:09:07,419 - INFO - 训练 Epoch: 23 [1600/2233 (71%)] 损失: 0.019783
-2025-06-16 08:09:14,780 - INFO - Epoch 23/24, 平均损失: 0.0353
-2025-06-16 08:09:17,864 - INFO - 验证集: 平均损失: 0.3692, 准确率: 570/604 (94%)
-2025-06-16 08:09:33,936 - INFO - 训练 Epoch: 24 [1600/2233 (71%)] 损失: 0.072016
-2025-06-16 08:09:40,293 - INFO - Epoch 24/24, 平均损失: 0.0406
-2025-06-16 08:09:43,063 - INFO - 验证集: 平均损失: 0.3274, 准确率: 567/604 (94%)
-2025-06-16 08:09:43,218 - INFO - 模型已保存至 ./models/resnet18_0.01_source.pth
-2025-06-16 08:09:43,232 - INFO - 移动图像 data/val/Cyclone/120.jpg 到 trash/Cyclone/120.jpg
-2025-06-16 08:09:43,233 - INFO - 移动图像 data/val/Cyclone/165.jpg 到 trash/Cyclone/165.jpg
-2025-06-16 08:09:43,234 - INFO - 移动图像 data/val/Cyclone/363.jpg 到 trash/Cyclone/363.jpg
-2025-06-16 08:09:43,235 - INFO - 移动图像 data/val/Cyclone/472.jpg 到 trash/Cyclone/472.jpg
-2025-06-16 08:09:43,236 - INFO - 移动图像 data/val/Cyclone/541.jpg 到 trash/Cyclone/541.jpg
-2025-06-16 08:09:43,241 - INFO - 移动图像 data/val/Cyclone/83.jpg 到 trash/Cyclone/83.jpg
-2025-06-16 08:09:43,246 - INFO - 移动图像 data/val/Earthquake/1323.jpg 到 trash/Earthquake/1323.jpg
-2025-06-16 08:09:43,247 - INFO - 移动图像 data/val/Earthquake/378.jpg 到 trash/Earthquake/378.jpg
-2025-06-16 08:09:43,249 - INFO - 移动图像 data/val/Earthquake/663.jpg 到 trash/Earthquake/663.jpg
-2025-06-16 08:09:43,249 - INFO - 移动图像 data/val/Earthquake/985.jpg 到 trash/Earthquake/985.jpg
-2025-06-16 08:09:43,252 - INFO - 移动图像 data/val/Flood/14.jpg 到 trash/Flood/14.jpg
-2025-06-16 08:09:43,256 - INFO - 移动图像 data/val/Flood/267.jpg 到 trash/Flood/267.jpg
-2025-06-16 08:09:43,257 - INFO - 移动图像 data/val/Flood/309.jpg 到 trash/Flood/309.jpg
-2025-06-16 08:09:43,260 - INFO - 移动图像 data/val/Flood/317.jpg 到 trash/Flood/317.jpg
-2025-06-16 08:09:43,262 - INFO - 移动图像 data/val/Flood/389.jpg 到 trash/Flood/389.jpg
-2025-06-16 08:09:43,263 - INFO - 移动图像 data/val/Flood/394.jpg 到 trash/Flood/394.jpg
-2025-06-16 08:09:43,264 - INFO - 移动图像 data/val/Flood/405.jpg 到 trash/Flood/405.jpg
-2025-06-16 08:09:43,266 - INFO - 移动图像 data/val/Flood/463.jpg 到 trash/Flood/463.jpg
-2025-06-16 08:09:43,267 - INFO - 移动图像 data/val/Flood/489.jpg 到 trash/Flood/489.jpg
-2025-06-16 08:09:43,268 - INFO - 移动图像 data/val/Flood/507.jpg 到 trash/Flood/507.jpg
-2025-06-16 08:09:43,269 - INFO - 移动图像 data/val/Flood/526.jpg 到 trash/Flood/526.jpg
-2025-06-16 08:09:43,269 - INFO - 移动图像 data/val/Flood/60.jpg 到 trash/Flood/60.jpg
-2025-06-16 08:09:43,270 - INFO - 移动图像 data/val/Flood/798.jpg 到 trash/Flood/798.jpg
-2025-06-16 08:09:43,270 - INFO - 移动图像 data/val/Flood/845.jpg 到 trash/Flood/845.jpg
-2025-06-16 08:09:43,270 - INFO - 移动图像 data/val/Flood/921.jpg 到 trash/Flood/921.jpg
-2025-06-16 08:09:43,272 - INFO - 移动图像 data/val/Flood/939.jpg 到 trash/Flood/939.jpg
-2025-06-16 08:09:43,273 - INFO - 移动图像 data/val/Flood/984.jpg 到 trash/Flood/984.jpg
-2025-06-16 08:09:43,278 - INFO - 移动图像 data/val/Wildfire/1055.jpg 到 trash/Wildfire/1055.jpg
-2025-06-16 08:09:43,278 - INFO - 移动图像 data/val/Wildfire/159.jpg 到 trash/Wildfire/159.jpg
-2025-06-16 08:09:43,280 - INFO - 移动图像 data/val/Wildfire/407.jpg 到 trash/Wildfire/407.jpg
-2025-06-16 08:09:43,282 - INFO - 移动图像 data/val/Wildfire/464.jpg 到 trash/Wildfire/464.jpg
-2025-06-16 08:09:43,282 - INFO - 移动图像 data/val/Wildfire/486.jpg 到 trash/Wildfire/486.jpg
-2025-06-16 08:09:43,282 - INFO - 移动图像 data/val/Wildfire/640.jpg 到 trash/Wildfire/640.jpg
-2025-06-16 08:09:43,283 - INFO - 移动图像 data/val/Wildfire/876.jpg 到 trash/Wildfire/876.jpg
-2025-06-16 08:09:43,283 - INFO - 移动图像 data/val/Wildfire/895.jpg 到 trash/Wildfire/895.jpg
-2025-06-16 08:09:43,286 - INFO - 移动图像 data/val/Wildfire/952.jpg 到 trash/Wildfire/952.jpg
-2025-06-16 08:09:43,288 - INFO - 移动图像 data/val/Wildfire/991.jpg 到 trash/Wildfire/991.jpg
-2025-06-16 08:09:43,288 - INFO - 所有错误预测图像已处理
+2025-06-16 17:12:57,455 - INFO - 训练配置: Config(data_dir='./data', target_root_dir='./trash', model_save_path='./resnet18_0.01_source.pth', num_classes=4, learning_rate=0.01, num_epochs=25, batch_size=64, num_workers=4, pretrained=False, device='cpu')
+2025-06-16 17:12:57,455 - INFO - 使用设备: cpu
+2025-06-16 17:12:57,458 - INFO - 训练集大小: 649, 验证集大小: 139
+2025-06-16 17:12:57,458 - ERROR - 模型初始化失败: __init__() got an unexpected keyword argument 'weights'
+2025-06-16 17:12:57,458 - ERROR - 程序执行出错: 无法初始化模型: __init__() got an unexpected keyword argument 'weights'
+Traceback (most recent call last):
+  File "Model_training_v1.py", line 104, in initialize_model
+    model = models.resnet18(weights=None if not config.pretrained else "DEFAULT")
+  File "/usr/local/lib64/python3.6/site-packages/torchvision/models/resnet.py", line 277, in resnet18
+    **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/torchvision/models/resnet.py", line 260, in _resnet
+    model = ResNet(block, layers, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'weights'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "Model_training_v1.py", line 230, in main
+    model = initialize_model(config)
+  File "Model_training_v1.py", line 110, in initialize_model
+    raise RuntimeError(f"无法初始化模型: {e}")
+RuntimeError: 无法初始化模型: __init__() got an unexpected keyword argument 'weights'
+2025-06-16 17:13:13,046 - INFO - 训练配置: Config(data_dir='./data', target_root_dir='./trash', model_save_path='./models/resnet18_0.01_source.pth', num_classes=4, learning_rate=0.01, num_epochs=25, batch_size=32, num_workers=0, pretrained=False, device='cpu')
+2025-06-16 17:13:13,046 - INFO - 使用设备: cpu
+2025-06-16 17:13:13,049 - INFO - 训练集大小: 649, 验证集大小: 139
+2025-06-16 17:13:13,049 - ERROR - 模型初始化失败: __init__() got an unexpected keyword argument 'weights'
+2025-06-16 17:13:13,049 - ERROR - 程序执行出错: 无法初始化模型: __init__() got an unexpected keyword argument 'weights'
+Traceback (most recent call last):
+  File "Model_training_docker.py", line 108, in initialize_model
+    model = models.resnet18(weights=None if not config.pretrained else "DEFAULT")
+  File "/usr/local/lib64/python3.6/site-packages/torchvision/models/resnet.py", line 277, in resnet18
+    **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/torchvision/models/resnet.py", line 260, in _resnet
+    model = ResNet(block, layers, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'weights'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "Model_training_docker.py", line 231, in main
+    model = initialize_model(config)
+  File "Model_training_docker.py", line 114, in initialize_model
+    raise RuntimeError(f"无法初始化模型: {e}")
+RuntimeError: 无法初始化模型: __init__() got an unexpected keyword argument 'weights'
+2025-06-16 17:13:39,579 - INFO - 训练配置: Config(data_dir='./data', target_root_dir='./trash', model_save_path='./resnet18_0.01_source.pth', num_classes=4, learning_rate=0.01, num_epochs=25, batch_size=64, num_workers=4, pretrained=False, device='cpu')
+2025-06-16 17:13:39,579 - INFO - 使用设备: cpu
+2025-06-16 17:13:39,582 - INFO - 训练集大小: 649, 验证集大小: 139
+2025-06-16 17:13:39,582 - ERROR - 模型初始化失败: __init__() got an unexpected keyword argument 'weights'
+2025-06-16 17:13:39,582 - ERROR - 程序执行出错: 无法初始化模型: __init__() got an unexpected keyword argument 'weights'
+Traceback (most recent call last):
+  File "Model_training_v1.py", line 104, in initialize_model
+    model = models.resnet18(weights=None if not config.pretrained else "DEFAULT")
+  File "/usr/local/lib64/python3.6/site-packages/torchvision/models/resnet.py", line 277, in resnet18
+    **kwargs)
+  File "/usr/local/lib64/python3.6/site-packages/torchvision/models/resnet.py", line 260, in _resnet
+    model = ResNet(block, layers, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'weights'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "Model_training_v1.py", line 230, in main
+    model = initialize_model(config)
+  File "Model_training_v1.py", line 110, in initialize_model
+    raise RuntimeError(f"无法初始化模型: {e}")
+RuntimeError: 无法初始化模型: __init__() got an unexpected keyword argument 'weights'
+2025-06-16 17:20:07,355 - INFO - 当前训练配置: Config(data_dir='./data', target_root_dir='./trash', model_save_path='./resnet18_0.01_source.pth', num_classes=4, learning_rate=0.01, num_epochs=25, batch_size=64, num_workers=4, pretrained=False, device='cpu')
+2025-06-16 17:20:07,355 - INFO - 正在使用设备: cpu
+2025-06-16 17:20:07,358 - INFO - 训练集大小: 649 张图像, 验证集大小: 139 张图像
+2025-06-16 17:20:07,497 - INFO - 初始化 ResNet18 模型，类别数: 4, 预训练: False
+2025-06-16 17:20:28,412 - INFO - --- Epoch 1/25 训练完成, 平均损失: 0.1587 ---
+2025-06-16 17:20:30,214 - INFO - 验证结果: 平均损失: 0.0000, 准确率: 139/139 (100.00%)
+2025-06-16 17:20:51,503 - INFO - --- Epoch 2/25 训练完成, 平均损失: 0.0000 ---
+2025-06-16 17:20:53,277 - INFO - 验证结果: 平均损失: 0.0000, 准确率: 139/139 (100.00%)
+2025-06-16 18:00:03,550 - INFO - 当前训练配置: Config(data_dir='./data', target_root_dir='./trash', model_save_path='./resnet18_0.01_source.pth', num_classes=4, learning_rate=0.01, num_epochs=25, batch_size=64, num_workers=4, pretrained=False, device='cpu')
+2025-06-16 18:00:03,551 - INFO - 正在使用设备: cpu
+2025-06-16 18:00:03,561 - INFO - 训练集大小: 3097 张图像, 验证集大小: 662 张图像
+2025-06-16 18:00:03,696 - INFO - 初始化 ResNet18 模型，类别数: 4, 预训练: False
+2025-06-16 18:01:37,263 - INFO - --- Epoch 1/25 训练完成, 平均损失: 1.3112 ---
+2025-06-16 18:01:44,442 - INFO - 验证结果: 平均损失: 2.5861, 准确率: 210/662 (31.72%)
+2025-06-16 18:03:20,959 - INFO - --- Epoch 2/25 训练完成, 平均损失: 0.9877 ---
+2025-06-16 18:03:28,292 - INFO - 验证结果: 平均损失: 0.9970, 准确率: 395/662 (59.67%)
+2025-06-16 18:05:04,445 - INFO - --- Epoch 3/25 训练完成, 平均损失: 0.9069 ---
+2025-06-16 18:05:11,932 - INFO - 验证结果: 平均损失: 1.4156, 准确率: 338/662 (51.06%)
+2025-06-16 18:06:48,309 - INFO - --- Epoch 4/25 训练完成, 平均损失: 0.7979 ---
+2025-06-16 18:06:55,810 - INFO - 验证结果: 平均损失: 2.2080, 准确率: 320/662 (48.34%)
+2025-06-16 18:08:31,917 - INFO - --- Epoch 5/25 训练完成, 平均损失: 0.6278 ---
+2025-06-16 18:08:39,124 - INFO - 验证结果: 平均损失: 1.2287, 准确率: 376/662 (56.80%)
+2025-06-16 18:10:16,504 - INFO - --- Epoch 6/25 训练完成, 平均损失: 0.4546 ---
+2025-06-16 18:10:23,862 - INFO - 验证结果: 平均损失: 1.4243, 准确率: 396/662 (59.82%)
+2025-06-16 18:11:59,960 - INFO - --- Epoch 7/25 训练完成, 平均损失: 0.3191 ---
+2025-06-16 18:12:07,161 - INFO - 验证结果: 平均损失: 1.2535, 准确率: 398/662 (60.12%)
+2025-06-16 18:13:43,554 - INFO - --- Epoch 8/25 训练完成, 平均损失: 0.2386 ---
+2025-06-16 18:13:51,062 - INFO - 验证结果: 平均损失: 1.5844, 准确率: 416/662 (62.84%)
+2025-06-16 18:15:28,643 - INFO - --- Epoch 9/25 训练完成, 平均损失: 0.1634 ---
+2025-06-16 18:15:36,283 - INFO - 验证结果: 平均损失: 2.2143, 准确率: 376/662 (56.80%)
+2025-06-16 18:17:17,774 - INFO - --- Epoch 10/25 训练完成, 平均损失: 0.2188 ---
+2025-06-16 18:17:25,695 - INFO - 验证结果: 平均损失: 1.8986, 准确率: 397/662 (59.97%)
+2025-06-16 18:19:06,833 - INFO - --- Epoch 11/25 训练完成, 平均损失: 0.1756 ---
+2025-06-16 18:19:14,755 - INFO - 验证结果: 平均损失: 2.0316, 准确率: 396/662 (59.82%)
+2025-06-16 18:20:56,658 - INFO - --- Epoch 12/25 训练完成, 平均损失: 0.1573 ---
+2025-06-16 18:21:04,526 - INFO - 验证结果: 平均损失: 2.0514, 准确率: 400/662 (60.42%)
+2025-06-16 18:22:46,839 - INFO - --- Epoch 13/25 训练完成, 平均损失: 0.1878 ---
+2025-06-16 18:22:54,762 - INFO - 验证结果: 平均损失: 1.8582, 准确率: 398/662 (60.12%)
+2025-06-16 18:24:36,702 - INFO - --- Epoch 14/25 训练完成, 平均损失: 0.1442 ---
+2025-06-16 18:24:44,539 - INFO - 验证结果: 平均损失: 1.8021, 准确率: 405/662 (61.18%)
+2025-06-16 18:26:23,760 - INFO - --- Epoch 15/25 训练完成, 平均损失: 0.1059 ---
+2025-06-16 18:26:31,078 - INFO - 验证结果: 平均损失: 1.6428, 准确率: 430/662 (64.95%)
+2025-06-16 18:28:08,261 - INFO - --- Epoch 16/25 训练完成, 平均损失: 0.0734 ---
+2025-06-16 18:28:15,866 - INFO - 验证结果: 平均损失: 1.6500, 准确率: 443/662 (66.92%)
+2025-06-16 18:29:57,421 - INFO - --- Epoch 17/25 训练完成, 平均损失: 0.0537 ---
+2025-06-16 18:30:05,346 - INFO - 验证结果: 平均损失: 1.6868, 准确率: 430/662 (64.95%)
+2025-06-16 18:31:46,769 - INFO - --- Epoch 18/25 训练完成, 平均损失: 0.0555 ---
+2025-06-16 18:31:54,514 - INFO - 验证结果: 平均损失: 1.7346, 准确率: 435/662 (65.71%)
+2025-06-16 18:33:34,440 - INFO - --- Epoch 19/25 训练完成, 平均损失: 0.0692 ---
+2025-06-16 18:33:41,600 - INFO - 验证结果: 平均损失: 1.8325, 准确率: 428/662 (64.65%)
+2025-06-16 18:35:16,657 - INFO - --- Epoch 20/25 训练完成, 平均损失: 0.0607 ---
+2025-06-16 18:35:24,077 - INFO - 验证结果: 平均损失: 1.8930, 准确率: 437/662 (66.01%)
+2025-06-16 18:36:59,303 - INFO - --- Epoch 21/25 训练完成, 平均损失: 0.0486 ---
+2025-06-16 18:37:06,597 - INFO - 验证结果: 平均损失: 1.6773, 准确率: 435/662 (65.71%)
+2025-06-16 18:38:42,429 - INFO - --- Epoch 22/25 训练完成, 平均损失: 0.0386 ---
+2025-06-16 18:38:49,901 - INFO - 验证结果: 平均损失: 1.9059, 准确率: 438/662 (66.16%)
+2025-06-16 18:40:26,584 - INFO - --- Epoch 23/25 训练完成, 平均损失: 0.0408 ---
+2025-06-16 18:40:33,864 - INFO - 验证结果: 平均损失: 1.7522, 准确率: 432/662 (65.26%)
+2025-06-16 18:42:09,172 - INFO - --- Epoch 24/25 训练完成, 平均损失: 0.0331 ---
+2025-06-16 18:42:16,522 - INFO - 验证结果: 平均损失: 1.7701, 准确率: 424/662 (64.05%)
+2025-06-16 18:43:52,231 - INFO - --- Epoch 25/25 训练完成, 平均损失: 0.0302 ---
+2025-06-16 18:43:59,324 - INFO - 验证结果: 平均损失: 1.8038, 准确率: 445/662 (67.22%)
+2025-06-16 18:43:59,369 - INFO - 模型参数已保存至: ./resnet18_0.01_source.pth
+2025-06-16 18:43:59,369 - INFO - 共发现 639 张预测错误的图像，正在移动...
+2025-06-16 18:43:59,370 - INFO - 已移动图像: 'data/val/Earthquake/491.jpg' 到 'trash/Earthquake/491.jpg'
+2025-06-16 18:43:59,370 - INFO - 已移动图像: 'data/val/Earthquake/1331.jpg' 到 'trash/Earthquake/1331.jpg'
+2025-06-16 18:43:59,370 - INFO - 已移动图像: 'data/val/Earthquake/513.jpg' 到 'trash/Earthquake/513.jpg'
+2025-06-16 18:43:59,370 - INFO - 已移动图像: 'data/val/Wildfire/975.jpg' 到 'trash/Wildfire/975.jpg'
+2025-06-16 18:43:59,370 - INFO - 已移动图像: 'data/val/Earthquake/440.jpg' 到 'trash/Earthquake/440.jpg'
+2025-06-16 18:43:59,370 - INFO - 已移动图像: 'data/val/Wildfire/329.jpg' 到 'trash/Wildfire/329.jpg'
+2025-06-16 18:43:59,370 - INFO - 已移动图像: 'data/val/Flood/797.jpg' 到 'trash/Flood/797.jpg'
+2025-06-16 18:43:59,371 - INFO - 已移动图像: 'data/val/Flood/446.jpg' 到 'trash/Flood/446.jpg'
+2025-06-16 18:43:59,371 - INFO - 已移动图像: 'data/val/Flood/319.jpg' 到 'trash/Flood/319.jpg'
+2025-06-16 18:43:59,371 - INFO - 已移动图像: 'data/val/Wildfire/751.jpg' 到 'trash/Wildfire/751.jpg'
+2025-06-16 18:43:59,371 - INFO - 已移动图像: 'data/val/Wildfire/855.jpg' 到 'trash/Wildfire/855.jpg'
+2025-06-16 18:43:59,371 - INFO - 已移动图像: 'data/val/Wildfire/662.jpg' 到 'trash/Wildfire/662.jpg'
+2025-06-16 18:43:59,371 - INFO - 已移动图像: 'data/val/Flood/1056.jpg' 到 'trash/Flood/1056.jpg'
+2025-06-16 18:43:59,371 - INFO - 已移动图像: 'data/val/Wildfire/683.jpg' 到 'trash/Wildfire/683.jpg'
+2025-06-16 18:43:59,371 - INFO - 已移动图像: 'data/val/Cyclone/225.jpg' 到 'trash/Cyclone/225.jpg'
+2025-06-16 18:43:59,371 - INFO - 已移动图像: 'data/val/Earthquake/984.jpg' 到 'trash/Earthquake/984.jpg'
+2025-06-16 18:43:59,371 - INFO - 已移动图像: 'data/val/Flood/1025.jpg' 到 'trash/Flood/1025.jpg'
+2025-06-16 18:43:59,372 - INFO - 已移动图像: 'data/val/Wildfire/881.jpg' 到 'trash/Wildfire/881.jpg'
+2025-06-16 18:43:59,372 - INFO - 已移动图像: 'data/val/Cyclone/739.jpg' 到 'trash/Cyclone/739.jpg'
+2025-06-16 18:43:59,372 - INFO - 已移动图像: 'data/val/Flood/102.jpg' 到 'trash/Flood/102.jpg'
+2025-06-16 18:43:59,372 - INFO - 已移动图像: 'data/val/Earthquake/1348.jpg' 到 'trash/Earthquake/1348.jpg'
+2025-06-16 18:43:59,372 - INFO - 已移动图像: 'data/val/Flood/59.jpg' 到 'trash/Flood/59.jpg'
+2025-06-16 18:43:59,372 - INFO - 已移动图像: 'data/val/Earthquake/782.jpg' 到 'trash/Earthquake/782.jpg'
+2025-06-16 18:43:59,372 - INFO - 已移动图像: 'data/val/Cyclone/503.jpg' 到 'trash/Cyclone/503.jpg'
+2025-06-16 18:43:59,372 - INFO - 已移动图像: 'data/val/Earthquake/4.jpg' 到 'trash/Earthquake/4.jpg'
+2025-06-16 18:43:59,372 - INFO - 已移动图像: 'data/val/Flood/1027.jpg' 到 'trash/Flood/1027.jpg'
+2025-06-16 18:43:59,373 - INFO - 已移动图像: 'data/val/Cyclone/499.jpg' 到 'trash/Cyclone/499.jpg'
+2025-06-16 18:43:59,373 - INFO - 已移动图像: 'data/val/Earthquake/849.jpg' 到 'trash/Earthquake/849.jpg'
+2025-06-16 18:43:59,373 - INFO - 已移动图像: 'data/val/Wildfire/1060.jpg' 到 'trash/Wildfire/1060.jpg'
+2025-06-16 18:43:59,373 - INFO - 已移动图像: 'data/val/Flood/34.jpg' 到 'trash/Flood/34.jpg'
+2025-06-16 18:43:59,373 - INFO - 已移动图像: 'data/val/Cyclone/492.jpg' 到 'trash/Cyclone/492.jpg'
+2025-06-16 18:43:59,373 - INFO - 已移动图像: 'data/val/Earthquake/1101.jpg' 到 'trash/Earthquake/1101.jpg'
+2025-06-16 18:43:59,373 - INFO - 已移动图像: 'data/val/Flood/1012.jpg' 到 'trash/Flood/1012.jpg'
+2025-06-16 18:43:59,373 - INFO - 已移动图像: 'data/val/Flood/630.jpg' 到 'trash/Flood/630.jpg'
+2025-06-16 18:43:59,373 - INFO - 已移动图像: 'data/val/Cyclone/928.jpg' 到 'trash/Cyclone/928.jpg'
+2025-06-16 18:43:59,373 - INFO - 已移动图像: 'data/val/Cyclone/701.jpg' 到 'trash/Cyclone/701.jpg'
+2025-06-16 18:43:59,374 - INFO - 已移动图像: 'data/val/Earthquake/1190.jpg' 到 'trash/Earthquake/1190.jpg'
+2025-06-16 18:43:59,374 - INFO - 已移动图像: 'data/val/Flood/40.jpg' 到 'trash/Flood/40.jpg'
+2025-06-16 18:43:59,374 - INFO - 已移动图像: 'data/val/Cyclone/107.jpg' 到 'trash/Cyclone/107.jpg'
+2025-06-16 18:43:59,374 - INFO - 已移动图像: 'data/val/Earthquake/567.jpg' 到 'trash/Earthquake/567.jpg'
+2025-06-16 18:43:59,374 - INFO - 已移动图像: 'data/val/Earthquake/468.jpg' 到 'trash/Earthquake/468.jpg'
+2025-06-16 18:43:59,374 - INFO - 已移动图像: 'data/val/Flood/894.jpg' 到 'trash/Flood/894.jpg'
+2025-06-16 18:43:59,374 - INFO - 已移动图像: 'data/val/Flood/783.jpg' 到 'trash/Flood/783.jpg'
+2025-06-16 18:43:59,374 - INFO - 已移动图像: 'data/val/Earthquake/122.jpg' 到 'trash/Earthquake/122.jpg'
+2025-06-16 18:43:59,374 - INFO - 已移动图像: 'data/val/Earthquake/359.jpg' 到 'trash/Earthquake/359.jpg'
+2025-06-16 18:43:59,374 - INFO - 已移动图像: 'data/val/Earthquake/602.jpg' 到 'trash/Earthquake/602.jpg'
+2025-06-16 18:43:59,375 - INFO - 已移动图像: 'data/val/Cyclone/98.jpg' 到 'trash/Cyclone/98.jpg'
+2025-06-16 18:43:59,375 - INFO - 已移动图像: 'data/val/Flood/435.jpg' 到 'trash/Flood/435.jpg'
+2025-06-16 18:43:59,375 - INFO - 已移动图像: 'data/val/Earthquake/604.jpg' 到 'trash/Earthquake/604.jpg'
+2025-06-16 18:43:59,375 - INFO - 已移动图像: 'data/val/Flood/810.jpg' 到 'trash/Flood/810.jpg'
+2025-06-16 18:43:59,375 - INFO - 已移动图像: 'data/val/Wildfire/1033.jpg' 到 'trash/Wildfire/1033.jpg'
+2025-06-16 18:43:59,375 - INFO - 已移动图像: 'data/val/Wildfire/278.jpg' 到 'trash/Wildfire/278.jpg'
+2025-06-16 18:43:59,375 - INFO - 已移动图像: 'data/val/Flood/110.jpg' 到 'trash/Flood/110.jpg'
+2025-06-16 18:43:59,375 - INFO - 已移动图像: 'data/val/Flood/632.jpg' 到 'trash/Flood/632.jpg'
+2025-06-16 18:43:59,375 - INFO - 已移动图像: 'data/val/Cyclone/326.jpg' 到 'trash/Cyclone/326.jpg'
+2025-06-16 18:43:59,375 - INFO - 已移动图像: 'data/val/Flood/351.jpg' 到 'trash/Flood/351.jpg'
+2025-06-16 18:43:59,376 - INFO - 已移动图像: 'data/val/Wildfire/1043.jpg' 到 'trash/Wildfire/1043.jpg'
+2025-06-16 18:43:59,376 - INFO - 已移动图像: 'data/val/Earthquake/180.jpg' 到 'trash/Earthquake/180.jpg'
+2025-06-16 18:43:59,376 - INFO - 已移动图像: 'data/val/Earthquake/982.jpg' 到 'trash/Earthquake/982.jpg'
+2025-06-16 18:43:59,376 - INFO - 已移动图像: 'data/val/Flood/786.jpg' 到 'trash/Flood/786.jpg'
+2025-06-16 18:43:59,376 - INFO - 已移动图像: 'data/val/Flood/429.jpg' 到 'trash/Flood/429.jpg'
+2025-06-16 18:43:59,376 - INFO - 已移动图像: 'data/val/Flood/196.jpg' 到 'trash/Flood/196.jpg'
+2025-06-16 18:43:59,376 - INFO - 已移动图像: 'data/val/Wildfire/50.jpg' 到 'trash/Wildfire/50.jpg'
+2025-06-16 18:43:59,376 - INFO - 已移动图像: 'data/val/Cyclone/86.jpg' 到 'trash/Cyclone/86.jpg'
+2025-06-16 18:43:59,376 - INFO - 已移动图像: 'data/val/Earthquake/563.jpg' 到 'trash/Earthquake/563.jpg'
+2025-06-16 18:43:59,376 - INFO - 已移动图像: 'data/val/Cyclone/275.jpg' 到 'trash/Cyclone/275.jpg'
+2025-06-16 18:43:59,376 - INFO - 已移动图像: 'data/val/Earthquake/85.jpg' 到 'trash/Earthquake/85.jpg'
+2025-06-16 18:43:59,377 - INFO - 已移动图像: 'data/val/Wildfire/341.jpg' 到 'trash/Wildfire/341.jpg'
+2025-06-16 18:43:59,377 - INFO - 已移动图像: 'data/val/Wildfire/734.jpg' 到 'trash/Wildfire/734.jpg'
+2025-06-16 18:43:59,377 - INFO - 已移动图像: 'data/val/Earthquake/792.jpg' 到 'trash/Earthquake/792.jpg'
+2025-06-16 18:43:59,377 - INFO - 已移动图像: 'data/val/Wildfire/485.jpg' 到 'trash/Wildfire/485.jpg'
+2025-06-16 18:43:59,377 - INFO - 已移动图像: 'data/val/Earthquake/879.jpg' 到 'trash/Earthquake/879.jpg'
+2025-06-16 18:43:59,377 - INFO - 已移动图像: 'data/val/Earthquake/1201.jpg' 到 'trash/Earthquake/1201.jpg'
+2025-06-16 18:43:59,377 - INFO - 已移动图像: 'data/val/Wildfire/63.jpg' 到 'trash/Wildfire/63.jpg'
+2025-06-16 18:43:59,377 - INFO - 已移动图像: 'data/val/Flood/392.jpg' 到 'trash/Flood/392.jpg'
+2025-06-16 18:43:59,377 - INFO - 已移动图像: 'data/val/Cyclone/40.jpg' 到 'trash/Cyclone/40.jpg'
+2025-06-16 18:43:59,377 - INFO - 已移动图像: 'data/val/Wildfire/577.jpg' 到 'trash/Wildfire/577.jpg'
+2025-06-16 18:43:59,378 - INFO - 已移动图像: 'data/val/Flood/1023.jpg' 到 'trash/Flood/1023.jpg'
+2025-06-16 18:43:59,378 - INFO - 已移动图像: 'data/val/Earthquake/211.jpg' 到 'trash/Earthquake/211.jpg'
+2025-06-16 18:43:59,378 - INFO - 已移动图像: 'data/val/Cyclone/777.jpg' 到 'trash/Cyclone/777.jpg'
+2025-06-16 18:43:59,378 - INFO - 已移动图像: 'data/val/Earthquake/132.jpg' 到 'trash/Earthquake/132.jpg'
+2025-06-16 18:43:59,378 - INFO - 已移动图像: 'data/val/Wildfire/523.jpg' 到 'trash/Wildfire/523.jpg'
+2025-06-16 18:43:59,378 - INFO - 已移动图像: 'data/val/Cyclone/594.jpg' 到 'trash/Cyclone/594.jpg'
+2025-06-16 18:43:59,378 - INFO - 已移动图像: 'data/val/Wildfire/779.jpg' 到 'trash/Wildfire/779.jpg'
+2025-06-16 18:43:59,378 - INFO - 已移动图像: 'data/val/Earthquake/1193.jpg' 到 'trash/Earthquake/1193.jpg'
+2025-06-16 18:43:59,378 - INFO - 已移动图像: 'data/val/Wildfire/207.jpg' 到 'trash/Wildfire/207.jpg'
+2025-06-16 18:43:59,378 - INFO - 已移动图像: 'data/val/Flood/879.jpg' 到 'trash/Flood/879.jpg'
+2025-06-16 18:43:59,379 - INFO - 已移动图像: 'data/val/Flood/62.jpg' 到 'trash/Flood/62.jpg'
+2025-06-16 18:43:59,379 - INFO - 已移动图像: 'data/val/Earthquake/742.jpg' 到 'trash/Earthquake/742.jpg'
+2025-06-16 18:43:59,379 - INFO - 已移动图像: 'data/val/Earthquake/585.jpg' 到 'trash/Earthquake/585.jpg'
+2025-06-16 18:43:59,379 - INFO - 已移动图像: 'data/val/Cyclone/883.jpg' 到 'trash/Cyclone/883.jpg'
+2025-06-16 18:43:59,379 - INFO - 已移动图像: 'data/val/Cyclone/602.jpg' 到 'trash/Cyclone/602.jpg'
+2025-06-16 18:43:59,379 - INFO - 已移动图像: 'data/val/Wildfire/868.jpg' 到 'trash/Wildfire/868.jpg'
+2025-06-16 18:43:59,379 - INFO - 已移动图像: 'data/val/Flood/908.jpg' 到 'trash/Flood/908.jpg'
+2025-06-16 18:43:59,379 - INFO - 已移动图像: 'data/val/Earthquake/1100.jpg' 到 'trash/Earthquake/1100.jpg'
+2025-06-16 18:43:59,379 - INFO - 已移动图像: 'data/val/Flood/79.jpg' 到 'trash/Flood/79.jpg'
+2025-06-16 18:43:59,379 - INFO - 已移动图像: 'data/val/Earthquake/797.jpg' 到 'trash/Earthquake/797.jpg'
+2025-06-16 18:43:59,380 - INFO - 已移动图像: 'data/val/Flood/6.jpg' 到 'trash/Flood/6.jpg'
+2025-06-16 18:43:59,380 - INFO - 已移动图像: 'data/val/Wildfire/545.jpg' 到 'trash/Wildfire/545.jpg'
+2025-06-16 18:43:59,380 - INFO - 已移动图像: 'data/val/Earthquake/1262.jpg' 到 'trash/Earthquake/1262.jpg'
+2025-06-16 18:43:59,380 - INFO - 已移动图像: 'data/val/Flood/237.jpg' 到 'trash/Flood/237.jpg'
+2025-06-16 18:43:59,380 - INFO - 已移动图像: 'data/val/Wildfire/853.jpg' 到 'trash/Wildfire/853.jpg'
+2025-06-16 18:43:59,380 - INFO - 已移动图像: 'data/val/Wildfire/651.jpg' 到 'trash/Wildfire/651.jpg'
+2025-06-16 18:43:59,380 - INFO - 已移动图像: 'data/val/Cyclone/612.jpg' 到 'trash/Cyclone/612.jpg'
+2025-06-16 18:43:59,380 - INFO - 已移动图像: 'data/val/Earthquake/675.jpg' 到 'trash/Earthquake/675.jpg'
+2025-06-16 18:43:59,380 - INFO - 已移动图像: 'data/val/Wildfire/834.jpg' 到 'trash/Wildfire/834.jpg'
+2025-06-16 18:43:59,380 - INFO - 已移动图像: 'data/val/Flood/640.jpg' 到 'trash/Flood/640.jpg'
+2025-06-16 18:43:59,381 - INFO - 已移动图像: 'data/val/Wildfire/39.jpg' 到 'trash/Wildfire/39.jpg'
+2025-06-16 18:43:59,381 - INFO - 已移动图像: 'data/val/Earthquake/217.jpg' 到 'trash/Earthquake/217.jpg'
+2025-06-16 18:43:59,381 - INFO - 已移动图像: 'data/val/Cyclone/723.jpg' 到 'trash/Cyclone/723.jpg'
+2025-06-16 18:43:59,381 - INFO - 已移动图像: 'data/val/Earthquake/237.jpg' 到 'trash/Earthquake/237.jpg'
+2025-06-16 18:43:59,381 - INFO - 已移动图像: 'data/val/Wildfire/872.jpg' 到 'trash/Wildfire/872.jpg'
+2025-06-16 18:43:59,381 - INFO - 已移动图像: 'data/val/Flood/1072.jpg' 到 'trash/Flood/1072.jpg'
+2025-06-16 18:43:59,381 - INFO - 已移动图像: 'data/val/Earthquake/621.jpg' 到 'trash/Earthquake/621.jpg'
+2025-06-16 18:43:59,381 - INFO - 已移动图像: 'data/val/Earthquake/1135.jpg' 到 'trash/Earthquake/1135.jpg'
+2025-06-16 18:43:59,381 - INFO - 已移动图像: 'data/val/Wildfire/254.jpg' 到 'trash/Wildfire/254.jpg'
+2025-06-16 18:43:59,381 - INFO - 已移动图像: 'data/val/Cyclone/84.jpg' 到 'trash/Cyclone/84.jpg'
+2025-06-16 18:43:59,382 - INFO - 已移动图像: 'data/val/Flood/247.jpg' 到 'trash/Flood/247.jpg'
+2025-06-16 18:43:59,382 - INFO - 已移动图像: 'data/val/Earthquake/536.jpg' 到 'trash/Earthquake/536.jpg'
+2025-06-16 18:43:59,382 - INFO - 已移动图像: 'data/val/Earthquake/1075.jpg' 到 'trash/Earthquake/1075.jpg'
+2025-06-16 18:43:59,382 - INFO - 已移动图像: 'data/val/Wildfire/185.jpg' 到 'trash/Wildfire/185.jpg'
+2025-06-16 18:43:59,382 - INFO - 已移动图像: 'data/val/Wildfire/753.jpg' 到 'trash/Wildfire/753.jpg'
+2025-06-16 18:43:59,382 - INFO - 已移动图像: 'data/val/Earthquake/384.jpg' 到 'trash/Earthquake/384.jpg'
+2025-06-16 18:43:59,382 - INFO - 已移动图像: 'data/val/Earthquake/206.jpg' 到 'trash/Earthquake/206.jpg'
+2025-06-16 18:43:59,382 - INFO - 已移动图像: 'data/val/Flood/517.jpg' 到 'trash/Flood/517.jpg'
+2025-06-16 18:43:59,382 - INFO - 已移动图像: 'data/val/Flood/938.jpg' 到 'trash/Flood/938.jpg'
+2025-06-16 18:43:59,382 - INFO - 已移动图像: 'data/val/Flood/383.jpg' 到 'trash/Flood/383.jpg'
+2025-06-16 18:43:59,382 - INFO - 已移动图像: 'data/val/Flood/144.jpg' 到 'trash/Flood/144.jpg'
+2025-06-16 18:43:59,383 - INFO - 已移动图像: 'data/val/Cyclone/593.jpg' 到 'trash/Cyclone/593.jpg'
+2025-06-16 18:43:59,383 - INFO - 已移动图像: 'data/val/Cyclone/536.jpg' 到 'trash/Cyclone/536.jpg'
+2025-06-16 18:43:59,383 - INFO - 已移动图像: 'data/val/Cyclone/656.jpg' 到 'trash/Cyclone/656.jpg'
+2025-06-16 18:43:59,383 - INFO - 已移动图像: 'data/val/Wildfire/919.jpg' 到 'trash/Wildfire/919.jpg'
+2025-06-16 18:43:59,383 - INFO - 已移动图像: 'data/val/Flood/19.jpg' 到 'trash/Flood/19.jpg'
+2025-06-16 18:43:59,383 - INFO - 已移动图像: 'data/val/Cyclone/122.jpg' 到 'trash/Cyclone/122.jpg'
+2025-06-16 18:43:59,383 - INFO - 已移动图像: 'data/val/Cyclone/300.jpg' 到 'trash/Cyclone/300.jpg'
+2025-06-16 18:43:59,383 - INFO - 已移动图像: 'data/val/Earthquake/1236.jpg' 到 'trash/Earthquake/1236.jpg'
+2025-06-16 18:43:59,383 - INFO - 已移动图像: 'data/val/Earthquake/524.jpg' 到 'trash/Earthquake/524.jpg'
+2025-06-16 18:43:59,383 - INFO - 已移动图像: 'data/val/Wildfire/55.jpg' 到 'trash/Wildfire/55.jpg'
+2025-06-16 18:43:59,384 - INFO - 已移动图像: 'data/val/Earthquake/976.jpg' 到 'trash/Earthquake/976.jpg'
+2025-06-16 18:43:59,384 - INFO - 已移动图像: 'data/val/Wildfire/124.jpg' 到 'trash/Wildfire/124.jpg'
+2025-06-16 18:43:59,384 - INFO - 已移动图像: 'data/val/Flood/39.jpg' 到 'trash/Flood/39.jpg'
+2025-06-16 18:43:59,384 - INFO - 已移动图像: 'data/val/Flood/299.jpg' 到 'trash/Flood/299.jpg'
+2025-06-16 18:43:59,384 - INFO - 已移动图像: 'data/val/Cyclone/672.jpg' 到 'trash/Cyclone/672.jpg'
+2025-06-16 18:43:59,384 - INFO - 已移动图像: 'data/val/Earthquake/499.jpg' 到 'trash/Earthquake/499.jpg'
+2025-06-16 18:43:59,384 - INFO - 已移动图像: 'data/val/Wildfire/211.jpg' 到 'trash/Wildfire/211.jpg'
+2025-06-16 18:43:59,384 - INFO - 已移动图像: 'data/val/Flood/1039.jpg' 到 'trash/Flood/1039.jpg'
+2025-06-16 18:43:59,384 - INFO - 已移动图像: 'data/val/Wildfire/16.jpg' 到 'trash/Wildfire/16.jpg'
+2025-06-16 18:43:59,384 - INFO - 已移动图像: 'data/val/Wildfire/962.jpg' 到 'trash/Wildfire/962.jpg'
+2025-06-16 18:43:59,384 - INFO - 已移动图像: 'data/val/Wildfire/303.jpg' 到 'trash/Wildfire/303.jpg'
+2025-06-16 18:43:59,385 - INFO - 已移动图像: 'data/val/Wildfire/546.jpg' 到 'trash/Wildfire/546.jpg'
+2025-06-16 18:43:59,385 - INFO - 已移动图像: 'data/val/Cyclone/470.jpg' 到 'trash/Cyclone/470.jpg'
+2025-06-16 18:43:59,385 - INFO - 已移动图像: 'data/val/Earthquake/83.jpg' 到 'trash/Earthquake/83.jpg'
+2025-06-16 18:43:59,385 - INFO - 已移动图像: 'data/val/Cyclone/529.jpg' 到 'trash/Cyclone/529.jpg'
+2025-06-16 18:43:59,385 - INFO - 已移动图像: 'data/val/Flood/885.jpg' 到 'trash/Flood/885.jpg'
+2025-06-16 18:43:59,385 - INFO - 已移动图像: 'data/val/Wildfire/325.jpg' 到 'trash/Wildfire/325.jpg'
+2025-06-16 18:43:59,385 - INFO - 已移动图像: 'data/val/Wildfire/463.jpg' 到 'trash/Wildfire/463.jpg'
+2025-06-16 18:43:59,385 - INFO - 已移动图像: 'data/val/Cyclone/681.jpg' 到 'trash/Cyclone/681.jpg'
+2025-06-16 18:43:59,385 - INFO - 已移动图像: 'data/val/Flood/777.jpg' 到 'trash/Flood/777.jpg'
+2025-06-16 18:43:59,385 - INFO - 已移动图像: 'data/val/Earthquake/1148.jpg' 到 'trash/Earthquake/1148.jpg'
+2025-06-16 18:43:59,386 - INFO - 已移动图像: 'data/val/Wildfire/648.jpg' 到 'trash/Wildfire/648.jpg'
+2025-06-16 18:43:59,386 - INFO - 已移动图像: 'data/val/Cyclone/874.jpg' 到 'trash/Cyclone/874.jpg'
+2025-06-16 18:43:59,386 - INFO - 已移动图像: 'data/val/Earthquake/351.jpg' 到 'trash/Earthquake/351.jpg'
+2025-06-16 18:43:59,386 - INFO - 已移动图像: 'data/val/Wildfire/588.jpg' 到 'trash/Wildfire/588.jpg'
+2025-06-16 18:43:59,386 - INFO - 已移动图像: 'data/val/Earthquake/174.jpg' 到 'trash/Earthquake/174.jpg'
+2025-06-16 18:43:59,386 - INFO - 已移动图像: 'data/val/Earthquake/1165.jpg' 到 'trash/Earthquake/1165.jpg'
+2025-06-16 18:43:59,386 - INFO - 已移动图像: 'data/val/Wildfire/717.jpg' 到 'trash/Wildfire/717.jpg'
+2025-06-16 18:43:59,386 - INFO - 已移动图像: 'data/val/Earthquake/305.jpg' 到 'trash/Earthquake/305.jpg'
+2025-06-16 18:43:59,386 - INFO - 已移动图像: 'data/val/Flood/988.jpg' 到 'trash/Flood/988.jpg'
+2025-06-16 18:43:59,386 - INFO - 已移动图像: 'data/val/Earthquake/117.jpg' 到 'trash/Earthquake/117.jpg'
+2025-06-16 18:43:59,387 - INFO - 已移动图像: 'data/val/Flood/599.jpg' 到 'trash/Flood/599.jpg'
+2025-06-16 18:43:59,387 - INFO - 已移动图像: 'data/val/Wildfire/462.jpg' 到 'trash/Wildfire/462.jpg'
+2025-06-16 18:43:59,387 - INFO - 已移动图像: 'data/val/Cyclone/61.jpg' 到 'trash/Cyclone/61.jpg'
+2025-06-16 18:43:59,387 - INFO - 已移动图像: 'data/val/Flood/282.jpg' 到 'trash/Flood/282.jpg'
+2025-06-16 18:43:59,387 - INFO - 已移动图像: 'data/val/Flood/433.jpg' 到 'trash/Flood/433.jpg'
+2025-06-16 18:43:59,387 - INFO - 已移动图像: 'data/val/Wildfire/726.jpg' 到 'trash/Wildfire/726.jpg'
+2025-06-16 18:43:59,387 - INFO - 已移动图像: 'data/val/Wildfire/775.jpg' 到 'trash/Wildfire/775.jpg'
+2025-06-16 18:43:59,387 - INFO - 已移动图像: 'data/val/Earthquake/1207.jpg' 到 'trash/Earthquake/1207.jpg'
+2025-06-16 18:43:59,387 - INFO - 已移动图像: 'data/val/Earthquake/632.jpg' 到 'trash/Earthquake/632.jpg'
+2025-06-16 18:43:59,387 - INFO - 已移动图像: 'data/val/Earthquake/248.jpg' 到 'trash/Earthquake/248.jpg'
+2025-06-16 18:43:59,388 - INFO - 已移动图像: 'data/val/Wildfire/709.jpg' 到 'trash/Wildfire/709.jpg'
+2025-06-16 18:43:59,388 - INFO - 已移动图像: 'data/val/Cyclone/127.jpg' 到 'trash/Cyclone/127.jpg'
+2025-06-16 18:43:59,388 - INFO - 已移动图像: 'data/val/Flood/167.jpg' 到 'trash/Flood/167.jpg'
+2025-06-16 18:43:59,388 - INFO - 已移动图像: 'data/val/Cyclone/210.jpg' 到 'trash/Cyclone/210.jpg'
+2025-06-16 18:43:59,388 - INFO - 已移动图像: 'data/val/Flood/286.jpg' 到 'trash/Flood/286.jpg'
+2025-06-16 18:43:59,388 - INFO - 已移动图像: 'data/val/Wildfire/352.jpg' 到 'trash/Wildfire/352.jpg'
+2025-06-16 18:43:59,388 - INFO - 已移动图像: 'data/val/Wildfire/860.jpg' 到 'trash/Wildfire/860.jpg'
+2025-06-16 18:43:59,388 - INFO - 已移动图像: 'data/val/Flood/1051.jpg' 到 'trash/Flood/1051.jpg'
+2025-06-16 18:43:59,388 - INFO - 已移动图像: 'data/val/Cyclone/698.jpg' 到 'trash/Cyclone/698.jpg'
+2025-06-16 18:43:59,388 - INFO - 已移动图像: 'data/val/Flood/275.jpg' 到 'trash/Flood/275.jpg'
+2025-06-16 18:43:59,388 - INFO - 已移动图像: 'data/val/Earthquake/485.jpg' 到 'trash/Earthquake/485.jpg'
+2025-06-16 18:43:59,389 - INFO - 已移动图像: 'data/val/Wildfire/153.jpg' 到 'trash/Wildfire/153.jpg'
+2025-06-16 18:43:59,389 - INFO - 已移动图像: 'data/val/Cyclone/375.jpg' 到 'trash/Cyclone/375.jpg'
+2025-06-16 18:43:59,389 - INFO - 已移动图像: 'data/val/Cyclone/109.jpg' 到 'trash/Cyclone/109.jpg'
+2025-06-16 18:43:59,389 - INFO - 已移动图像: 'data/val/Earthquake/1115.jpg' 到 'trash/Earthquake/1115.jpg'
+2025-06-16 18:43:59,389 - INFO - 已移动图像: 'data/val/Earthquake/987.jpg' 到 'trash/Earthquake/987.jpg'
+2025-06-16 18:43:59,389 - INFO - 已移动图像: 'data/val/Earthquake/1323.jpg' 到 'trash/Earthquake/1323.jpg'
+2025-06-16 18:43:59,389 - INFO - 已移动图像: 'data/val/Earthquake/424.jpg' 到 'trash/Earthquake/424.jpg'
+2025-06-16 18:43:59,389 - INFO - 已移动图像: 'data/val/Earthquake/137.jpg' 到 'trash/Earthquake/137.jpg'
+2025-06-16 18:43:59,389 - INFO - 已移动图像: 'data/val/Earthquake/297.jpg' 到 'trash/Earthquake/297.jpg'
+2025-06-16 18:43:59,389 - INFO - 已移动图像: 'data/val/Flood/14.jpg' 到 'trash/Flood/14.jpg'
+2025-06-16 18:43:59,390 - INFO - 已移动图像: 'data/val/Wildfire/801.jpg' 到 'trash/Wildfire/801.jpg'
+2025-06-16 18:43:59,390 - INFO - 已移动图像: 'data/val/Wildfire/752.jpg' 到 'trash/Wildfire/752.jpg'
+2025-06-16 18:43:59,390 - INFO - 已移动图像: 'data/val/Flood/868.jpg' 到 'trash/Flood/868.jpg'
+2025-06-16 18:43:59,390 - INFO - 已移动图像: 'data/val/Earthquake/624.jpg' 到 'trash/Earthquake/624.jpg'
+2025-06-16 18:43:59,390 - INFO - 已移动图像: 'data/val/Cyclone/173.jpg' 到 'trash/Cyclone/173.jpg'
+2025-06-16 18:43:59,390 - INFO - 已移动图像: 'data/val/Flood/1049.jpg' 到 'trash/Flood/1049.jpg'
+2025-06-16 18:43:59,390 - INFO - 已移动图像: 'data/val/Wildfire/989.jpg' 到 'trash/Wildfire/989.jpg'
+2025-06-16 18:43:59,390 - INFO - 已移动图像: 'data/val/Flood/757.jpg' 到 'trash/Flood/757.jpg'
+2025-06-16 18:43:59,390 - INFO - 已移动图像: 'data/val/Flood/575.jpg' 到 'trash/Flood/575.jpg'
+2025-06-16 18:43:59,390 - INFO - 已移动图像: 'data/val/Flood/30.jpg' 到 'trash/Flood/30.jpg'
+2025-06-16 18:43:59,390 - INFO - 已移动图像: 'data/val/Flood/721.jpg' 到 'trash/Flood/721.jpg'
+2025-06-16 18:43:59,391 - INFO - 已移动图像: 'data/val/Cyclone/717.jpg' 到 'trash/Cyclone/717.jpg'
+2025-06-16 18:43:59,391 - INFO - 已移动图像: 'data/val/Cyclone/730.jpg' 到 'trash/Cyclone/730.jpg'
+2025-06-16 18:43:59,391 - INFO - 已移动图像: 'data/val/Wildfire/509.jpg' 到 'trash/Wildfire/509.jpg'
+2025-06-16 18:43:59,391 - INFO - 已移动图像: 'data/val/Earthquake/840.jpg' 到 'trash/Earthquake/840.jpg'
+2025-06-16 18:43:59,391 - INFO - 已移动图像: 'data/val/Wildfire/721.jpg' 到 'trash/Wildfire/721.jpg'
+2025-06-16 18:43:59,391 - INFO - 已移动图像: 'data/val/Cyclone/307.jpg' 到 'trash/Cyclone/307.jpg'
+2025-06-16 18:43:59,391 - INFO - 已移动图像: 'data/val/Wildfire/145.jpg' 到 'trash/Wildfire/145.jpg'
+2025-06-16 18:43:59,391 - INFO - 已移动图像: 'data/val/Cyclone/566.jpg' 到 'trash/Cyclone/566.jpg'
+2025-06-16 18:43:59,391 - INFO - 已移动图像: 'data/val/Earthquake/1141.jpg' 到 'trash/Earthquake/1141.jpg'
+2025-06-16 18:43:59,391 - INFO - 已移动图像: 'data/val/Earthquake/1128.jpg' 到 'trash/Earthquake/1128.jpg'
+2025-06-16 18:43:59,392 - INFO - 已移动图像: 'data/val/Wildfire/950.jpg' 到 'trash/Wildfire/950.jpg'
+2025-06-16 18:43:59,392 - INFO - 已移动图像: 'data/val/Flood/339.jpg' 到 'trash/Flood/339.jpg'
+2025-06-16 18:43:59,392 - INFO - 已移动图像: 'data/val/Earthquake/264.jpg' 到 'trash/Earthquake/264.jpg'
+2025-06-16 18:43:59,392 - INFO - 已移动图像: 'data/val/Wildfire/483.jpg' 到 'trash/Wildfire/483.jpg'
+2025-06-16 18:43:59,392 - INFO - 已移动图像: 'data/val/Cyclone/661.jpg' 到 'trash/Cyclone/661.jpg'
+2025-06-16 18:43:59,392 - INFO - 已移动图像: 'data/val/Cyclone/741.jpg' 到 'trash/Cyclone/741.jpg'
+2025-06-16 18:43:59,392 - INFO - 已移动图像: 'data/val/Wildfire/809.jpg' 到 'trash/Wildfire/809.jpg'
+2025-06-16 18:43:59,392 - INFO - 已移动图像: 'data/val/Earthquake/1301.jpg' 到 'trash/Earthquake/1301.jpg'
+2025-06-16 18:43:59,392 - INFO - 已移动图像: 'data/val/Wildfire/229.jpg' 到 'trash/Wildfire/229.jpg'
+2025-06-16 18:43:59,392 - INFO - 已移动图像: 'data/val/Cyclone/774.jpg' 到 'trash/Cyclone/774.jpg'
+2025-06-16 18:43:59,392 - INFO - 已移动图像: 'data/val/Earthquake/1052.jpg' 到 'trash/Earthquake/1052.jpg'
+2025-06-16 18:43:59,393 - INFO - 已移动图像: 'data/val/Flood/26.jpg' 到 'trash/Flood/26.jpg'
+2025-06-16 18:43:59,393 - INFO - 已移动图像: 'data/val/Earthquake/341.jpg' 到 'trash/Earthquake/341.jpg'
+2025-06-16 18:43:59,393 - INFO - 已移动图像: 'data/val/Cyclone/385.jpg' 到 'trash/Cyclone/385.jpg'
+2025-06-16 18:43:59,393 - INFO - 已移动图像: 'data/val/Flood/409.jpg' 到 'trash/Flood/409.jpg'
+2025-06-16 18:43:59,393 - INFO - 已移动图像: 'data/val/Earthquake/313.jpg' 到 'trash/Earthquake/313.jpg'
+2025-06-16 18:43:59,393 - INFO - 已移动图像: 'data/val/Earthquake/293.jpg' 到 'trash/Earthquake/293.jpg'
+2025-06-16 18:43:59,393 - INFO - 已移动图像: 'data/val/Cyclone/136.jpg' 到 'trash/Cyclone/136.jpg'
+2025-06-16 18:43:59,393 - INFO - 已移动图像: 'data/val/Earthquake/455.jpg' 到 'trash/Earthquake/455.jpg'
+2025-06-16 18:43:59,393 - INFO - 已移动图像: 'data/val/Earthquake/814.jpg' 到 'trash/Earthquake/814.jpg'
+2025-06-16 18:43:59,393 - INFO - 已移动图像: 'data/val/Earthquake/889.jpg' 到 'trash/Earthquake/889.jpg'
+2025-06-16 18:43:59,393 - INFO - 已移动图像: 'data/val/Wildfire/886.jpg' 到 'trash/Wildfire/886.jpg'
+2025-06-16 18:43:59,394 - INFO - 已移动图像: 'data/val/Flood/439.jpg' 到 'trash/Flood/439.jpg'
+2025-06-16 18:43:59,394 - INFO - 已移动图像: 'data/val/Earthquake/177.jpg' 到 'trash/Earthquake/177.jpg'
+2025-06-16 18:43:59,394 - INFO - 已移动图像: 'data/val/Cyclone/51.jpg' 到 'trash/Cyclone/51.jpg'
+2025-06-16 18:43:59,394 - INFO - 已移动图像: 'data/val/Earthquake/1228.jpg' 到 'trash/Earthquake/1228.jpg'
+2025-06-16 18:43:59,394 - INFO - 已移动图像: 'data/val/Earthquake/1061.jpg' 到 'trash/Earthquake/1061.jpg'
+2025-06-16 18:43:59,394 - INFO - 已移动图像: 'data/val/Flood/427.jpg' 到 'trash/Flood/427.jpg'
+2025-06-16 18:43:59,394 - INFO - 已移动图像: 'data/val/Earthquake/446.jpg' 到 'trash/Earthquake/446.jpg'
+2025-06-16 18:43:59,394 - INFO - 已移动图像: 'data/val/Cyclone/733.jpg' 到 'trash/Cyclone/733.jpg'
+2025-06-16 18:43:59,394 - INFO - 已移动图像: 'data/val/Cyclone/238.jpg' 到 'trash/Cyclone/238.jpg'
+2025-06-16 18:43:59,394 - INFO - 已移动图像: 'data/val/Wildfire/970.jpg' 到 'trash/Wildfire/970.jpg'
+2025-06-16 18:43:59,395 - INFO - 已移动图像: 'data/val/Wildfire/279.jpg' 到 'trash/Wildfire/279.jpg'
+2025-06-16 18:43:59,395 - INFO - 已移动图像: 'data/val/Wildfire/505.jpg' 到 'trash/Wildfire/505.jpg'
+2025-06-16 18:43:59,395 - INFO - 已移动图像: 'data/val/Earthquake/1029.jpg' 到 'trash/Earthquake/1029.jpg'
+2025-06-16 18:43:59,395 - INFO - 已移动图像: 'data/val/Flood/181.jpg' 到 'trash/Flood/181.jpg'
+2025-06-16 18:43:59,395 - INFO - 已移动图像: 'data/val/Flood/621.jpg' 到 'trash/Flood/621.jpg'
+2025-06-16 18:43:59,395 - INFO - 已移动图像: 'data/val/Earthquake/919.jpg' 到 'trash/Earthquake/919.jpg'
+2025-06-16 18:43:59,395 - INFO - 已移动图像: 'data/val/Wildfire/791.jpg' 到 'trash/Wildfire/791.jpg'
+2025-06-16 18:43:59,395 - INFO - 已移动图像: 'data/val/Cyclone/350.jpg' 到 'trash/Cyclone/350.jpg'
+2025-06-16 18:43:59,395 - INFO - 已移动图像: 'data/val/Cyclone/630.jpg' 到 'trash/Cyclone/630.jpg'
+2025-06-16 18:43:59,395 - INFO - 已移动图像: 'data/val/Earthquake/662.jpg' 到 'trash/Earthquake/662.jpg'
+2025-06-16 18:43:59,395 - INFO - 已移动图像: 'data/val/Earthquake/60.jpg' 到 'trash/Earthquake/60.jpg'
+2025-06-16 18:43:59,396 - INFO - 已移动图像: 'data/val/Flood/173.jpg' 到 'trash/Flood/173.jpg'
+2025-06-16 18:43:59,396 - INFO - 已移动图像: 'data/val/Wildfire/772.jpg' 到 'trash/Wildfire/772.jpg'
+2025-06-16 18:43:59,396 - INFO - 已移动图像: 'data/val/Earthquake/239.jpg' 到 'trash/Earthquake/239.jpg'
+2025-06-16 18:43:59,396 - INFO - 已移动图像: 'data/val/Cyclone/596.jpg' 到 'trash/Cyclone/596.jpg'
+2025-06-16 18:43:59,396 - INFO - 已移动图像: 'data/val/Earthquake/1286.jpg' 到 'trash/Earthquake/1286.jpg'
+2025-06-16 18:43:59,396 - INFO - 已移动图像: 'data/val/Flood/904.jpg' 到 'trash/Flood/904.jpg'
+2025-06-16 18:43:59,396 - INFO - 已移动图像: 'data/val/Wildfire/585.jpg' 到 'trash/Wildfire/585.jpg'
+2025-06-16 18:43:59,396 - INFO - 已移动图像: 'data/val/Earthquake/387.jpg' 到 'trash/Earthquake/387.jpg'
+2025-06-16 18:43:59,396 - INFO - 已移动图像: 'data/val/Flood/347.jpg' 到 'trash/Flood/347.jpg'
+2025-06-16 18:43:59,396 - INFO - 已移动图像: 'data/val/Wildfire/903.jpg' 到 'trash/Wildfire/903.jpg'
+2025-06-16 18:43:59,396 - INFO - 已移动图像: 'data/val/Flood/1046.jpg' 到 'trash/Flood/1046.jpg'
+2025-06-16 18:43:59,397 - INFO - 已移动图像: 'data/val/Earthquake/52.jpg' 到 'trash/Earthquake/52.jpg'
+2025-06-16 18:43:59,397 - INFO - 已移动图像: 'data/val/Cyclone/778.jpg' 到 'trash/Cyclone/778.jpg'
+2025-06-16 18:43:59,397 - INFO - 已移动图像: 'data/val/Earthquake/1314.jpg' 到 'trash/Earthquake/1314.jpg'
+2025-06-16 18:43:59,397 - INFO - 已移动图像: 'data/val/Flood/898.jpg' 到 'trash/Flood/898.jpg'
+2025-06-16 18:43:59,397 - INFO - 已移动图像: 'data/val/Cyclone/590.jpg' 到 'trash/Cyclone/590.jpg'
+2025-06-16 18:43:59,397 - INFO - 已移动图像: 'data/val/Earthquake/613.jpg' 到 'trash/Earthquake/613.jpg'
+2025-06-16 18:43:59,397 - INFO - 已移动图像: 'data/val/Wildfire/979.jpg' 到 'trash/Wildfire/979.jpg'
+2025-06-16 18:43:59,397 - INFO - 已移动图像: 'data/val/Flood/445.jpg' 到 'trash/Flood/445.jpg'
+2025-06-16 18:43:59,397 - INFO - 已移动图像: 'data/val/Earthquake/1215.jpg' 到 'trash/Earthquake/1215.jpg'
+2025-06-16 18:43:59,397 - INFO - 已移动图像: 'data/val/Earthquake/276.jpg' 到 'trash/Earthquake/276.jpg'
+2025-06-16 18:43:59,397 - INFO - 已移动图像: 'data/val/Cyclone/929.jpg' 到 'trash/Cyclone/929.jpg'
+2025-06-16 18:43:59,397 - INFO - 已移动图像: 'data/val/Cyclone/686.jpg' 到 'trash/Cyclone/686.jpg'
+2025-06-16 18:43:59,397 - INFO - 已移动图像: 'data/val/Flood/273.jpg' 到 'trash/Flood/273.jpg'
+2025-06-16 18:43:59,398 - INFO - 已移动图像: 'data/val/Earthquake/1290.jpg' 到 'trash/Earthquake/1290.jpg'
+2025-06-16 18:43:59,398 - INFO - 已移动图像: 'data/val/Cyclone/419.jpg' 到 'trash/Cyclone/419.jpg'
+2025-06-16 18:43:59,398 - INFO - 已移动图像: 'data/val/Earthquake/1225.jpg' 到 'trash/Earthquake/1225.jpg'
+2025-06-16 18:43:59,398 - INFO - 已移动图像: 'data/val/Wildfire/51.jpg' 到 'trash/Wildfire/51.jpg'
+2025-06-16 18:43:59,398 - INFO - 已移动图像: 'data/val/Wildfire/981.jpg' 到 'trash/Wildfire/981.jpg'
+2025-06-16 18:43:59,398 - INFO - 已移动图像: 'data/val/Flood/944.jpg' 到 'trash/Flood/944.jpg'
+2025-06-16 18:43:59,398 - INFO - 已移动图像: 'data/val/Cyclone/229.jpg' 到 'trash/Cyclone/229.jpg'
+2025-06-16 18:43:59,398 - INFO - 已移动图像: 'data/val/Earthquake/183.jpg' 到 'trash/Earthquake/183.jpg'
+2025-06-16 18:43:59,398 - INFO - 已移动图像: 'data/val/Cyclone/527.jpg' 到 'trash/Cyclone/527.jpg'
+2025-06-16 18:43:59,398 - INFO - 已移动图像: 'data/val/Flood/314.jpg' 到 'trash/Flood/314.jpg'
+2025-06-16 18:43:59,398 - INFO - 已移动图像: 'data/val/Flood/995.jpg' 到 'trash/Flood/995.jpg'
+2025-06-16 18:43:59,398 - INFO - 已移动图像: 'data/val/Cyclone/29.jpg' 到 'trash/Cyclone/29.jpg'
+2025-06-16 18:43:59,398 - INFO - 已移动图像: 'data/val/Earthquake/623.jpg' 到 'trash/Earthquake/623.jpg'
+2025-06-16 18:43:59,399 - INFO - 已移动图像: 'data/val/Cyclone/791.jpg' 到 'trash/Cyclone/791.jpg'
+2025-06-16 18:43:59,399 - INFO - 已移动图像: 'data/val/Cyclone/360.jpg' 到 'trash/Cyclone/360.jpg'
+2025-06-16 18:43:59,399 - INFO - 已移动图像: 'data/val/Earthquake/771.jpg' 到 'trash/Earthquake/771.jpg'
+2025-06-16 18:43:59,399 - INFO - 已移动图像: 'data/val/Wildfire/437.jpg' 到 'trash/Wildfire/437.jpg'
+2025-06-16 18:43:59,399 - INFO - 已移动图像: 'data/val/Cyclone/301.jpg' 到 'trash/Cyclone/301.jpg'
+2025-06-16 18:43:59,399 - INFO - 已移动图像: 'data/val/Wildfire/635.jpg' 到 'trash/Wildfire/635.jpg'
+2025-06-16 18:43:59,399 - INFO - 已移动图像: 'data/val/Wildfire/64.jpg' 到 'trash/Wildfire/64.jpg'
+2025-06-16 18:43:59,399 - INFO - 已移动图像: 'data/val/Earthquake/546.jpg' 到 'trash/Earthquake/546.jpg'
+2025-06-16 18:43:59,399 - INFO - 已移动图像: 'data/val/Earthquake/497.jpg' 到 'trash/Earthquake/497.jpg'
+2025-06-16 18:43:59,399 - INFO - 已移动图像: 'data/val/Earthquake/441.jpg' 到 'trash/Earthquake/441.jpg'
+2025-06-16 18:43:59,400 - INFO - 已移动图像: 'data/val/Cyclone/366.jpg' 到 'trash/Cyclone/366.jpg'
+2025-06-16 18:43:59,400 - INFO - 已移动图像: 'data/val/Flood/1057.jpg' 到 'trash/Flood/1057.jpg'
+2025-06-16 18:43:59,400 - INFO - 已移动图像: 'data/val/Flood/242.jpg' 到 'trash/Flood/242.jpg'
+2025-06-16 18:43:59,400 - INFO - 已移动图像: 'data/val/Flood/821.jpg' 到 'trash/Flood/821.jpg'
+2025-06-16 18:43:59,400 - INFO - 已移动图像: 'data/val/Flood/544.jpg' 到 'trash/Flood/544.jpg'
+2025-06-16 18:43:59,400 - INFO - 已移动图像: 'data/val/Cyclone/493.jpg' 到 'trash/Cyclone/493.jpg'
+2025-06-16 18:43:59,400 - INFO - 已移动图像: 'data/val/Earthquake/519.jpg' 到 'trash/Earthquake/519.jpg'
+2025-06-16 18:43:59,400 - INFO - 已移动图像: 'data/val/Cyclone/49.jpg' 到 'trash/Cyclone/49.jpg'
+2025-06-16 18:43:59,400 - INFO - 已移动图像: 'data/val/Wildfire/220.jpg' 到 'trash/Wildfire/220.jpg'
+2025-06-16 18:43:59,400 - INFO - 已移动图像: 'data/val/Wildfire/356.jpg' 到 'trash/Wildfire/356.jpg'
+2025-06-16 18:43:59,400 - INFO - 已移动图像: 'data/val/Cyclone/314.jpg' 到 'trash/Cyclone/314.jpg'
+2025-06-16 18:43:59,400 - INFO - 已移动图像: 'data/val/Cyclone/202.jpg' 到 'trash/Cyclone/202.jpg'
+2025-06-16 18:43:59,401 - INFO - 已移动图像: 'data/val/Cyclone/387.jpg' 到 'trash/Cyclone/387.jpg'
+2025-06-16 18:43:59,401 - INFO - 已移动图像: 'data/val/Flood/1036.jpg' 到 'trash/Flood/1036.jpg'
+2025-06-16 18:43:59,401 - INFO - 已移动图像: 'data/val/Flood/205.jpg' 到 'trash/Flood/205.jpg'
+2025-06-16 18:43:59,401 - INFO - 已移动图像: 'data/val/Earthquake/934.jpg' 到 'trash/Earthquake/934.jpg'
+2025-06-16 18:43:59,401 - INFO - 已移动图像: 'data/val/Wildfire/824.jpg' 到 'trash/Wildfire/824.jpg'
+2025-06-16 18:43:59,401 - INFO - 已移动图像: 'data/val/Flood/1013.jpg' 到 'trash/Flood/1013.jpg'
+2025-06-16 18:43:59,401 - INFO - 已移动图像: 'data/val/Wildfire/11.jpg' 到 'trash/Wildfire/11.jpg'
+2025-06-16 18:43:59,401 - INFO - 已移动图像: 'data/val/Earthquake/1003.jpg' 到 'trash/Earthquake/1003.jpg'
+2025-06-16 18:43:59,401 - INFO - 已移动图像: 'data/val/Wildfire/729.jpg' 到 'trash/Wildfire/729.jpg'
+2025-06-16 18:43:59,401 - INFO - 已移动图像: 'data/val/Wildfire/978.jpg' 到 'trash/Wildfire/978.jpg'
+2025-06-16 18:43:59,401 - INFO - 已移动图像: 'data/val/Wildfire/231.jpg' 到 'trash/Wildfire/231.jpg'
+2025-06-16 18:43:59,401 - INFO - 已移动图像: 'data/val/Flood/1042.jpg' 到 'trash/Flood/1042.jpg'
+2025-06-16 18:43:59,402 - INFO - 已移动图像: 'data/val/Wildfire/937.jpg' 到 'trash/Wildfire/937.jpg'
+2025-06-16 18:43:59,402 - INFO - 已移动图像: 'data/val/Earthquake/252.jpg' 到 'trash/Earthquake/252.jpg'
+2025-06-16 18:43:59,402 - INFO - 已移动图像: 'data/val/Flood/316.jpg' 到 'trash/Flood/316.jpg'
+2025-06-16 18:43:59,402 - INFO - 已移动图像: 'data/val/Flood/343.jpg' 到 'trash/Flood/343.jpg'
+2025-06-16 18:43:59,402 - INFO - 已移动图像: 'data/val/Cyclone/106.jpg' 到 'trash/Cyclone/106.jpg'
+2025-06-16 18:43:59,402 - INFO - 已移动图像: 'data/val/Flood/123.jpg' 到 'trash/Flood/123.jpg'
+2025-06-16 18:43:59,402 - INFO - 已移动图像: 'data/val/Earthquake/793.jpg' 到 'trash/Earthquake/793.jpg'
+2025-06-16 18:43:59,402 - INFO - 已移动图像: 'data/val/Flood/511.jpg' 到 'trash/Flood/511.jpg'
+2025-06-16 18:43:59,402 - INFO - 已移动图像: 'data/val/Earthquake/572.jpg' 到 'trash/Earthquake/572.jpg'
+2025-06-16 18:43:59,402 - INFO - 已移动图像: 'data/val/Earthquake/383.jpg' 到 'trash/Earthquake/383.jpg'
+2025-06-16 18:43:59,402 - INFO - 已移动图像: 'data/val/Earthquake/848.jpg' 到 'trash/Earthquake/848.jpg'
+2025-06-16 18:43:59,402 - INFO - 已移动图像: 'data/val/Cyclone/876.jpg' 到 'trash/Cyclone/876.jpg'
+2025-06-16 18:43:59,402 - INFO - 已移动图像: 'data/val/Flood/485.jpg' 到 'trash/Flood/485.jpg'
+2025-06-16 18:43:59,403 - INFO - 已移动图像: 'data/val/Earthquake/566.jpg' 到 'trash/Earthquake/566.jpg'
+2025-06-16 18:43:59,403 - INFO - 已移动图像: 'data/val/Wildfire/594.jpg' 到 'trash/Wildfire/594.jpg'
+2025-06-16 18:43:59,403 - INFO - 已移动图像: 'data/val/Flood/714.jpg' 到 'trash/Flood/714.jpg'
+2025-06-16 18:43:59,403 - INFO - 已移动图像: 'data/val/Earthquake/836.jpg' 到 'trash/Earthquake/836.jpg'
+2025-06-16 18:43:59,403 - INFO - 已移动图像: 'data/val/Wildfire/1065.jpg' 到 'trash/Wildfire/1065.jpg'
+2025-06-16 18:43:59,403 - INFO - 已移动图像: 'data/val/Flood/899.jpg' 到 'trash/Flood/899.jpg'
+2025-06-16 18:43:59,403 - INFO - 已移动图像: 'data/val/Earthquake/256.jpg' 到 'trash/Earthquake/256.jpg'
+2025-06-16 18:43:59,403 - INFO - 已移动图像: 'data/val/Flood/570.jpg' 到 'trash/Flood/570.jpg'
+2025-06-16 18:43:59,403 - INFO - 已移动图像: 'data/val/Cyclone/711.jpg' 到 'trash/Cyclone/711.jpg'
+2025-06-16 18:43:59,403 - INFO - 已移动图像: 'data/val/Wildfire/686.jpg' 到 'trash/Wildfire/686.jpg'
+2025-06-16 18:43:59,403 - INFO - 已移动图像: 'data/val/Wildfire/568.jpg' 到 'trash/Wildfire/568.jpg'
+2025-06-16 18:43:59,403 - INFO - 已移动图像: 'data/val/Earthquake/417.jpg' 到 'trash/Earthquake/417.jpg'
+2025-06-16 18:43:59,403 - INFO - 已移动图像: 'data/val/Cyclone/584.jpg' 到 'trash/Cyclone/584.jpg'
+2025-06-16 18:43:59,404 - INFO - 已移动图像: 'data/val/Earthquake/483.jpg' 到 'trash/Earthquake/483.jpg'
+2025-06-16 18:43:59,404 - INFO - 已移动图像: 'data/val/Flood/668.jpg' 到 'trash/Flood/668.jpg'
+2025-06-16 18:43:59,404 - INFO - 已移动图像: 'data/val/Earthquake/837.jpg' 到 'trash/Earthquake/837.jpg'
+2025-06-16 18:43:59,404 - INFO - 已移动图像: 'data/val/Earthquake/1171.jpg' 到 'trash/Earthquake/1171.jpg'
+2025-06-16 18:43:59,404 - INFO - 已移动图像: 'data/val/Wildfire/468.jpg' 到 'trash/Wildfire/468.jpg'
+2025-06-16 18:43:59,404 - INFO - 已移动图像: 'data/val/Cyclone/343.jpg' 到 'trash/Cyclone/343.jpg'
+2025-06-16 18:43:59,404 - INFO - 已移动图像: 'data/val/Wildfire/486.jpg' 到 'trash/Wildfire/486.jpg'
+2025-06-16 18:43:59,404 - INFO - 已移动图像: 'data/val/Cyclone/514.jpg' 到 'trash/Cyclone/514.jpg'
+2025-06-16 18:43:59,404 - INFO - 已移动图像: 'data/val/Earthquake/891.jpg' 到 'trash/Earthquake/891.jpg'
+2025-06-16 18:43:59,404 - INFO - 已移动图像: 'data/val/Wildfire/612.jpg' 到 'trash/Wildfire/612.jpg'
+2025-06-16 18:43:59,404 - INFO - 已移动图像: 'data/val/Wildfire/782.jpg' 到 'trash/Wildfire/782.jpg'
+2025-06-16 18:43:59,404 - INFO - 已移动图像: 'data/val/Earthquake/659.jpg' 到 'trash/Earthquake/659.jpg'
+2025-06-16 18:43:59,404 - INFO - 已移动图像: 'data/val/Wildfire/80.jpg' 到 'trash/Wildfire/80.jpg'
+2025-06-16 18:43:59,404 - INFO - 已移动图像: 'data/val/Flood/267.jpg' 到 'trash/Flood/267.jpg'
+2025-06-16 18:43:59,405 - INFO - 已移动图像: 'data/val/Wildfire/435.jpg' 到 'trash/Wildfire/435.jpg'
+2025-06-16 18:43:59,405 - INFO - 已移动图像: 'data/val/Cyclone/177.jpg' 到 'trash/Cyclone/177.jpg'
+2025-06-16 18:43:59,405 - INFO - 已移动图像: 'data/val/Flood/881.jpg' 到 'trash/Flood/881.jpg'
+2025-06-16 18:43:59,405 - INFO - 已移动图像: 'data/val/Flood/271.jpg' 到 'trash/Flood/271.jpg'
+2025-06-16 18:43:59,405 - INFO - 已移动图像: 'data/val/Earthquake/65.jpg' 到 'trash/Earthquake/65.jpg'
+2025-06-16 18:43:59,405 - INFO - 已移动图像: 'data/val/Flood/1003.jpg' 到 'trash/Flood/1003.jpg'
+2025-06-16 18:43:59,405 - INFO - 已移动图像: 'data/val/Earthquake/176.jpg' 到 'trash/Earthquake/176.jpg'
+2025-06-16 18:43:59,405 - INFO - 已移动图像: 'data/val/Cyclone/361.jpg' 到 'trash/Cyclone/361.jpg'
+2025-06-16 18:43:59,405 - INFO - 已移动图像: 'data/val/Earthquake/893.jpg' 到 'trash/Earthquake/893.jpg'
+2025-06-16 18:43:59,405 - INFO - 已移动图像: 'data/val/Flood/956.jpg' 到 'trash/Flood/956.jpg'
+2025-06-16 18:43:59,405 - INFO - 已移动图像: 'data/val/Earthquake/796.jpg' 到 'trash/Earthquake/796.jpg'
+2025-06-16 18:43:59,405 - INFO - 已移动图像: 'data/val/Earthquake/1058.jpg' 到 'trash/Earthquake/1058.jpg'
+2025-06-16 18:43:59,406 - INFO - 已移动图像: 'data/val/Earthquake/1076.jpg' 到 'trash/Earthquake/1076.jpg'
+2025-06-16 18:43:59,406 - INFO - 已移动图像: 'data/val/Earthquake/817.jpg' 到 'trash/Earthquake/817.jpg'
+2025-06-16 18:43:59,406 - INFO - 已移动图像: 'data/val/Cyclone/557.jpg' 到 'trash/Cyclone/557.jpg'
+2025-06-16 18:43:59,406 - INFO - 已移动图像: 'data/val/Earthquake/408.jpg' 到 'trash/Earthquake/408.jpg'
+2025-06-16 18:43:59,406 - INFO - 已移动图像: 'data/val/Wildfire/861.jpg' 到 'trash/Wildfire/861.jpg'
+2025-06-16 18:43:59,406 - INFO - 已移动图像: 'data/val/Earthquake/803.jpg' 到 'trash/Earthquake/803.jpg'
+2025-06-16 18:43:59,406 - INFO - 已移动图像: 'data/val/Earthquake/1024.jpg' 到 'trash/Earthquake/1024.jpg'
+2025-06-16 18:43:59,406 - INFO - 已移动图像: 'data/val/Flood/187.jpg' 到 'trash/Flood/187.jpg'
+2025-06-16 18:43:59,406 - INFO - 已移动图像: 'data/val/Wildfire/599.jpg' 到 'trash/Wildfire/599.jpg'
+2025-06-16 18:43:59,406 - INFO - 已移动图像: 'data/val/Wildfire/426.jpg' 到 'trash/Wildfire/426.jpg'
+2025-06-16 18:43:59,406 - INFO - 已移动图像: 'data/val/Wildfire/590.jpg' 到 'trash/Wildfire/590.jpg'
+2025-06-16 18:43:59,406 - INFO - 已移动图像: 'data/val/Wildfire/587.jpg' 到 'trash/Wildfire/587.jpg'
+2025-06-16 18:43:59,406 - INFO - 已移动图像: 'data/val/Earthquake/532.jpg' 到 'trash/Earthquake/532.jpg'
+2025-06-16 18:43:59,407 - INFO - 已移动图像: 'data/val/Earthquake/391.jpg' 到 'trash/Earthquake/391.jpg'
+2025-06-16 18:43:59,407 - INFO - 已移动图像: 'data/val/Cyclone/502.jpg' 到 'trash/Cyclone/502.jpg'
+2025-06-16 18:43:59,407 - INFO - 已移动图像: 'data/val/Flood/344.jpg' 到 'trash/Flood/344.jpg'
+2025-06-16 18:43:59,407 - INFO - 已移动图像: 'data/val/Earthquake/744.jpg' 到 'trash/Earthquake/744.jpg'
+2025-06-16 18:43:59,407 - INFO - 已移动图像: 'data/val/Flood/1065.jpg' 到 'trash/Flood/1065.jpg'
+2025-06-16 18:43:59,407 - INFO - 已移动图像: 'data/val/Wildfire/616.jpg' 到 'trash/Wildfire/616.jpg'
+2025-06-16 18:43:59,407 - INFO - 已移动图像: 'data/val/Wildfire/750.jpg' 到 'trash/Wildfire/750.jpg'
+2025-06-16 18:43:59,407 - INFO - 已移动图像: 'data/val/Earthquake/712.jpg' 到 'trash/Earthquake/712.jpg'
+2025-06-16 18:43:59,407 - INFO - 已移动图像: 'data/val/Earthquake/936.jpg' 到 'trash/Earthquake/936.jpg'
+2025-06-16 18:43:59,407 - INFO - 已移动图像: 'data/val/Cyclone/627.jpg' 到 'trash/Cyclone/627.jpg'
+2025-06-16 18:43:59,407 - INFO - 已移动图像: 'data/val/Earthquake/1159.jpg' 到 'trash/Earthquake/1159.jpg'
+2025-06-16 18:43:59,407 - INFO - 已移动图像: 'data/val/Cyclone/345.jpg' 到 'trash/Cyclone/345.jpg'
+2025-06-16 18:43:59,408 - INFO - 已移动图像: 'data/val/Wildfire/549.jpg' 到 'trash/Wildfire/549.jpg'
+2025-06-16 18:43:59,408 - INFO - 已移动图像: 'data/val/Cyclone/466.jpg' 到 'trash/Cyclone/466.jpg'
+2025-06-16 18:43:59,408 - INFO - 已移动图像: 'data/val/Flood/159.jpg' 到 'trash/Flood/159.jpg'
+2025-06-16 18:43:59,408 - INFO - 已移动图像: 'data/val/Flood/567.jpg' 到 'trash/Flood/567.jpg'
+2025-06-16 18:43:59,408 - INFO - 已移动图像: 'data/val/Wildfire/639.jpg' 到 'trash/Wildfire/639.jpg'
+2025-06-16 18:43:59,408 - INFO - 已移动图像: 'data/val/Earthquake/466.jpg' 到 'trash/Earthquake/466.jpg'
+2025-06-16 18:43:59,408 - INFO - 已移动图像: 'data/val/Wildfire/353.jpg' 到 'trash/Wildfire/353.jpg'
+2025-06-16 18:43:59,408 - INFO - 已移动图像: 'data/val/Cyclone/804.jpg' 到 'trash/Cyclone/804.jpg'
+2025-06-16 18:43:59,408 - INFO - 已移动图像: 'data/val/Earthquake/380.jpg' 到 'trash/Earthquake/380.jpg'
+2025-06-16 18:43:59,408 - INFO - 已移动图像: 'data/val/Flood/202.jpg' 到 'trash/Flood/202.jpg'
+2025-06-16 18:43:59,408 - INFO - 已移动图像: 'data/val/Flood/506.jpg' 到 'trash/Flood/506.jpg'
+2025-06-16 18:43:59,409 - INFO - 已移动图像: 'data/val/Wildfire/1002.jpg' 到 'trash/Wildfire/1002.jpg'
+2025-06-16 18:43:59,409 - INFO - 已移动图像: 'data/val/Earthquake/864.jpg' 到 'trash/Earthquake/864.jpg'
+2025-06-16 18:43:59,409 - INFO - 已移动图像: 'data/val/Earthquake/316.jpg' 到 'trash/Earthquake/316.jpg'
+2025-06-16 18:43:59,409 - INFO - 已移动图像: 'data/val/Cyclone/167.jpg' 到 'trash/Cyclone/167.jpg'
+2025-06-16 18:43:59,409 - INFO - 已移动图像: 'data/val/Earthquake/377.jpg' 到 'trash/Earthquake/377.jpg'
+2025-06-16 18:43:59,409 - INFO - 已移动图像: 'data/val/Cyclone/426.jpg' 到 'trash/Cyclone/426.jpg'
+2025-06-16 18:43:59,409 - INFO - 已移动图像: 'data/val/Cyclone/756.jpg' 到 'trash/Cyclone/756.jpg'
+2025-06-16 18:43:59,409 - INFO - 已移动图像: 'data/val/Wildfire/1062.jpg' 到 'trash/Wildfire/1062.jpg'
+2025-06-16 18:43:59,409 - INFO - 已移动图像: 'data/val/Wildfire/780.jpg' 到 'trash/Wildfire/780.jpg'
+2025-06-16 18:43:59,409 - INFO - 已移动图像: 'data/val/Earthquake/1031.jpg' 到 'trash/Earthquake/1031.jpg'
+2025-06-16 18:43:59,410 - INFO - 已移动图像: 'data/val/Earthquake/969.jpg' 到 'trash/Earthquake/969.jpg'
+2025-06-16 18:43:59,410 - INFO - 已移动图像: 'data/val/Earthquake/1191.jpg' 到 'trash/Earthquake/1191.jpg'
+2025-06-16 18:43:59,410 - INFO - 已移动图像: 'data/val/Wildfire/337.jpg' 到 'trash/Wildfire/337.jpg'
+2025-06-16 18:43:59,410 - INFO - 已移动图像: 'data/val/Cyclone/342.jpg' 到 'trash/Cyclone/342.jpg'
+2025-06-16 18:43:59,410 - INFO - 已移动图像: 'data/val/Earthquake/1258.jpg' 到 'trash/Earthquake/1258.jpg'
+2025-06-16 18:43:59,410 - INFO - 已移动图像: 'data/val/Wildfire/627.jpg' 到 'trash/Wildfire/627.jpg'
+2025-06-16 18:43:59,410 - INFO - 已移动图像: 'data/val/Earthquake/1270.jpg' 到 'trash/Earthquake/1270.jpg'
+2025-06-16 18:43:59,410 - INFO - 已移动图像: 'data/val/Cyclone/262.jpg' 到 'trash/Cyclone/262.jpg'
+2025-06-16 18:43:59,410 - INFO - 已移动图像: 'data/val/Wildfire/1064.jpg' 到 'trash/Wildfire/1064.jpg'
+2025-06-16 18:43:59,410 - INFO - 已移动图像: 'data/val/Wildfire/411.jpg' 到 'trash/Wildfire/411.jpg'
+2025-06-16 18:43:59,410 - INFO - 已移动图像: 'data/val/Wildfire/107.jpg' 到 'trash/Wildfire/107.jpg'
+2025-06-16 18:43:59,410 - INFO - 已移动图像: 'data/val/Wildfire/108.jpg' 到 'trash/Wildfire/108.jpg'
+2025-06-16 18:43:59,411 - INFO - 已移动图像: 'data/val/Wildfire/902.jpg' 到 'trash/Wildfire/902.jpg'
+2025-06-16 18:43:59,411 - INFO - 已移动图像: 'data/val/Flood/304.jpg' 到 'trash/Flood/304.jpg'
+2025-06-16 18:43:59,411 - INFO - 已移动图像: 'data/val/Earthquake/233.jpg' 到 'trash/Earthquake/233.jpg'
+2025-06-16 18:43:59,411 - INFO - 已移动图像: 'data/val/Flood/1032.jpg' 到 'trash/Flood/1032.jpg'
+2025-06-16 18:43:59,411 - INFO - 已移动图像: 'data/val/Earthquake/1142.jpg' 到 'trash/Earthquake/1142.jpg'
+2025-06-16 18:43:59,411 - INFO - 已移动图像: 'data/val/Cyclone/562.jpg' 到 'trash/Cyclone/562.jpg'
+2025-06-16 18:43:59,411 - INFO - 已移动图像: 'data/val/Earthquake/1014.jpg' 到 'trash/Earthquake/1014.jpg'
+2025-06-16 18:43:59,411 - INFO - 已移动图像: 'data/val/Cyclone/858.jpg' 到 'trash/Cyclone/858.jpg'
+2025-06-16 18:43:59,411 - INFO - 已移动图像: 'data/val/Earthquake/1317.jpg' 到 'trash/Earthquake/1317.jpg'
+2025-06-16 18:43:59,411 - INFO - 已移动图像: 'data/val/Earthquake/726.jpg' 到 'trash/Earthquake/726.jpg'
+2025-06-16 18:43:59,411 - INFO - 已移动图像: 'data/val/Earthquake/134.jpg' 到 'trash/Earthquake/134.jpg'
+2025-06-16 18:43:59,411 - INFO - 已移动图像: 'data/val/Earthquake/523.jpg' 到 'trash/Earthquake/523.jpg'
+2025-06-16 18:43:59,411 - INFO - 已移动图像: 'data/val/Cyclone/854.jpg' 到 'trash/Cyclone/854.jpg'
+2025-06-16 18:43:59,412 - INFO - 已移动图像: 'data/val/Wildfire/877.jpg' 到 'trash/Wildfire/877.jpg'
+2025-06-16 18:43:59,412 - INFO - 已移动图像: 'data/val/Wildfire/966.jpg' 到 'trash/Wildfire/966.jpg'
+2025-06-16 18:43:59,412 - INFO - 已移动图像: 'data/val/Earthquake/1048.jpg' 到 'trash/Earthquake/1048.jpg'
+2025-06-16 18:43:59,412 - INFO - 已移动图像: 'data/val/Flood/65.jpg' 到 'trash/Flood/65.jpg'
+2025-06-16 18:43:59,412 - INFO - 已移动图像: 'data/val/Wildfire/255.jpg' 到 'trash/Wildfire/255.jpg'
+2025-06-16 18:43:59,412 - INFO - 已移动图像: 'data/val/Earthquake/592.jpg' 到 'trash/Earthquake/592.jpg'
+2025-06-16 18:43:59,412 - INFO - 已移动图像: 'data/val/Flood/583.jpg' 到 'trash/Flood/583.jpg'
+2025-06-16 18:43:59,412 - INFO - 已移动图像: 'data/val/Cyclone/367.jpg' 到 'trash/Cyclone/367.jpg'
+2025-06-16 18:43:59,412 - INFO - 已移动图像: 'data/val/Cyclone/819.jpg' 到 'trash/Cyclone/819.jpg'
+2025-06-16 18:43:59,412 - INFO - 已移动图像: 'data/val/Wildfire/667.jpg' 到 'trash/Wildfire/667.jpg'
+2025-06-16 18:43:59,412 - INFO - 已移动图像: 'data/val/Flood/1004.jpg' 到 'trash/Flood/1004.jpg'
+2025-06-16 18:43:59,412 - INFO - 已移动图像: 'data/val/Earthquake/3.jpg' 到 'trash/Earthquake/3.jpg'
+2025-06-16 18:43:59,412 - INFO - 已移动图像: 'data/val/Cyclone/765.jpg' 到 'trash/Cyclone/765.jpg'
+2025-06-16 18:43:59,413 - INFO - 已移动图像: 'data/val/Cyclone/639.jpg' 到 'trash/Cyclone/639.jpg'
+2025-06-16 18:43:59,413 - INFO - 已移动图像: 'data/val/Cyclone/196.jpg' 到 'trash/Cyclone/196.jpg'
+2025-06-16 18:43:59,413 - INFO - 已移动图像: 'data/val/Cyclone/438.jpg' 到 'trash/Cyclone/438.jpg'
+2025-06-16 18:43:59,413 - INFO - 已移动图像: 'data/val/Wildfire/850.jpg' 到 'trash/Wildfire/850.jpg'
+2025-06-16 18:43:59,413 - INFO - 已移动图像: 'data/val/Cyclone/799.jpg' 到 'trash/Cyclone/799.jpg'
+2025-06-16 18:43:59,413 - INFO - 已移动图像: 'data/val/Flood/811.jpg' 到 'trash/Flood/811.jpg'
+2025-06-16 18:43:59,413 - INFO - 已移动图像: 'data/val/Earthquake/1263.jpg' 到 'trash/Earthquake/1263.jpg'
+2025-06-16 18:43:59,413 - INFO - 已移动图像: 'data/val/Wildfire/816.jpg' 到 'trash/Wildfire/816.jpg'
+2025-06-16 18:43:59,413 - INFO - 已移动图像: 'data/val/Earthquake/914.jpg' 到 'trash/Earthquake/914.jpg'
+2025-06-16 18:43:59,413 - INFO - 已移动图像: 'data/val/Earthquake/1238.jpg' 到 'trash/Earthquake/1238.jpg'
+2025-06-16 18:43:59,413 - INFO - 已移动图像: 'data/val/Cyclone/677.jpg' 到 'trash/Cyclone/677.jpg'
+2025-06-16 18:43:59,413 - INFO - 已移动图像: 'data/val/Cyclone/704.jpg' 到 'trash/Cyclone/704.jpg'
+2025-06-16 18:43:59,413 - INFO - 已移动图像: 'data/val/Flood/824.jpg' 到 'trash/Flood/824.jpg'
+2025-06-16 18:43:59,414 - INFO - 已移动图像: 'data/val/Flood/774.jpg' 到 'trash/Flood/774.jpg'
+2025-06-16 18:43:59,414 - INFO - 已移动图像: 'data/val/Wildfire/659.jpg' 到 'trash/Wildfire/659.jpg'
+2025-06-16 18:43:59,414 - INFO - 已移动图像: 'data/val/Wildfire/128.jpg' 到 'trash/Wildfire/128.jpg'
+2025-06-16 18:43:59,414 - INFO - 已移动图像: 'data/val/Flood/420.jpg' 到 'trash/Flood/420.jpg'
+2025-06-16 18:43:59,414 - INFO - 已移动图像: 'data/val/Earthquake/562.jpg' 到 'trash/Earthquake/562.jpg'
+2025-06-16 18:43:59,414 - INFO - 已移动图像: 'data/val/Earthquake/777.jpg' 到 'trash/Earthquake/777.jpg'
+2025-06-16 18:43:59,414 - INFO - 已移动图像: 'data/val/Cyclone/22.jpg' 到 'trash/Cyclone/22.jpg'
+2025-06-16 18:43:59,414 - INFO - 已移动图像: 'data/val/Flood/974.jpg' 到 'trash/Flood/974.jpg'
+2025-06-16 18:43:59,414 - INFO - 已移动图像: 'data/val/Earthquake/708.jpg' 到 'trash/Earthquake/708.jpg'
+2025-06-16 18:43:59,414 - INFO - 已移动图像: 'data/val/Cyclone/363.jpg' 到 'trash/Cyclone/363.jpg'
+2025-06-16 18:43:59,414 - INFO - 已移动图像: 'data/val/Flood/1041.jpg' 到 'trash/Flood/1041.jpg'
+2025-06-16 18:43:59,415 - INFO - 已移动图像: 'data/val/Earthquake/419.jpg' 到 'trash/Earthquake/419.jpg'
+2025-06-16 18:43:59,415 - INFO - 已移动图像: 'data/val/Earthquake/998.jpg' 到 'trash/Earthquake/998.jpg'
+2025-06-16 18:43:59,415 - INFO - 已移动图像: 'data/val/Cyclone/849.jpg' 到 'trash/Cyclone/849.jpg'
+2025-06-16 18:43:59,415 - INFO - 已移动图像: 'data/val/Flood/635.jpg' 到 'trash/Flood/635.jpg'
+2025-06-16 18:43:59,415 - INFO - 已移动图像: 'data/val/Earthquake/784.jpg' 到 'trash/Earthquake/784.jpg'
+2025-06-16 18:43:59,415 - INFO - 已移动图像: 'data/val/Flood/93.jpg' 到 'trash/Flood/93.jpg'
+2025-06-16 18:43:59,415 - INFO - 已移动图像: 'data/val/Cyclone/855.jpg' 到 'trash/Cyclone/855.jpg'
+2025-06-16 18:43:59,415 - INFO - 已移动图像: 'data/val/Flood/493.jpg' 到 'trash/Flood/493.jpg'
+2025-06-16 18:43:59,415 - INFO - 已移动图像: 'data/val/Flood/776.jpg' 到 'trash/Flood/776.jpg'
+2025-06-16 18:43:59,415 - INFO - 已移动图像: 'data/val/Earthquake/374.jpg' 到 'trash/Earthquake/374.jpg'
+2025-06-16 18:43:59,416 - INFO - 已移动图像: 'data/val/Earthquake/149.jpg' 到 'trash/Earthquake/149.jpg'
+2025-06-16 18:43:59,416 - INFO - 已移动图像: 'data/val/Earthquake/371.jpg' 到 'trash/Earthquake/371.jpg'
+2025-06-16 18:43:59,416 - INFO - 已移动图像: 'data/val/Cyclone/619.jpg' 到 'trash/Cyclone/619.jpg'
+2025-06-16 18:43:59,416 - INFO - 已移动图像: 'data/val/Wildfire/980.jpg' 到 'trash/Wildfire/980.jpg'
+2025-06-16 18:43:59,416 - INFO - 已移动图像: 'data/val/Earthquake/214.jpg' 到 'trash/Earthquake/214.jpg'
+2025-06-16 18:43:59,416 - INFO - 已移动图像: 'data/val/Cyclone/189.jpg' 到 'trash/Cyclone/189.jpg'
+2025-06-16 18:43:59,416 - INFO - 已移动图像: 'data/val/Earthquake/1145.jpg' 到 'trash/Earthquake/1145.jpg'
+2025-06-16 18:43:59,416 - INFO - 已移动图像: 'data/val/Earthquake/268.jpg' 到 'trash/Earthquake/268.jpg'
+2025-06-16 18:43:59,416 - INFO - 已移动图像: 'data/val/Wildfire/789.jpg' 到 'trash/Wildfire/789.jpg'
+2025-06-16 18:43:59,416 - INFO - 已移动图像: 'data/val/Flood/736.jpg' 到 'trash/Flood/736.jpg'
+2025-06-16 18:43:59,416 - INFO - 已移动图像: 'data/val/Earthquake/517.jpg' 到 'trash/Earthquake/517.jpg'
+2025-06-16 18:43:59,416 - INFO - 已移动图像: 'data/val/Wildfire/106.jpg' 到 'trash/Wildfire/106.jpg'
+2025-06-16 18:43:59,417 - INFO - 已移动图像: 'data/val/Earthquake/946.jpg' 到 'trash/Earthquake/946.jpg'
+2025-06-16 18:43:59,417 - INFO - 已移动图像: 'data/val/Flood/225.jpg' 到 'trash/Flood/225.jpg'
+2025-06-16 18:43:59,417 - INFO - 已移动图像: 'data/val/Wildfire/321.jpg' 到 'trash/Wildfire/321.jpg'
+2025-06-16 18:43:59,417 - INFO - 已移动图像: 'data/val/Flood/27.jpg' 到 'trash/Flood/27.jpg'
+2025-06-16 18:43:59,417 - INFO - 已移动图像: 'data/val/Earthquake/471.jpg' 到 'trash/Earthquake/471.jpg'
+2025-06-16 18:43:59,417 - INFO - 已移动图像: 'data/val/Cyclone/233.jpg' 到 'trash/Cyclone/233.jpg'
+2025-06-16 18:43:59,417 - INFO - 已移动图像: 'data/val/Earthquake/369.jpg' 到 'trash/Earthquake/369.jpg'
+2025-06-16 18:43:59,417 - INFO - 已移动图像: 'data/val/Wildfire/371.jpg' 到 'trash/Wildfire/371.jpg'
+2025-06-16 18:43:59,417 - INFO - 已移动图像: 'data/val/Flood/838.jpg' 到 'trash/Flood/838.jpg'
+2025-06-16 18:43:59,417 - INFO - 已移动图像: 'data/val/Cyclone/398.jpg' 到 'trash/Cyclone/398.jpg'
+2025-06-16 18:43:59,417 - INFO - 已移动图像: 'data/val/Cyclone/506.jpg' 到 'trash/Cyclone/506.jpg'
+2025-06-16 18:43:59,417 - INFO - 已移动图像: 'data/val/Earthquake/272.jpg' 到 'trash/Earthquake/272.jpg'
+2025-06-16 18:43:59,417 - INFO - 已移动图像: 'data/val/Earthquake/213.jpg' 到 'trash/Earthquake/213.jpg'
+2025-06-16 18:43:59,418 - INFO - 已移动图像: 'data/val/Cyclone/50.jpg' 到 'trash/Cyclone/50.jpg'
+2025-06-16 18:43:59,418 - INFO - 已移动图像: 'data/val/Flood/710.jpg' 到 'trash/Flood/710.jpg'
+2025-06-16 18:43:59,418 - INFO - 已移动图像: 'data/val/Earthquake/856.jpg' 到 'trash/Earthquake/856.jpg'
+2025-06-16 18:43:59,418 - INFO - 已移动图像: 'data/val/Wildfire/62.jpg' 到 'trash/Wildfire/62.jpg'
+2025-06-16 18:43:59,418 - INFO - 已移动图像: 'data/val/Earthquake/1001.jpg' 到 'trash/Earthquake/1001.jpg'
+2025-06-16 18:43:59,418 - INFO - 已移动图像: 'data/val/Flood/922.jpg' 到 'trash/Flood/922.jpg'
+2025-06-16 18:43:59,418 - INFO - 已移动图像: 'data/val/Cyclone/496.jpg' 到 'trash/Cyclone/496.jpg'
+2025-06-16 18:43:59,418 - INFO - 已移动图像: 'data/val/Wildfire/110.jpg' 到 'trash/Wildfire/110.jpg'
+2025-06-16 18:43:59,418 - INFO - 已移动图像: 'data/val/Earthquake/1255.jpg' 到 'trash/Earthquake/1255.jpg'
+2025-06-16 18:43:59,418 - INFO - 已移动图像: 'data/val/Wildfire/467.jpg' 到 'trash/Wildfire/467.jpg'
+2025-06-16 18:43:59,418 - INFO - 已移动图像: 'data/val/Earthquake/453.jpg' 到 'trash/Earthquake/453.jpg'
+2025-06-16 18:43:59,419 - INFO - 已移动图像: 'data/val/Wildfire/1012.jpg' 到 'trash/Wildfire/1012.jpg'
+2025-06-16 18:43:59,419 - INFO - 已移动图像: 'data/val/Wildfire/342.jpg' 到 'trash/Wildfire/342.jpg'
+2025-06-16 18:43:59,419 - INFO - 已移动图像: 'data/val/Earthquake/1123.jpg' 到 'trash/Earthquake/1123.jpg'
+2025-06-16 18:43:59,419 - INFO - 已移动图像: 'data/val/Flood/201.jpg' 到 'trash/Flood/201.jpg'
+2025-06-16 18:43:59,419 - INFO - 已移动图像: 'data/val/Earthquake/894.jpg' 到 'trash/Earthquake/894.jpg'
+2025-06-16 18:43:59,419 - INFO - 已移动图像: 'data/val/Earthquake/231.jpg' 到 'trash/Earthquake/231.jpg'
+2025-06-16 18:43:59,419 - INFO - 已移动图像: 'data/val/Cyclone/712.jpg' 到 'trash/Cyclone/712.jpg'
+2025-06-16 18:43:59,419 - INFO - 已移动图像: 'data/val/Cyclone/168.jpg' 到 'trash/Cyclone/168.jpg'
+2025-06-16 18:43:59,419 - INFO - 已移动图像: 'data/val/Wildfire/247.jpg' 到 'trash/Wildfire/247.jpg'
+2025-06-16 18:43:59,419 - INFO - 已移动图像: 'data/val/Flood/87.jpg' 到 'trash/Flood/87.jpg'
+2025-06-16 18:43:59,419 - INFO - 已移动图像: 'data/val/Wildfire/155.jpg' 到 'trash/Wildfire/155.jpg'
+2025-06-16 18:43:59,420 - INFO - 已移动图像: 'data/val/Flood/447.jpg' 到 'trash/Flood/447.jpg'
+2025-06-16 18:43:59,420 - INFO - 已移动图像: 'data/val/Flood/875.jpg' 到 'trash/Flood/875.jpg'
+2025-06-16 18:43:59,420 - INFO - 已移动图像: 'data/val/Earthquake/501.jpg' 到 'trash/Earthquake/501.jpg'
+2025-06-16 18:43:59,420 - INFO - 已移动图像: 'data/val/Cyclone/903.jpg' 到 'trash/Cyclone/903.jpg'
+2025-06-16 18:43:59,420 - INFO - 已移动图像: 'data/val/Wildfire/518.jpg' 到 'trash/Wildfire/518.jpg'
+2025-06-16 18:43:59,420 - INFO - 已移动图像: 'data/val/Wildfire/754.jpg' 到 'trash/Wildfire/754.jpg'
+2025-06-16 18:43:59,420 - INFO - 已移动图像: 'data/val/Wildfire/210.jpg' 到 'trash/Wildfire/210.jpg'
+2025-06-16 18:43:59,420 - INFO - 已移动图像: 'data/val/Flood/765.jpg' 到 'trash/Flood/765.jpg'
+2025-06-16 18:43:59,420 - INFO - 已移动图像: 'data/val/Flood/491.jpg' 到 'trash/Flood/491.jpg'
+2025-06-16 18:43:59,420 - INFO - 已移动图像: 'data/val/Flood/614.jpg' 到 'trash/Flood/614.jpg'
+2025-06-16 18:43:59,421 - INFO - 已移动图像: 'data/val/Earthquake/205.jpg' 到 'trash/Earthquake/205.jpg'
+2025-06-16 18:43:59,421 - INFO - 已移动图像: 'data/val/Wildfire/845.jpg' 到 'trash/Wildfire/845.jpg'
+2025-06-16 18:43:59,421 - INFO - 已移动图像: 'data/val/Earthquake/745.jpg' 到 'trash/Earthquake/745.jpg'
+2025-06-16 18:43:59,421 - INFO - 已移动图像: 'data/val/Cyclone/812.jpg' 到 'trash/Cyclone/812.jpg'
+2025-06-16 18:43:59,421 - INFO - 已移动图像: 'data/val/Flood/912.jpg' 到 'trash/Flood/912.jpg'
+2025-06-16 18:43:59,421 - INFO - 已移动图像: 'data/val/Earthquake/958.jpg' 到 'trash/Earthquake/958.jpg'
+2025-06-16 18:43:59,421 - INFO - 已移动图像: 'data/val/Cyclone/571.jpg' 到 'trash/Cyclone/571.jpg'
+2025-06-16 18:43:59,421 - INFO - 已移动图像: 'data/val/Cyclone/180.jpg' 到 'trash/Cyclone/180.jpg'
+2025-06-16 18:43:59,421 - INFO - 已移动图像: 'data/val/Flood/897.jpg' 到 'trash/Flood/897.jpg'
+2025-06-16 18:43:59,421 - INFO - 已移动图像: 'data/val/Wildfire/851.jpg' 到 'trash/Wildfire/851.jpg'
+2025-06-16 18:43:59,421 - INFO - 已移动图像: 'data/val/Wildfire/241.jpg' 到 'trash/Wildfire/241.jpg'
+2025-06-16 18:43:59,422 - INFO - 已移动图像: 'data/val/Earthquake/1087.jpg' 到 'trash/Earthquake/1087.jpg'
+2025-06-16 18:43:59,422 - INFO - 已移动图像: 'data/val/Cyclone/565.jpg' 到 'trash/Cyclone/565.jpg'
+2025-06-16 18:43:59,422 - INFO - 已移动图像: 'data/val/Earthquake/656.jpg' 到 'trash/Earthquake/656.jpg'
+2025-06-16 18:43:59,422 - INFO - 已移动图像: 'data/val/Wildfire/827.jpg' 到 'trash/Wildfire/827.jpg'
+2025-06-16 18:43:59,422 - INFO - 已移动图像: 'data/val/Flood/725.jpg' 到 'trash/Flood/725.jpg'
+2025-06-16 18:43:59,422 - INFO - 已移动图像: 'data/val/Earthquake/310.jpg' 到 'trash/Earthquake/310.jpg'
+2025-06-16 18:43:59,422 - INFO - 已移动图像: 'data/val/Cyclone/145.jpg' 到 'trash/Cyclone/145.jpg'
+2025-06-16 18:43:59,422 - INFO - 已移动图像: 'data/val/Cyclone/121.jpg' 到 'trash/Cyclone/121.jpg'
+2025-06-16 18:43:59,422 - INFO - 已移动图像: 'data/val/Wildfire/433.jpg' 到 'trash/Wildfire/433.jpg'
+2025-06-16 18:43:59,422 - INFO - 已移动图像: 'data/val/Cyclone/585.jpg' 到 'trash/Cyclone/585.jpg'
+2025-06-16 18:43:59,422 - INFO - 已移动图像: 'data/val/Flood/967.jpg' 到 'trash/Flood/967.jpg'
+2025-06-16 18:43:59,422 - INFO - 已移动图像: 'data/val/Wildfire/541.jpg' 到 'trash/Wildfire/541.jpg'
+2025-06-16 18:43:59,422 - INFO - 已移动图像: 'data/val/Wildfire/328.jpg' 到 'trash/Wildfire/328.jpg'
+2025-06-16 18:43:59,423 - INFO - 已移动图像: 'data/val/Earthquake/574.jpg' 到 'trash/Earthquake/574.jpg'
+2025-06-16 18:43:59,423 - INFO - 已移动图像: 'data/val/Earthquake/1272.jpg' 到 'trash/Earthquake/1272.jpg'
+2025-06-16 18:43:59,423 - INFO - 已移动图像: 'data/val/Wildfire/465.jpg' 到 'trash/Wildfire/465.jpg'
+2025-06-16 18:43:59,423 - INFO - 已移动图像: 'data/val/Wildfire/395.jpg' 到 'trash/Wildfire/395.jpg'
+2025-06-16 18:43:59,423 - INFO - 已移动图像: 'data/val/Cyclone/89.jpg' 到 'trash/Cyclone/89.jpg'
+2025-06-16 18:43:59,423 - INFO - 已移动图像: 'data/val/Wildfire/730.jpg' 到 'trash/Wildfire/730.jpg'
+2025-06-16 18:43:59,423 - INFO - 已移动图像: 'data/val/Flood/124.jpg' 到 'trash/Flood/124.jpg'
+2025-06-16 18:43:59,423 - INFO - 已移动图像: 'data/val/Cyclone/432.jpg' 到 'trash/Cyclone/432.jpg'
+2025-06-16 18:43:59,423 - INFO - 已移动图像: 'data/val/Flood/526.jpg' 到 'trash/Flood/526.jpg'
+2025-06-16 18:43:59,423 - INFO - 已移动图像: 'data/val/Wildfire/280.jpg' 到 'trash/Wildfire/280.jpg'
+2025-06-16 18:43:59,423 - INFO - 已移动图像: 'data/val/Earthquake/56.jpg' 到 'trash/Earthquake/56.jpg'
+2025-06-16 18:43:59,423 - INFO - 已移动图像: 'data/val/Cyclone/788.jpg' 到 'trash/Cyclone/788.jpg'
+2025-06-16 18:43:59,424 - INFO - 已移动图像: 'data/val/Flood/659.jpg' 到 'trash/Flood/659.jpg'
+2025-06-16 18:43:59,424 - INFO - 已移动图像: 'data/val/Earthquake/961.jpg' 到 'trash/Earthquake/961.jpg'
+2025-06-16 18:43:59,424 - INFO - 已移动图像: 'data/val/Flood/73.jpg' 到 'trash/Flood/73.jpg'
+2025-06-16 18:43:59,424 - INFO - 已移动图像: 'data/val/Wildfire/422.jpg' 到 'trash/Wildfire/422.jpg'
+2025-06-16 18:43:59,424 - INFO - 已移动图像: 'data/val/Earthquake/828.jpg' 到 'trash/Earthquake/828.jpg'
+2025-06-16 18:43:59,424 - INFO - 已移动图像: 'data/val/Earthquake/1068.jpg' 到 'trash/Earthquake/1068.jpg'
+2025-06-16 18:43:59,424 - INFO - 已移动图像: 'data/val/Flood/404.jpg' 到 'trash/Flood/404.jpg'
+2025-06-16 18:43:59,424 - INFO - 已移动图像: 'data/val/Cyclone/904.jpg' 到 'trash/Cyclone/904.jpg'
+2025-06-16 18:43:59,424 - INFO - 已移动图像: 'data/val/Earthquake/496.jpg' 到 'trash/Earthquake/496.jpg'
+2025-06-16 18:43:59,424 - INFO - 已移动图像: 'data/val/Earthquake/36.jpg' 到 'trash/Earthquake/36.jpg'
+2025-06-16 18:43:59,424 - INFO - 已移动图像: 'data/val/Earthquake/467.jpg' 到 'trash/Earthquake/467.jpg'
+2025-06-16 18:43:59,424 - INFO - 已移动图像: 'data/val/Wildfire/770.jpg' 到 'trash/Wildfire/770.jpg'
+2025-06-16 18:43:59,425 - INFO - 已移动图像: 'data/val/Flood/1017.jpg' 到 'trash/Flood/1017.jpg'
+2025-06-16 18:43:59,425 - INFO - 已移动图像: 'data/val/Cyclone/467.jpg' 到 'trash/Cyclone/467.jpg'
+2025-06-16 18:43:59,425 - INFO - 已移动图像: 'data/val/Cyclone/831.jpg' 到 'trash/Cyclone/831.jpg'
+2025-06-16 18:43:59,425 - INFO - 已移动图像: 'data/val/Earthquake/515.jpg' 到 'trash/Earthquake/515.jpg'
+2025-06-16 18:43:59,425 - INFO - 已移动图像: 'data/val/Wildfire/571.jpg' 到 'trash/Wildfire/571.jpg'
+2025-06-16 18:43:59,425 - INFO - 已移动图像: 'data/val/Wildfire/9.jpg' 到 'trash/Wildfire/9.jpg'
+2025-06-16 18:43:59,425 - INFO - 已移动图像: 'data/val/Cyclone/735.jpg' 到 'trash/Cyclone/735.jpg'
+2025-06-16 18:43:59,425 - INFO - 已移动图像: 'data/val/Cyclone/868.jpg' 到 'trash/Cyclone/868.jpg'
+2025-06-16 18:43:59,425 - INFO - 已移动图像: 'data/val/Earthquake/1178.jpg' 到 'trash/Earthquake/1178.jpg'
+2025-06-16 18:43:59,425 - INFO - 已移动图像: 'data/val/Flood/1033.jpg' 到 'trash/Flood/1033.jpg'
+2025-06-16 18:43:59,425 - INFO - 已移动图像: 'data/val/Wildfire/415.jpg' 到 'trash/Wildfire/415.jpg'
+2025-06-16 18:43:59,425 - INFO - 已移动图像: 'data/val/Wildfire/696.jpg' 到 'trash/Wildfire/696.jpg'
+2025-06-16 18:43:59,425 - INFO - 已移动图像: 'data/val/Cyclone/116.jpg' 到 'trash/Cyclone/116.jpg'
+2025-06-16 18:43:59,426 - INFO - 已移动图像: 'data/val/Cyclone/469.jpg' 到 'trash/Cyclone/469.jpg'
+2025-06-16 18:43:59,426 - INFO - 已移动图像: 'data/val/Flood/512.jpg' 到 'trash/Flood/512.jpg'
+2025-06-16 18:43:59,426 - INFO - 已移动图像: 'data/val/Earthquake/19.jpg' 到 'trash/Earthquake/19.jpg'
+2025-06-16 18:43:59,426 - INFO - 已移动图像: 'data/val/Earthquake/77.jpg' 到 'trash/Earthquake/77.jpg'
+2025-06-16 18:43:59,426 - INFO - 已移动图像: 'data/val/Wildfire/977.jpg' 到 'trash/Wildfire/977.jpg'
+2025-06-16 18:43:59,426 - INFO - 已移动图像: 'data/val/Earthquake/1180.jpg' 到 'trash/Earthquake/1180.jpg'
+2025-06-16 18:43:59,426 - INFO - 已移动图像: 'data/val/Wildfire/882.jpg' 到 'trash/Wildfire/882.jpg'
+2025-06-16 18:43:59,426 - INFO - 已移动图像: 'data/val/Flood/171.jpg' 到 'trash/Flood/171.jpg'
+2025-06-16 18:43:59,426 - INFO - 已移动图像: 'data/val/Wildfire/152.jpg' 到 'trash/Wildfire/152.jpg'
+2025-06-16 18:43:59,426 - INFO - 已移动图像: 'data/val/Earthquake/605.jpg' 到 'trash/Earthquake/605.jpg'
+2025-06-16 18:43:59,426 - INFO - 已移动图像: 'data/val/Flood/568.jpg' 到 'trash/Flood/568.jpg'
+2025-06-16 18:43:59,426 - INFO - 已移动图像: 'data/val/Wildfire/187.jpg' 到 'trash/Wildfire/187.jpg'
+2025-06-16 18:43:59,427 - INFO - 已移动图像: 'data/val/Wildfire/606.jpg' 到 'trash/Wildfire/606.jpg'
+2025-06-16 18:43:59,427 - INFO - 已移动图像: 'data/val/Wildfire/454.jpg' 到 'trash/Wildfire/454.jpg'
+2025-06-16 18:43:59,427 - INFO - 已移动图像: 'data/val/Flood/294.jpg' 到 'trash/Flood/294.jpg'
+2025-06-16 18:43:59,427 - INFO - 已移动图像: 'data/val/Cyclone/749.jpg' 到 'trash/Cyclone/749.jpg'
+2025-06-16 18:43:59,427 - INFO - 所有预测错误的图像处理完成。

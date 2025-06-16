@@ -256,7 +256,7 @@ def main():
 
     # 数据路径和特征列定义
     # 确保此HDFS路径正确且可访问。这是您处理后的数据输出目录。
-    hdfs_input_dir = "hdfs://master:9000/home/data/processed_GSN_Earthquake_Catalog_normalized_MinMaxScaler"
+    hdfs_input_dir = "oss://cug-111.cn-beijing.oss-dls.aliyuncs.com/user/hadoop/input/processed_GSN_Earthquake_Catalog_normalized_MinMaxScaler"
     
     # 特征列的列表
     # 根据您提供的文件内容，这些列名与原始文件中的列名一致

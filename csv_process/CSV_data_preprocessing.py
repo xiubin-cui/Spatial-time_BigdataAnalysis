@@ -84,10 +84,10 @@ def main():
     # BUG: Please ensure this is the correct address and port for your HDFS NameNode
     HDFS_NAMENODE = "hdfs://master:9000"
     # BUG: Please verify this HDFS path matches your actual HDFS data storage path
-    HDFS_INPUT_BASE_PATH = "hdfs://master:9000/home/data/"
+    HDFS_INPUT_BASE_PATH = "oss://cug-111.cn-beijing.oss-dls.aliyuncs.com/user/hadoop/input/"
     # Define the HDFS output base path for processed files
     # The output will be a directory containing multiple part-files
-    HDFS_OUTPUT_BASE_PATH = "hdfs://master:9000/home/data/" # As per your requirement
+    HDFS_OUTPUT_BASE_PATH = "oss://cug-111.cn-beijing.oss-dls.aliyuncs.com/user/hadoop/input/" # As per your requirement
 
     # Create SparkSession
     spark = (
@@ -116,7 +116,7 @@ def main():
         if df is not None:
             # Define the HDFS output path for the processed file
             # Spark writes to a directory, not a single file name.
-            # The structure will be: hdfs://master:9000/home/data/processed_CEN_Center_Earthquake_Catalog/part-XXXXX.csv
+            # The structure will be: oss://cug-111.cn-beijing.oss-dls.aliyuncs.com/user/hadoop/input/processed_CEN_Center_Earthquake_Catalog/part-XXXXX.csv
             hdfs_output_dir = f"{HDFS_OUTPUT_BASE_PATH}processed_{csv_file}.csv"
             save_dataframe_to_hdfs(df, hdfs_output_dir)
         else:

@@ -288,8 +288,8 @@ def main():
     """
     # --- Configuration Parameters ---
     HDFS_NAMENODE = "hdfs://master:9000" # BUG: 请检查你的 HDFS NameNode 地址和端口是否正确
-    HDFS_INPUT_BASE_PATH = "hdfs://master:9000/home/data/" # BUG: 请验证你的 HDFS 数据实际存储路径
-    HDFS_OUTPUT_BASE_PATH = "hdfs://master:9000/home/data/" # HDFS output path for processed files
+    HDFS_INPUT_BASE_PATH = "oss://cug-111.cn-beijing.oss-dls.aliyuncs.com/user/hadoop/input/" # BUG: 请验证你的 HDFS 数据实际存储路径
+    HDFS_OUTPUT_BASE_PATH = "oss://cug-111.cn-beijing.oss-dls.aliyuncs.com/user/hadoop/input/" # HDFS output path for processed files
 
     # Create SparkSession
     spark = initialize_spark(hdfs_namenode=HDFS_NAMENODE)

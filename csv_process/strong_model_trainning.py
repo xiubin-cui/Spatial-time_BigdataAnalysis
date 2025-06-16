@@ -261,7 +261,7 @@ def main():
 
     # 数据路径和特征列定义
     # 确保此HDFS路径正确且可访问。这是您处理后的数据输出目录。
-    hdfs_input_dir = "hdfs://master:9000/home/data/processed_Strong_Motion_Parameters_Dataset_normalized_MinMaxScaler"
+    hdfs_input_dir = "oss://cug-111.cn-beijing.oss-dls.aliyuncs.com/user/hadoop/input/processed_Strong_Motion_Parameters_Dataset_normalized_MinMaxScaler"
 
     # 特征列的列表
     feature_columns = [

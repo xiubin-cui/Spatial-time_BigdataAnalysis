@@ -157,14 +157,14 @@ def main():
         spark = create_spark_session()
 
         # 配置路径和参数
-        # hdfs_path = "hdfs://master:9000/home/data/Cyclone_Wildfire_Flood_Earthquake_Database/Wildfire"  # BUG
+        # hdfs_path = "oss://cug-111.cn-beijing.oss-dls.aliyuncs.com/user/hadoop/input/Cyclone_Wildfire_Flood_Earthquake_Database/Wildfire"  # BUG
         # output_base_dir = Path("./data/Wildfire")  # BUG
-        hdfs_path = "hdfs://master:9000/home/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone"  # BUG
-        output_base_dir = Path("./data/Cyclone")  # BUG
-        # hdfs_path = "hdfs://master:9000/home/data/Cyclone_Wildfire_Flood_Earthquake_Database/Earthquake"  # BUG
+        # hdfs_path = "oss://cug-111.cn-beijing.oss-dls.aliyuncs.com/user/hadoop/input/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone"  # BUG
+        # output_base_dir = Path("./data/Cyclone")  # BUG
+        # hdfs_path = "oss://cug-111.cn-beijing.oss-dls.aliyuncs.com/user/hadoop/input/Cyclone_Wildfire_Flood_Earthquake_Database/Earthquake"  # BUG
         # output_base_dir = Path("./data/Earthquake")  # BUG
-        # hdfs_path = "hdfs://master:9000/home/data/Cyclone_Wildfire_Flood_Earthquake_Database/Flood"  # BUG
-        # output_base_dir = Path("./data/Flood")  # BUG
+        hdfs_path = "oss://cug-111.cn-beijing.oss-dls.aliyuncs.com/user/hadoop/input/Cyclone_Wildfire_Flood_Earthquake_Database/Flood"  # BUG
+        output_base_dir = Path("./data/Flood")  # BUG
         channel_means = np.array([123.68, 116.78, 103.94])
         batch_size = 100
 
