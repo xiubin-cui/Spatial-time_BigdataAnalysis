@@ -8,7 +8,7 @@ import logging
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
-def initialize_spark(app_name="BigDataFeatureProcessing", hdfs_namenode="hdfs://master:9000"):
+def initialize_spark(app_name="BigDataFeatureProcessing", hdfs_namenode="oss://cug-111.cn-beijing.oss-dls.aliyuncs.com"):
     """
     初始化 SparkSession。
     参数:
@@ -287,7 +287,7 @@ def main():
     主函数：批量处理 HDFS 上的 CSV 文件，进行特征标准化和正则化，并将结果保存到 HDFS。
     """
     # --- Configuration Parameters ---
-    HDFS_NAMENODE = "hdfs://master:9000" # BUG: 请检查你的 HDFS NameNode 地址和端口是否正确
+    HDFS_NAMENODE = "oss://cug-111.cn-beijing.oss-dls.aliyuncs.com" # BUG: 请检查你的 HDFS NameNode 地址和端口是否正确
     HDFS_INPUT_BASE_PATH = "oss://cug-111.cn-beijing.oss-dls.aliyuncs.com/user/hadoop/input/" # BUG: 请验证你的 HDFS 数据实际存储路径
     HDFS_OUTPUT_BASE_PATH = "oss://cug-111.cn-beijing.oss-dls.aliyuncs.com/user/hadoop/input/" # HDFS output path for processed files
 

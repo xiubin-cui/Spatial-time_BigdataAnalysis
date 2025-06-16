@@ -5,7 +5,7 @@
 
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow
-from data_vision.Main_window_logic import main_Window
+from data_vision.Main_window_logic import MainWindow
 from utils import logger
 
 
@@ -15,7 +15,7 @@ def main():
     """
     try:
         app = QApplication(sys.argv)
-        window = main_Window()
+        window = MainWindow()
         window.show()
         logger.info("应用程序启动成功")
         sys.exit(app.exec_())

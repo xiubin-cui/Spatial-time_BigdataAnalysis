@@ -11,7 +11,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 
 # 数据路径
-DATA_DIR = BASE_DIR / "data_source"
+DATA_DIR = BASE_DIR / "source"
 MODEL_DIR = BASE_DIR / "model"
 OUTPUT_DIR = BASE_DIR / "output"
 

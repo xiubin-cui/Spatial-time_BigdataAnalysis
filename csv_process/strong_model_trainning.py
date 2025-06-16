@@ -22,7 +22,7 @@ if not logger.handlers:
     handler.setFormatter(formatter)
     logger.addHandler(handler)
 
-def initialize_spark(app_name="PCAAndRegressionExample", hdfs_namenode="hdfs://master:9000"):
+def initialize_spark(app_name="PCAAndRegressionExample", hdfs_namenode="oss://cug-111.cn-beijing.oss-dls.aliyuncs.com"):
     """
     初始化一个SparkSession，并配置执行器和驱动程序资源。
 
@@ -346,6 +346,10 @@ def main():
         if 'spark' in locals() and spark: # 检查spark变量是否存在且非空
             spark.stop()
             logger.info("所有模型训练和评估完成。SparkSession已停止。")
+
+# 2025-06-16 19:17:15,255 - __main__ - INFO - 准确率计算完成: 正确预测数 7618 / 总预测数 7840
+# 2025-06-16 19:17:15,255 - __main__ - INFO - 模型 GBTRegressor 评估结果 - RMSE: 0.1781, 准确率: 0.9717
+# 2025-06-16 19:17:15,255 - __main__ - INFO - 总结 - GBT Regression RMSE: 0.1781, 准确率: 0.9717
 
 if __name__ == "__main__":
     main()

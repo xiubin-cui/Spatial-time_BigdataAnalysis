@@ -59,7 +59,7 @@ def save_dataframe_to_hdfs(df, hdfs_output_path):
 
     参数:
         df (pyspark.sql.DataFrame): 输入的 Spark DataFrame
-        hdfs_output_path (str): HDFS 输出路径 (e.g., hdfs://master:9000/path/to/file.csv)
+        hdfs_output_path (str): HDFS 输出路径 (e.g., oss://cug-111.cn-beijing.oss-dls.aliyuncs.com/path/to/file.csv)
     """
     if df is None:
         logging.warning(f"尝试保存一个空的 DataFrame 到 HDFS: {hdfs_output_path}. 操作跳过。")
@@ -82,7 +82,7 @@ def main():
     """
     # --- Configuration Parameters ---
     # BUG: Please ensure this is the correct address and port for your HDFS NameNode
-    HDFS_NAMENODE = "hdfs://master:9000"
+    HDFS_NAMENODE = "oss://cug-111.cn-beijing.oss-dls.aliyuncs.com"
     # BUG: Please verify this HDFS path matches your actual HDFS data storage path
     HDFS_INPUT_BASE_PATH = "oss://cug-111.cn-beijing.oss-dls.aliyuncs.com/user/hadoop/input/"
     # Define the HDFS output base path for processed files

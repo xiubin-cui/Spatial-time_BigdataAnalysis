@@ -9,9 +9,9 @@ from pyecharts.charts import HeatMap
 from pathlib import Path
 from utils import safe_read_csv, logger
 from config import BATCH_RESULT_PATH, CONFUSION_MATRIX_PATH
+from typing import Tuple, List
 
-
-def create_confusion_matrix(df: pd.DataFrame) -> tuple[pd.DataFrame, list, list]:
+def create_confusion_matrix(df: pd.DataFrame) -> Tuple[pd.DataFrame, List, List]:
     """
     创建混淆矩阵并准备热力图数据。
 
