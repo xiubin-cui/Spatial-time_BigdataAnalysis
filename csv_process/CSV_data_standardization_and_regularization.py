@@ -218,8 +218,7 @@ def normalize_features_l2_and_save(standardized_df, feature_columns, hdfs_output
         # Only drop columns that actually exist in the DataFrame
         normalized_df_final = normalized_df.drop(*[c for c in columns_to_drop if c in normalized_df.columns])
 
-        # --- FIX: Ensure .csv suffix and handle single file output ---
-        output_hdfs_dir = f"{hdfs_output_path}processed_{file_name_base}_normalized_MinMaxScaler.csv"
+        output_hdfs_dir = f"{hdfs_output_path}processed_{file_name_base}_normalized_MinMaxScaler"
 
         # Coalesce to 1 partition to save as a single CSV file.
         # Be cautious with very large datasets, as this can be a bottleneck.
