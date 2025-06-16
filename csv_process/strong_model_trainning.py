@@ -8,228 +8,262 @@ from pyspark.ml.regression import (
 )
 from pyspark.ml.evaluation import RegressionEvaluator
 from pyspark.ml.tuning import CrossValidator, ParamGridBuilder
-from pyspark.sql.functions import col
+from pyspark.sql.functions import col, isnan, when, count
 import logging
 
-# Configure logging for better visibility in Spark logs
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+# 配置日志，以便在Spark日志中更好地查看
+# 使用更具体的logger名称是大型应用程序中的良好实践
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+# 防止脚本多次运行时出现重复的handler
+if not logger.handlers:
+    handler = logging.StreamHandler()
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
 
 def initialize_spark(app_name="PCAAndRegressionExample", hdfs_namenode="hdfs://master:9000"):
     """
-    初始化 SparkSession，配置执行器和驱动器资源。
+    初始化一个SparkSession，并配置执行器和驱动程序资源。
 
     参数:
-        app_name (str): Spark 应用程序名称。
-        hdfs_namenode (str): HDFS NameNode 地址。
+        app_name (str): Spark应用程序的名称。
+        hdfs_namenode (str): HDFS NameNode地址。
 
     返回:
-        SparkSession: 初始化后的 Spark 会话对象。
+        SparkSession: 初始化后的Spark会话对象。
     """
     try:
         spark = (
             SparkSession.builder
             .appName(app_name)
             .config("spark.hadoop.fs.defaultFS", hdfs_namenode)
-            .config("spark.executor.instances", "4") # Number of executor instances
-            .config("spark.executor.cores", "4")     # Number of cores per executor
-            .config("spark.executor.memory", "8g")   # Memory per executor
-            .config("spark.driver.memory", "8g")     # Memory for the driver
+            .config("spark.executor.instances", "4") # 执行器实例的数量，可根据集群实际资源调整
+            .config("spark.executor.cores", "4")      # 每个执行器的核心数量，可根据集群实际资源调整
+            .config("spark.executor.memory", "8g")    # 每个执行器的内存，可根据集群实际资源调整
+            .config("spark.driver.memory", "8g")      # 驱动程序的内存，建议与executor内存相匹配或更高
+            .config("spark.sql.shuffle.partitions", "200") # Shuffle分区数，对于大型数据集和集群很重要，可根据数据量和Executor数量调整
             .getOrCreate()
         )
-        logging.info(f"SparkSession '{app_name}' 初始化成功，连接到 HDFS: {hdfs_namenode}。资源配置完成。")
+        logger.info(f"SparkSession '{app_name}' 成功初始化并连接到 HDFS: {hdfs_namenode}。资源已配置。")
         return spark
     except Exception as e:
-        logging.error(f"SparkSession 初始化失败: {e}", exc_info=True)
-        raise # Re-raise the exception to stop execution if Spark fails to initialize
-
+        logger.error(f"初始化SparkSession失败: {e}", exc_info=True)
+        raise # 重新抛出异常以停止执行，因为SparkSession是后续操作的基础
 
 def load_and_prepare_data(spark, hdfs_path, feature_columns, label_column, pca_k=9):
     """
-    加载 HDFS 数据并进行特征组合、PCA 降维、数据类型转换、空值处理和数据打乱。
+    从HDFS加载数据，执行特征向量化、PCA降维、数据类型转换、处理缺失值，
+    并将数据拆分为训练集和测试集。
 
     参数:
-        spark (SparkSession): Spark 会话对象。
-        hdfs_path (str): HDFS 数据文件（目录）路径。
-        feature_columns (list): 标准化特征列名称列表。
-        label_column (str): 目标标签列名。
-        pca_k (int): PCA 主成分数量，默认为 9。
+        spark (SparkSession): Spark会话对象。
+        hdfs_path (str): 数据文件的HDFS路径。
+        feature_columns (list): 特征列名称列表。
+        label_column (str): 目标标签列的名称。
+        pca_k (int): PCA的主成分数量，默认为9。
 
     返回:
-        tuple: (训练集 DataFrame, 测试集 DataFrame)
+        tuple: (训练DataFrame, 测试DataFrame)
     """
     try:
-        # 读取数据 (指向目录，因为Spark写入时会创建目录)
+        # 读取数据 (指向目录，因为Spark写入会创建目录)
+        # inferSchema=True 会触发一次数据扫描，如果文件很大，可能需要时间
         df = spark.read.csv(hdfs_path, header=True, inferSchema=True, encoding="utf-8")
-        logging.info(f"成功读取数据来自: {hdfs_path}，总行数: {df.count()}")
-        logging.info("数据结构:")
+        logger.info(f"成功从 {hdfs_path} 读取数据，初始总行数: {df.count()}") # 记录初始行数
+        logger.info("数据Schema:")
         df.printSchema()
-        df.show(5, truncate=False)
+        df.show(5, truncate=False) # 展示前5行数据，truncate=False 避免截断内容
 
-        # 检查并确保标签列存在且为 Double 类型
+        # 验证并转换标签列类型为Double
         if label_column not in df.columns:
-            logging.error(f"错误: 标签列 '{label_column}' 不存在于 DataFrame 中。可用的列: {df.columns}")
-            raise ValueError(f"Label column '{label_column}' not found.")
+            logger.error(f"错误: 标签列 '{label_column}' 不存在于DataFrame中。可用列: {df.columns}")
+            raise ValueError(f"未找到标签列 '{label_column}'。")
         df = df.withColumn(label_column, col(label_column).cast("double"))
-        logging.info(f"标签列 '{label_column}' 已确保为 Double 类型。")
+        logger.info(f"标签列 '{label_column}' 已确保为Double类型。")
 
-        # 检查并确保所有特征列存在且为 Double 类型
+        # 验证并转换所有特征列类型为Double
         for col_name in feature_columns:
             if col_name not in df.columns:
-                logging.error(f"错误: 特征列 '{col_name}' 不存在于 DataFrame 中。可用的列: {df.columns}")
-                raise ValueError(f"Feature column '{col_name}' not found.")
+                logger.error(f"错误: 特征列 '{col_name}' 不存在于DataFrame中。可用列: {df.columns}")
+                raise ValueError(f"未找到特征列 '{col_name}'。")
             df = df.withColumn(col_name, col(col_name).cast("double"))
-        logging.info("所有特征列已确保为 Double 类型。")
+        logger.info("所有特征列已确保为Double类型。")
 
-        # 空值处理：在特征组合和PCA之前，删除包含空值的行
-        # 针对所有特征列和标签列进行空值检查和删除
-        cols_to_check = feature_columns + [label_column]
+        # --- 增强的缺失值处理 ---
+        # 统计并记录特征和标签列中的缺失值数量
+        logger.info("正在检查特征和标签列中的缺失值...")
+        cols_to_check_for_nulls = feature_columns + [label_column]
+        for col_name in cols_to_check_for_nulls:
+            # 统计 null 和 NaN 值
+            missing_count = df.filter(col(col_name).isNull() | isnan(col(col_name))).count()
+            if missing_count > 0:
+                logger.warning(f"列 '{col_name}' 包含 {missing_count} 个缺失 (null/NaN) 值。")
+        
         original_count = df.count()
-        df_cleaned = df.na.drop(subset=cols_to_check)
+        # 删除在所有特征列或标签列中存在缺失值的行
+        df_cleaned = df.na.drop(subset=cols_to_check_for_nulls)
         if df_cleaned.count() < original_count:
-            logging.warning(f"由于特征或标签列存在空值，删除了 {original_count - df_cleaned.count()} 行数据。")
+            dropped_rows = original_count - df_cleaned.count()
+            logger.warning(f"由于特征或标签列中存在缺失值，已删除 {dropped_rows} 行。当前行数: {df_cleaned.count()}")
         else:
-            logging.info("数据中未发现特征或标签列的空值。")
-        df = df_cleaned # Use the cleaned DataFrame from now on
+            logger.info("在指定特征或标签列中未发现缺失值。")
+        df = df_cleaned # 从现在开始使用清理后的DataFrame
 
+        # 检查清理后的DataFrame是否为空
         if df.count() == 0:
-            logging.error("清洗后的 DataFrame 为空，无法进行特征工程和模型训练。")
+            logger.error("清理后的DataFrame为空，无法继续进行特征工程和模型训练。")
             return None, None
 
-        # 特征组合
-        # handleInvalid="skip" will drop rows if any nulls remain in the inputCols for VectorAssembler
+        # 特征向量化：将所有特征列合并为一个向量列
+        # handleInvalid="skip" 表示如果向量化输入列中仍有空值，则跳过这些行
         assembler = VectorAssembler(inputCols=feature_columns, outputCol="features", handleInvalid="skip")
         df_assembled = assembler.transform(df)
-        logging.info("特征组合完成。")
+        logger.info("特征向量化完成。")
+        # 再次检查是否有行被 VectorAssembler 跳过
+        if df_assembled.count() < df.count():
+            logger.warning(f"VectorAssembler 跳过了 {df.count() - df_assembled.count()} 行，因为其中包含无效（通常是null/NaN）特征值。")
         df_assembled.select("features", label_column).show(5, truncate=False)
 
         # PCA 降维
         actual_num_features = len(feature_columns)
-        # Ensure pca_k does not exceed the actual number of features
-        if pca_k > actual_num_features:
-            logging.warning(f"请求的 PCA 主成分数量 (k={pca_k}) 大于实际特征数量 ({actual_num_features})。将 k 设置为实际特征数量。")
-            pca_k = actual_num_features
+        # 确保 pca_k 不超过实际特征数量，且至少为1（如果特征存在）
+        if pca_k <= 0 or pca_k > actual_num_features:
+            if actual_num_features > 0:
+                logger.warning(f"请求的PCA主成分数量 (k={pca_k}) 无效。将 k 设置为实际特征数量 {actual_num_features}。")
+                pca_k = actual_num_features
+            else:
+                logger.warning("特征数量为零，无法执行PCA。跳过PCA。")
+                pca_k = 0 # 无法执行PCA
 
-        if pca_k > 0 and actual_num_features > 0:
-            logging.info(f"执行 PCA 降维，从 {actual_num_features} 个特征降至 {pca_k} 个主成分。")
+        if pca_k > 0:
+            logger.info(f"正在执行PCA降维，从 {actual_num_features} 个特征降至 {pca_k} 个主成分。")
+            # 修正：PCA类构造函数中没有 'seed' 参数
             pca = PCA(k=pca_k, inputCol="features", outputCol="pca_features")
-            pca_model = pca.fit(df_assembled)
-            df_pca = pca_model.transform(df_assembled)
-            logging.info("PCA 降维完成。")
+            pca_model = pca.fit(df_assembled) # 在这里执行PCA拟合
+            df_pca = pca_model.transform(df_assembled) # 对数据进行转换
+            logger.info("PCA降维完成。")
+            # 记录PCA的解释方差比，这对于理解PCA效果很有用
+            if hasattr(pca_model, 'explainedVariance'):
+                logger.info(f"PCA解释方差比: {pca_model.explainedVariance.toArray()}")
             df_pca.select("pca_features", label_column).show(5, truncate=False)
         else:
-            logging.warning("PCA 主成分数量或特征数量为零，跳过 PCA 降维。使用原始组合特征。")
-            # If PCA is skipped, rename 'features' to 'pca_features' for consistent downstream model input
+            logger.warning("PCA主成分数量为零或特征数量为零，跳过PCA。使用原始向量化特征。")
+            # 如果PCA被跳过，将 'features' 列重命名为 'pca_features' 以保持后续模型输入的统一性
             df_pca = df_assembled.withColumnRenamed("features", "pca_features")
 
-        # 数据打乱 (通过 randomSplit 实现，无需额外 sample)
-        # df_pca = df_pca.sample(withReplacement=False, fraction=1.0, seed=1234) # This is usually not necessary before randomSplit
-
-        # 划分训练集和测试集
-        train_data, test_data = df_pca.randomSplit([0.8, 0.2], seed=1234)
-        logging.info(f"数据划分完成。训练集行数: {train_data.count()}, 测试集行数: {test_data.count()}")
+        # 将数据随机拆分为训练集和测试集
+        train_data, test_data = df_pca.randomSplit([0.8, 0.2], seed=1234) # 这里的seed用于控制数据分割的随机性
+        logger.info(f"数据拆分完成。训练集行数: {train_data.count()}, 测试集行数: {test_data.count()}")
         return train_data, test_data
     except Exception as e:
-        logging.error(f"数据加载或处理失败: {e}", exc_info=True)
-        raise # Re-raise the exception to indicate a critical failure
-
+        logger.error(f"数据加载或处理失败: {e}", exc_info=True)
+        raise # 重新抛出异常以指示关键步骤失败
 
 def compute_accuracy(predictions, label_col, prediction_col, threshold=0.5):
     """
-    计算预测准确率（基于阈值）。
+    计算预测准确率（基于阈值）。准确率定义为预测值与真实值差的绝对值在给定阈值内的比例。
 
     参数:
-        predictions (pyspark.sql.DataFrame): 包含预测结果的 DataFrame。
-        label_col (str): 标签列名。
-        prediction_col (str): 预测列名。
-        threshold (float): 误差阈值，默认为 0.5。
+        predictions (pyspark.sql.DataFrame): 包含预测结果的DataFrame。
+        label_col (str): 标签列的名称。
+        prediction_col (str): 预测列的名称。
+        threshold (float): 误差阈值，默认为0.5。
 
     返回:
         float: 准确率。
     """
     try:
-        # 确保用于计算的列没有空值
+        # 确保用于计算的列（标签和预测）没有空值，以避免计算错误
         predictions_cleaned = predictions.na.drop(subset=[label_col, prediction_col])
         if predictions_cleaned.count() == 0:
-            logging.warning("用于准确率计算的 DataFrame 在去除空值后为空。返回准确率 0.0。")
+            logger.warning("DataFrame用于准确率计算时，在删除空值后为空。返回准确率0.0。")
             return 0.0
 
+        # 计算绝对差并检查其是否在预设的阈值范围内
         predictions_with_correct = predictions_cleaned.withColumn(
             "correct", (col(label_col) - col(prediction_col)).between(-threshold, threshold)
         )
         correct_count = predictions_with_correct.filter(col("correct")).count()
         total_count = predictions_with_correct.count()
         accuracy = correct_count / total_count if total_count > 0 else 0.0
-        logging.info(f"准确率计算完成: 正确预测数 {correct_count} / 总预测数 {total_count}")
+        logger.info(f"准确率计算完成: 正确预测数 {correct_count} / 总预测数 {total_count}")
         return accuracy
     except Exception as e:
-        logging.error(f"准确率计算失败: {e}", exc_info=True)
-        return 0.0
+        logger.error(f"准确率计算失败: {e}", exc_info=True)
+        return 0.0 # 发生异常时返回0.0
 
 def train_and_evaluate_model(model, train_data, test_data, label_col, num_folds=5, param_grid=None):
     """
-    训练并评估模型（支持交叉验证或直接训练）。
+    训练和评估模型（支持交叉验证进行超参数调优，或直接训练）。
 
     参数:
-        model: 回归模型实例。
-        train_data (pyspark.sql.DataFrame): 训练集。
-        test_data (pyspark.sql.DataFrame): 测试集。
-        label_col (str): 标签列名。
-        num_folds (int): 交叉验证折数，默认为 5。
-        param_grid (ParamGridBuilder): 超参数网格，如果为 None 或空，则不使用交叉验证。
+        model: 回归模型实例 (pyspark.ml.regression 模型)。
+        train_data (pyspark.sql.DataFrame): 训练数据集。
+        test_data (pyspark.sql.DataFrame): 测试数据集。
+        label_col (str): 标签列的名称。
+        num_folds (int): 交叉验证的折叠数，默认为5。
+        param_grid (list): ParamGridBuilder 构建的超参数网格列表。如果为None或空列表，则跳过交叉验证。
 
     返回:
-        tuple: (RMSE, 准确率, 训练后的模型)
+        tuple: (RMSE, 准确率, 训练好的模型实例)
     """
     try:
         evaluator = RegressionEvaluator(
-            labelCol=label_col, predictionCol="prediction", metricName="rmse"
+            labelCol=label_col, predictionCol="prediction", metricName="rmse" # 使用RMSE作为评估指标
         )
 
         best_model = None
-        # Check if param_grid is provided and not empty
-        if param_grid and param_grid.isEmpty() is False:
-            logging.info(f"开始使用交叉验证训练模型: {model.__class__.__name__}")
+        # 判断是否进行交叉验证：当param_grid存在且非空时进行
+        if param_grid and len(param_grid) > 0:
+            logger.info(f"开始使用交叉验证训练模型: {model.__class__.__name__}，进行 {num_folds} 折交叉验证。")
             crossval = CrossValidator(
                 estimator=model,
                 estimatorParamMaps=param_grid,
                 evaluator=evaluator,
-                numFolds=num_folds,
-                seed=42,
-                parallelism=4 # Adjust based on your cluster's CPU resources
+                numFolds=num_folds, # 交叉验证折叠数
+                seed=42,            # 交叉验证的随机种子，用于结果的可复现性
+                parallelism=4       # 并行度，可根据集群CPU核数调整，提高超参数搜索速度
             )
-            cv_model = crossval.fit(train_data)
-            best_model = cv_model.bestModel
-            predictions = cv_model.transform(test_data)
-            logging.info(f"交叉验证完成。最佳模型参数: {best_model.extractParamMap()}")
+            cv_model = crossval.fit(train_data) # 在训练数据上拟合交叉验证模型
+            best_model = cv_model.bestModel     # 获取最佳模型
+            predictions = cv_model.transform(test_data) # 使用最佳模型在测试集上进行预测
+            
+            # 尝试记录最佳模型的超参数，如果模型支持的话
+            try:
+                # best_model.extractParamMap() 返回一个字典，包含模型的所有参数及其当前值
+                best_params = {param.name: best_model.getOrDefault(param) for param in best_model.extractParamMap()}
+                logger.info(f"交叉验证完成。最佳模型参数: {best_params}")
+            except Exception as e:
+                logger.warning(f"无法提取最佳模型参数: {e}")
         else:
-            logging.info(f"开始直接训练模型: {model.__class__.__name__} (无交叉验证)")
-            model_fit = model.fit(train_data)
+            logger.info(f"开始直接训练模型: {model.__class__.__name__} (不使用交叉验证)。")
+            model_fit = model.fit(train_data) # 直接在训练数据上拟合模型
             best_model = model_fit
-            predictions = model_fit.transform(test_data)
-            logging.info("模型直接训练完成。")
+            predictions = model_fit.transform(test_data) # 在测试集上进行预测
+            logger.info("模型直接训练完成。")
 
-        rmse = evaluator.evaluate(predictions)
-        accuracy = compute_accuracy(predictions, label_col, "prediction")
+        rmse = evaluator.evaluate(predictions) # 评估RMSE
+        accuracy = compute_accuracy(predictions, label_col, "prediction") # 评估自定义准确率
 
-        logging.info(f"模型 {model.__class__.__name__} 评估结果 - RMSE: {rmse:.4f}, Accuracy: {accuracy:.4f}")
+        logger.info(f"模型 {model.__class__.__name__} 评估结果 - RMSE: {rmse:.4f}, 准确率: {accuracy:.4f}")
         return rmse, accuracy, best_model
     except Exception as e:
-        logging.error(f"模型训练或评估失败: {e}", exc_info=True)
-        return float("inf"), 0.0, None
+        logger.error(f"模型训练或评估失败: {e}", exc_info=True)
+        return float("inf"), 0.0, None # 发生异常时返回无穷大RMSE和0准确率
 
 def main():
     """
-    主函数：加载数据、训练并评估多种回归模型。
+    主函数：初始化Spark，加载数据，训练并评估多种回归模型。
     """
-    # 初始化 Spark
+    # 初始化 SparkSession
     spark = initialize_spark()
 
-    # 数据路径和特征列
-    # BUG FIX: HDFS path should point to the directory, not a .csv file
+    # 数据路径和特征列定义
+    # 确保此HDFS路径正确且可访问。这是您处理后的数据输出目录。
     hdfs_input_dir = "hdfs://master:9000/home/data/processed_Strong_Motion_Parameters_Dataset_normalized_MinMaxScaler"
 
-    # BUG FIX: Corrected feature_columns to match normalized names from previous step
-    # Make sure these names are exact as they appear in your processed CSV files
+    # 特征列的列表
     feature_columns = [
         "normalized_震源深度",
         "normalized_震中距",
@@ -244,68 +278,74 @@ def main():
         "normalized_南北分量PGV",
         "normalized_竖向分量PGV"
     ]
-    # BUG FIX: Label column name should be consistent ("震级(M)" from model definitions)
-    label_column = "震级(M)"
-    pca_k_value = 9 # Define PCA k value here
+    label_column = "震级" # 目标标签列
+    pca_k_value = 9 # 定义PCA的主成分数量
 
     try:
-        # 加载和准备数据
+        # 加载和准备数据：执行数据读取、清洗、特征工程（向量化、PCA）和数据集分割
         training_data, test_data = load_and_prepare_data(
             spark, hdfs_input_dir, feature_columns, label_column, pca_k=pca_k_value
         )
 
+        # 检查训练集或测试集是否为空，如果是则终止程序，因为无法训练模型
         if training_data is None or test_data is None or training_data.count() == 0 or test_data.count() == 0:
-            logging.error("训练集或测试集为空，无法进行模型训练。请检查数据加载和清洗步骤。")
+            logger.error("训练集或测试集为空，无法继续进行模型训练。请检查数据加载和清洗步骤。")
             return
 
-        # Define models and their configurations (including optional ParamGridBuilders for CV)
+        # 定义要训练的回归模型及其超参数网格配置
+        # 每个元组包含：(模型实例, ParamGridBuilder构建的超参数网格列表, 模型名称)
         models_configs = [
             (
+                # 线性回归模型：修正 - LinearRegression构造函数没有seed参数
                 LinearRegression(featuresCol="pca_features", labelCol=label_column),
                 ParamGridBuilder()
-                .addGrid(LinearRegression.regParam, [0.01, 0.1, 0.5])
-                .addGrid(LinearRegression.elasticNetParam, [0.0, 0.5, 1.0])
+                .addGrid(LinearRegression.regParam, [0.01, 0.1]) # 正则化参数
+                .addGrid(LinearRegression.elasticNetParam, [0.0, 0.5]) # ElasticNet混合参数
                 .build(),
                 "Linear Regression"
             ),
             (
+                # 决策树回归模型：修正 - DecisionTreeRegressor构造函数没有seed参数
                 DecisionTreeRegressor(featuresCol="pca_features", labelCol=label_column),
                 ParamGridBuilder()
-                .addGrid(DecisionTreeRegressor.maxDepth, [5, 10, 15])
-                .addGrid(DecisionTreeRegressor.minInstancesPerNode, [1, 2, 4])
+                .addGrid(DecisionTreeRegressor.maxDepth, [5, 10]) # 树的最大深度
+                .addGrid(DecisionTreeRegressor.minInstancesPerNode, [1, 4]) # 每个节点最小实例数
                 .build(),
                 "Decision Tree Regression"
             ),
             (
-                RandomForestRegressor(featuresCol="pca_features", labelCol=label_column),
+                # 随机森林回归模型：RandomForestRegressor支持seed参数，用于控制随机性
+                RandomForestRegressor(featuresCol="pca_features", labelCol=label_column, seed=42),
                 ParamGridBuilder()
-                .addGrid(RandomForestRegressor.numTrees, [20, 50, 100])
-                .addGrid(RandomForestRegressor.maxDepth, [5, 10, 15])
+                .addGrid(RandomForestRegressor.numTrees, [20, 50]) # 森林中树的数量
+                .addGrid(RandomForestRegressor.maxDepth, [5, 10]) # 每棵树的最大深度
                 .build(),
                 "Random Forest Regression"
             ),
             (
-                GBTRegressor(featuresCol="pca_features", labelCol=label_column, maxIter=50, maxDepth=10),
-                ParamGridBuilder().build(), # Empty grid means no hyperparameter tuning via CV
+                # GBT回归模型：GBTRegressor支持seed参数，用于控制随机性
+                GBTRegressor(featuresCol="pca_features", labelCol=label_column, maxIter=50, maxDepth=10, seed=42),
+                [], # 为GBTRegressor提供空列表，表示不进行交叉验证，直接使用预设的maxIter和maxDepth
                 "GBT Regression"
             )
         ]
 
-        # Train and evaluate models
+        # 遍历模型配置，依次训练和评估每个模型
         for model, param_grid, name in models_configs:
-            logging.info(f"\n--- 开始处理模型: {name} ---")
-            # Pass param_grid to train_and_evaluate_model to control CV
+            logger.info(f"\n--- 开始处理模型: {name} ---")
+            # 调用训练和评估函数，传入模型实例、训练数据、测试数据、标签列和超参数网格
             rmse, accuracy, _ = train_and_evaluate_model(
                 model, training_data, test_data, label_col=label_column, num_folds=5, param_grid=param_grid
             )
-            logging.info(f"总结 - {name} RMSE: {rmse:.4f}, Accuracy: {accuracy:.4f}")
+            logger.info(f"总结 - {name} RMSE: {rmse:.4f}, 准确率: {accuracy:.4f}")
 
     except Exception as e:
-        logging.error(f"程序执行失败: {e}", exc_info=True)
+        logger.error(f"程序执行失败: {e}", exc_info=True)
     finally:
-        # 关闭 SparkSession
-        spark.stop()
-        logging.info("所有模型训练和评估完毕。SparkSession 已停止。")
+        # 确保SparkSession在程序结束时被正确关闭，释放集群资源
+        if 'spark' in locals() and spark: # 检查spark变量是否存在且非空
+            spark.stop()
+            logger.info("所有模型训练和评估完成。SparkSession已停止。")
 
 if __name__ == "__main__":
     main()
