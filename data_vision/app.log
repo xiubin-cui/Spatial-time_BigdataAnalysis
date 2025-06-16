@@ -30,3 +30,70 @@
 2025-06-16 21:58:12,844 - data_vision.utils - INFO - 数据预处理完成。样本数: 10000
 2025-06-16 21:58:13,007 - data_vision.utils - INFO - 随机森林回归模型训练完成
 2025-06-16 21:58:14,172 - data_vision.utils - INFO - 文本预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/中国地震台网地震目录.csv, RMSE: 1.3540
+2025-06-16 21:59:15,962 - data_vision.utils - INFO - 主窗口 UI 初始化完成
+2025-06-16 21:59:16,074 - data_vision.utils - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\data_vision\model\resnet18_0.01_source.pth
+2025-06-16 21:59:16,074 - data_vision.utils - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:59:16,075 - data_vision.utils - INFO - 主窗口初始化完成
+2025-06-16 21:59:16,512 - data_vision.utils - INFO - 应用程序启动成功
+2025-06-16 21:59:17,218 - data_vision.utils - INFO - 可视化窗口 UI 初始化完成
+2025-06-16 21:59:17,219 - data_vision.utils - INFO - 可视化窗口初始化完成
+2025-06-16 21:59:17,230 - data_vision.utils - INFO - 打开数据可视化窗口
+2025-06-16 21:59:20,258 - data_vision.utils - INFO - 尝试渲染未实现的图表:  for 数据描述
+2025-06-16 21:59:21,443 - data_vision.utils - INFO - 选择可视化类型: 数据描述
+2025-06-16 21:59:26,552 - data_vision.utils - INFO - 尝试渲染未实现的图表: 散点图 for 数据描述
+2025-06-16 21:59:28,192 - data_vision.utils - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 21:59:32,530 - data_vision.utils - INFO - 尝试渲染未实现的图表:  for 深度学习模型
+2025-06-16 21:59:33,605 - data_vision.utils - INFO - 选择可视化类型: 深度学习模型
+2025-06-16 21:59:36,656 - data_vision.utils - INFO - 尝试渲染未实现的图表:  for 随机森林回归模型
+2025-06-16 21:59:37,739 - data_vision.utils - INFO - 选择可视化类型: 随机森林回归模型
+2025-06-16 22:11:45,174 - data_vision.utils - INFO - 主窗口 UI 初始化完成
+2025-06-16 22:11:45,174 - data_vision.utils - INFO - UI 信号与槽连接设置完成
+2025-06-16 22:11:52,298 - data_vision.utils - ERROR - 加载深度学习模型失败: Error(s) in loading state_dict for SimpleCNN:
+	Missing key(s) in state_dict: "features.0.weight", "features.0.bias", "features.3.weight", "features.3.bias", "features.6.weight", "features.6.bias", "classifier.1.weight", "classifier.1.bias", "classifier.4.weight", "classifier.4.bias". 
+	Unexpected key(s) in state_dict: "conv1.weight", "bn1.weight", "bn1.bias", "bn1.running_mean", "bn1.running_var", "bn1.num_batches_tracked", "layer1.0.conv1.weight", "layer1.0.bn1.weight", "layer1.0.bn1.bias", "layer1.0.bn1.running_mean", "layer1.0.bn1.running_var", "layer1.0.bn1.num_batches_tracked", "layer1.0.conv2.weight", "layer1.0.bn2.weight", "layer1.0.bn2.bias", "layer1.0.bn2.running_mean", "layer1.0.bn2.running_var", "layer1.0.bn2.num_batches_tracked", "layer1.1.conv1.weight", "layer1.1.bn1.weight", "layer1.1.bn1.bias", "layer1.1.bn1.running_mean", "layer1.1.bn1.running_var", "layer1.1.bn1.num_batches_tracked", "layer1.1.conv2.weight", "layer1.1.bn2.weight", "layer1.1.bn2.bias", "layer1.1.bn2.running_mean", "layer1.1.bn2.running_var", "layer1.1.bn2.num_batches_tracked", "layer2.0.conv1.weight", "layer2.0.bn1.weight", "layer2.0.bn1.bias", "layer2.0.bn1.running_mean", "layer2.0.bn1.running_var", "layer2.0.bn1.num_batches_tracked", "layer2.0.conv2.weight", "layer2.0.bn2.weight", "layer2.0.bn2.bias", "layer2.0.bn2.running_mean", "layer2.0.bn2.running_var", "layer2.0.bn2.num_batches_tracked", "layer2.0.downsample.0.weight", "layer2.0.downsample.1.weight", "layer2.0.downsample.1.bias", "layer2.0.downsample.1.running_mean", "layer2.0.downsample.1.running_var", "layer2.0.downsample.1.num_batches_tracked", "layer2.1.conv1.weight", "layer2.1.bn1.weight", "layer2.1.bn1.bias", "layer2.1.bn1.running_mean", "layer2.1.bn1.running_var", "layer2.1.bn1.num_batches_tracked", "layer2.1.conv2.weight", "layer2.1.bn2.weight", "layer2.1.bn2.bias", "layer2.1.bn2.running_mean", "layer2.1.bn2.running_var", "layer2.1.bn2.num_batches_tracked", "layer3.0.conv1.weight", "layer3.0.bn1.weight", "layer3.0.bn1.bias", "layer3.0.bn1.running_mean", "layer3.0.bn1.running_var", "layer3.0.bn1.num_batches_tracked", "layer3.0.conv2.weight", "layer3.0.bn2.weight", "layer3.0.bn2.bias", "layer3.0.bn2.running_mean", "layer3.0.bn2.running_var", "layer3.0.bn2.num_batches_tracked", "layer3.0.downsample.0.weight", "layer3.0.downsample.1.weight", "layer3.0.downsample.1.bias", "layer3.0.downsample.1.running_mean", "layer3.0.downsample.1.running_var", "layer3.0.downsample.1.num_batches_tracked", "layer3.1.conv1.weight", "layer3.1.bn1.weight", "layer3.1.bn1.bias", "layer3.1.bn1.running_mean", "layer3.1.bn1.running_var", "layer3.1.bn1.num_batches_tracked", "layer3.1.conv2.weight", "layer3.1.bn2.weight", "layer3.1.bn2.bias", "layer3.1.bn2.running_mean", "layer3.1.bn2.running_var", "layer3.1.bn2.num_batches_tracked", "layer4.0.conv1.weight", "layer4.0.bn1.weight", "layer4.0.bn1.bias", "layer4.0.bn1.running_mean", "layer4.0.bn1.running_var", "layer4.0.bn1.num_batches_tracked", "layer4.0.conv2.weight", "layer4.0.bn2.weight", "layer4.0.bn2.bias", "layer4.0.bn2.running_mean", "layer4.0.bn2.running_var", "layer4.0.bn2.num_batches_tracked", "layer4.0.downsample.0.weight", "layer4.0.downsample.1.weight", "layer4.0.downsample.1.bias", "layer4.0.downsample.1.running_mean", "layer4.0.downsample.1.running_var", "layer4.0.downsample.1.num_batches_tracked", "layer4.1.conv1.weight", "layer4.1.bn1.weight", "layer4.1.bn1.bias", "layer4.1.bn1.running_mean", "layer4.1.bn1.running_var", "layer4.1.bn1.num_batches_tracked", "layer4.1.conv2.weight", "layer4.1.bn2.weight", "layer4.1.bn2.bias", "layer4.1.bn2.running_mean", "layer4.1.bn2.running_var", "layer4.1.bn2.num_batches_tracked", "fc.weight", "fc.bias". 
+Traceback (most recent call last):
+  File "E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\data_vision\Main_window_logic.py", line 126, in _load_deep_learning_model
+    self.deep_learning_model.load_state_dict(torch.load(IMAGE_MODEL_PATH, map_location=torch.device('cpu')))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cuixiubin\AppData\Local\Programs\Python\Python313\Lib\site-packages\torch\nn\modules\module.py", line 2593, in load_state_dict
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: Error(s) in loading state_dict for SimpleCNN:
+	Missing key(s) in state_dict: "features.0.weight", "features.0.bias", "features.3.weight", "features.3.bias", "features.6.weight", "features.6.bias", "classifier.1.weight", "classifier.1.bias", "classifier.4.weight", "classifier.4.bias". 
+	Unexpected key(s) in state_dict: "conv1.weight", "bn1.weight", "bn1.bias", "bn1.running_mean", "bn1.running_var", "bn1.num_batches_tracked", "layer1.0.conv1.weight", "layer1.0.bn1.weight", "layer1.0.bn1.bias", "layer1.0.bn1.running_mean", "layer1.0.bn1.running_var", "layer1.0.bn1.num_batches_tracked", "layer1.0.conv2.weight", "layer1.0.bn2.weight", "layer1.0.bn2.bias", "layer1.0.bn2.running_mean", "layer1.0.bn2.running_var", "layer1.0.bn2.num_batches_tracked", "layer1.1.conv1.weight", "layer1.1.bn1.weight", "layer1.1.bn1.bias", "layer1.1.bn1.running_mean", "layer1.1.bn1.running_var", "layer1.1.bn1.num_batches_tracked", "layer1.1.conv2.weight", "layer1.1.bn2.weight", "layer1.1.bn2.bias", "layer1.1.bn2.running_mean", "layer1.1.bn2.running_var", "layer1.1.bn2.num_batches_tracked", "layer2.0.conv1.weight", "layer2.0.bn1.weight", "layer2.0.bn1.bias", "layer2.0.bn1.running_mean", "layer2.0.bn1.running_var", "layer2.0.bn1.num_batches_tracked", "layer2.0.conv2.weight", "layer2.0.bn2.weight", "layer2.0.bn2.bias", "layer2.0.bn2.running_mean", "layer2.0.bn2.running_var", "layer2.0.bn2.num_batches_tracked", "layer2.0.downsample.0.weight", "layer2.0.downsample.1.weight", "layer2.0.downsample.1.bias", "layer2.0.downsample.1.running_mean", "layer2.0.downsample.1.running_var", "layer2.0.downsample.1.num_batches_tracked", "layer2.1.conv1.weight", "layer2.1.bn1.weight", "layer2.1.bn1.bias", "layer2.1.bn1.running_mean", "layer2.1.bn1.running_var", "layer2.1.bn1.num_batches_tracked", "layer2.1.conv2.weight", "layer2.1.bn2.weight", "layer2.1.bn2.bias", "layer2.1.bn2.running_mean", "layer2.1.bn2.running_var", "layer2.1.bn2.num_batches_tracked", "layer3.0.conv1.weight", "layer3.0.bn1.weight", "layer3.0.bn1.bias", "layer3.0.bn1.running_mean", "layer3.0.bn1.running_var", "layer3.0.bn1.num_batches_tracked", "layer3.0.conv2.weight", "layer3.0.bn2.weight", "layer3.0.bn2.bias", "layer3.0.bn2.running_mean", "layer3.0.bn2.running_var", "layer3.0.bn2.num_batches_tracked", "layer3.0.downsample.0.weight", "layer3.0.downsample.1.weight", "layer3.0.downsample.1.bias", "layer3.0.downsample.1.running_mean", "layer3.0.downsample.1.running_var", "layer3.0.downsample.1.num_batches_tracked", "layer3.1.conv1.weight", "layer3.1.bn1.weight", "layer3.1.bn1.bias", "layer3.1.bn1.running_mean", "layer3.1.bn1.running_var", "layer3.1.bn1.num_batches_tracked", "layer3.1.conv2.weight", "layer3.1.bn2.weight", "layer3.1.bn2.bias", "layer3.1.bn2.running_mean", "layer3.1.bn2.running_var", "layer3.1.bn2.num_batches_tracked", "layer4.0.conv1.weight", "layer4.0.bn1.weight", "layer4.0.bn1.bias", "layer4.0.bn1.running_mean", "layer4.0.bn1.running_var", "layer4.0.bn1.num_batches_tracked", "layer4.0.conv2.weight", "layer4.0.bn2.weight", "layer4.0.bn2.bias", "layer4.0.bn2.running_mean", "layer4.0.bn2.running_var", "layer4.0.bn2.num_batches_tracked", "layer4.0.downsample.0.weight", "layer4.0.downsample.1.weight", "layer4.0.downsample.1.bias", "layer4.0.downsample.1.running_mean", "layer4.0.downsample.1.running_var", "layer4.0.downsample.1.num_batches_tracked", "layer4.1.conv1.weight", "layer4.1.bn1.weight", "layer4.1.bn1.bias", "layer4.1.bn1.running_mean", "layer4.1.bn1.running_var", "layer4.1.bn1.num_batches_tracked", "layer4.1.conv2.weight", "layer4.1.bn2.weight", "layer4.1.bn2.bias", "layer4.1.bn2.running_mean", "layer4.1.bn2.running_var", "layer4.1.bn2.num_batches_tracked", "fc.weight", "fc.bias". 
+2025-06-16 22:11:52,304 - data_vision.utils - INFO - 主窗口初始化完成
+2025-06-16 22:11:52,335 - data_vision.utils - INFO - 应用程序启动成功
+2025-06-16 22:14:53,893 - data_vision.utils - INFO - 主窗口 UI 初始化完成
+2025-06-16 22:14:53,894 - data_vision.utils - ERROR - 应用程序启动失败: 'MainWindow' object has no attribute '_open_image_file'
+Traceback (most recent call last):
+  File "E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\data_vision\main_entry.py", line 19, in main
+    window = MainWindow()
+  File "E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\data_vision\Main_window_logic.py", line 94, in __init__
+    self._setup_connections()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\data_vision\Main_window_logic.py", line 123, in _setup_connections
+    self.btn_open_image.clicked.connect(self._open_image_file)
+                                        ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'MainWindow' object has no attribute '_open_image_file'
+2025-06-16 22:16:31,496 - data_vision.utils - INFO - 主窗口 UI 初始化完成
+2025-06-16 22:16:31,633 - data_vision.utils - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\data_vision\model\resnet18_0.01_source.pth
+2025-06-16 22:16:31,634 - data_vision.utils - INFO - 文本类型下拉框初始化完成
+2025-06-16 22:16:31,634 - data_vision.utils - INFO - 主窗口初始化完成
+2025-06-16 22:16:32,043 - data_vision.utils - INFO - 应用程序启动成功
+2025-06-16 22:16:41,717 - data_vision.utils - INFO - 成功显示图像: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/Cyclone_Wildfire_Flood_Earthquake_Database/Flood/0.jpg
+2025-06-16 22:16:41,719 - data_vision.utils - INFO - 成功加载图片: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/Cyclone_Wildfire_Flood_Earthquake_Database/Flood/0.jpg
+2025-06-16 22:16:45,841 - data_vision.utils - INFO - 单张图像预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/Cyclone_Wildfire_Flood_Earthquake_Database/Flood/0.jpg, 预测: Cyclone, 置信度: 92.16%
+2025-06-16 22:16:52,067 - data_vision.utils - INFO - 批量图片文件夹: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/Cyclone_Wildfire_Flood_Earthquake_Database/Wildfire
+2025-06-16 22:17:14,937 - data_vision.utils - INFO - 错误预测的图片路径和结果已保存至: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\data_vision\output\incorrect_image_predictions.csv (764 条)
+2025-06-16 22:17:14,938 - data_vision.utils - INFO - 批量图像预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/Cyclone_Wildfire_Flood_Earthquake_Database/Wildfire, 准确率: 29.06%
+2025-06-16 22:17:33,130 - data_vision.utils - INFO - 成功以编码 'utf-8' 和分隔符 ',' 读取文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/中国地震台网地震目录.csv
+2025-06-16 22:17:33,130 - data_vision.utils - INFO - Loaded and normalized columns: ['序号', '发震时刻(国际时)', '经度(°)', '纬度(°)', '震源深度(Km)', 'Ms', 'Ms7', 'mL', 'mb', 'mB', '地点']
+2025-06-16 22:17:34,115 - data_vision.utils - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/中国地震台网地震目录.csv
+2025-06-16 22:17:35,391 - data_vision.utils - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 22:17:36,658 - data_vision.utils - INFO - 成功以编码 'utf-8' 和分隔符 ',' 读取文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/中国地震台网地震目录.csv
+2025-06-16 22:17:36,659 - data_vision.utils - INFO - Loaded and normalized columns for text prediction: ['序号', '发震时刻(国际时)', '经度(°)', '纬度(°)', '震源深度(Km)', 'Ms', 'Ms7', 'mL', 'mb', 'mB', '地点']
+2025-06-16 22:17:36,659 - data_vision.utils - INFO - 为 '中国地震台网地震目录数据集训练' 数据集准备数据。期望的特征列: ['震源深度(Km)', 'mL', 'mb', 'mB']，标签列: Ms7
+2025-06-16 22:17:36,660 - data_vision.utils - INFO - 数据预处理完成。样本数: 10000
+2025-06-16 22:17:36,804 - data_vision.utils - INFO - 随机森林回归模型训练完成
+2025-06-16 22:17:38,052 - data_vision.utils - INFO - 文本预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/中国地震台网地震目录.csv, RMSE: 1.3540

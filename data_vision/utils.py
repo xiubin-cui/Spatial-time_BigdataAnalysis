@@ -44,6 +44,7 @@ def safe_read_csv(
     安全地读取 CSV 文件，包含错误处理和日志记录。
     尝试多种编码和分隔符来增加健壮性。
 
+
     Args:
         file_path (str): 文件路径
         delimiter (str): 分隔符，默认为None，将尝试自动检测（逗号，然后是分号，然后是制表符，最后是空格）。
@@ -118,6 +119,7 @@ def display_image(
         img_width, img_height = image.size
 
         # 计算缩放比例，确保图片完全可见并保持比例
+
         scale = min(label_width / img_width, label_height / img_height)
         new_width, new_height = int(img_width * scale), int(img_height * scale)
         
