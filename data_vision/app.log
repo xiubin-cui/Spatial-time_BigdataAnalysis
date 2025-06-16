@@ -1,0 +1,32 @@
+2025-06-16 21:55:41,526 - data_vision.utils - INFO - 主窗口 UI 初始化完成
+2025-06-16 21:55:41,526 - data_vision.utils - ERROR - 模型文件 'E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\data_vision\model\resnet18_0.01_source.pth' 不存在
+2025-06-16 21:56:38,009 - data_vision.utils - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:56:38,010 - data_vision.utils - INFO - 主窗口初始化完成
+2025-06-16 21:56:38,052 - data_vision.utils - INFO - 应用程序启动成功
+2025-06-16 21:56:49,385 - data_vision.utils - INFO - 主窗口 UI 初始化完成
+2025-06-16 21:56:49,501 - data_vision.utils - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\data_vision\model\resnet18_0.01_source.pth
+2025-06-16 21:56:49,504 - data_vision.utils - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:56:49,505 - data_vision.utils - INFO - 主窗口初始化完成
+2025-06-16 21:56:49,937 - data_vision.utils - INFO - 应用程序启动成功
+2025-06-16 21:56:59,407 - data_vision.utils - INFO - 成功显示图像: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone/0.jpg
+2025-06-16 21:56:59,408 - data_vision.utils - INFO - 成功加载图片: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone/0.jpg
+2025-06-16 21:57:02,380 - data_vision.utils - INFO - 单张图像预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone/0.jpg, 预测: Cyclone, 置信度: 84.45%
+2025-06-16 21:57:18,638 - data_vision.utils - INFO - 批量图片文件夹: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone
+2025-06-16 21:57:39,873 - data_vision.utils - INFO - 错误预测的图片路径和结果已保存至: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\data_vision\output\incorrect_image_predictions.csv (359 条)
+2025-06-16 21:57:39,875 - data_vision.utils - INFO - 批量图像预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/Cyclone_Wildfire_Flood_Earthquake_Database/Cyclone, 准确率: 61.31%
+2025-06-16 21:57:52,705 - data_vision.utils - INFO - 可视化窗口 UI 初始化完成
+2025-06-16 21:57:52,706 - data_vision.utils - INFO - 可视化窗口初始化完成
+2025-06-16 21:57:52,721 - data_vision.utils - INFO - 打开数据可视化窗口
+2025-06-16 21:57:55,518 - data_vision.utils - INFO - 尝试渲染未实现的图表:  for 数据描述
+2025-06-16 21:57:56,577 - data_vision.utils - INFO - 选择可视化类型: 数据描述
+2025-06-16 21:57:59,057 - data_vision.utils - INFO - 尝试渲染未实现的图表: 箱线图 for 数据描述
+2025-06-16 21:58:08,563 - data_vision.utils - INFO - 成功以编码 'utf-8' 和分隔符 ',' 读取文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/中国地震台网地震目录.csv
+2025-06-16 21:58:08,564 - data_vision.utils - INFO - Loaded and normalized columns: ['序号', '发震时刻(国际时)', '经度(°)', '纬度(°)', '震源深度(Km)', 'Ms', 'Ms7', 'mL', 'mb', 'mB', '地点']
+2025-06-16 21:58:09,564 - data_vision.utils - INFO - 成功加载文本文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/中国地震台网地震目录.csv
+2025-06-16 21:58:11,990 - data_vision.utils - INFO - 选择文本类型: 中国地震台网地震目录数据集训练
+2025-06-16 21:58:12,842 - data_vision.utils - INFO - 成功以编码 'utf-8' 和分隔符 ',' 读取文件: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/中国地震台网地震目录.csv
+2025-06-16 21:58:12,842 - data_vision.utils - INFO - Loaded and normalized columns for text prediction: ['序号', '发震时刻(国际时)', '经度(°)', '纬度(°)', '震源深度(Km)', 'Ms', 'Ms7', 'mL', 'mb', 'mB', '地点']
+2025-06-16 21:58:12,843 - data_vision.utils - INFO - 为 '中国地震台网地震目录数据集训练' 数据集准备数据。期望的特征列: ['震源深度(Km)', 'mL', 'mb', 'mB']，标签列: Ms7
+2025-06-16 21:58:12,844 - data_vision.utils - INFO - 数据预处理完成。样本数: 10000
+2025-06-16 21:58:13,007 - data_vision.utils - INFO - 随机森林回归模型训练完成
+2025-06-16 21:58:14,172 - data_vision.utils - INFO - 文本预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/中国地震台网地震目录.csv, RMSE: 1.3540

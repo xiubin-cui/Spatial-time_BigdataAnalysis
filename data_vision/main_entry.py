@@ -4,10 +4,9 @@
 """
 
 import sys
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication
 from data_vision.Main_window_logic import MainWindow
-from .utils import logger
-
+from data_vision.utils import logger # 确保从 .utils 导入 logger
 
 def main():
     """
@@ -15,12 +14,14 @@ def main():
     """
     try:
         app = QApplication(sys.argv)
+        # 设置应用程序图标（可选）
+        # app.setWindowIcon(QIcon("path/to/your/icon.png")) 
         window = MainWindow()
         window.show()
         logger.info("应用程序启动成功")
         sys.exit(app.exec_())
     except Exception as e:
-        logger.error(f"应用程序启动失败: {str(e)}")
+        logger.error(f"应用程序启动失败: {e}", exc_info=True) # 打印完整堆栈信息
         sys.exit(1)
 
 
