@@ -279,3 +279,10 @@
 2025-06-16 21:42:52,238 - INFO - Loaded and normalized columns: ['序号,发震时刻(国际时),经度(°),纬度(°),震源深度(Km),Ms,Ms7,mL,mb,mB,地点']
 2025-06-16 21:42:52,238 - INFO - 为 '中国地震台网地震目录数据集训练' 数据集准备数据。期望的特征列: ['震源深度(Km)', 'mL', 'mb', 'mB']，标签列: Ms7
 2025-06-16 21:42:52,238 - ERROR - 数据处理错误: 数据集中缺少必要列: 震源深度(Km), mL, mb, mB, Ms7
+2025-06-16 21:51:44,083 - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\image_process\resnet18_0.01_source.pth
+2025-06-16 21:51:44,083 - INFO - 文本类型下拉框初始化完成
+2025-06-16 21:51:44,083 - INFO - 主窗口初始化完成
+2025-06-16 21:51:44,491 - INFO - 应用程序启动成功
+2025-06-16 21:51:54,426 - INFO - 成功显示图像: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\data\Cyclone_Wildfire_Flood_Earthquake_Database\Earthquake\0.jpg
+2025-06-16 21:51:54,427 - INFO - 成功加载图片: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/Cyclone_Wildfire_Flood_Earthquake_Database/Earthquake/0.jpg
+2025-06-16 21:51:57,084 - INFO - 单张图像预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/Cyclone_Wildfire_Flood_Earthquake_Database/Earthquake/0.jpg, 预测: Earthquake, 置信度: 55.34%
