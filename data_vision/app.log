@@ -97,3 +97,8 @@ AttributeError: 'MainWindow' object has no attribute '_open_image_file'
 2025-06-16 22:17:36,660 - data_vision.utils - INFO - 数据预处理完成。样本数: 10000
 2025-06-16 22:17:36,804 - data_vision.utils - INFO - 随机森林回归模型训练完成
 2025-06-16 22:17:38,052 - data_vision.utils - INFO - 文本预测完成: E:/CUG/Spatial_time_BigdataAnalysis/project/spatial_time_bigdata_analysis/data/中国地震台网地震目录.csv, RMSE: 1.3540
+2025-06-17 13:00:27,263 - data_vision.utils - INFO - 主窗口 UI 初始化完成
+2025-06-17 13:00:27,471 - data_vision.utils - INFO - 成功加载图像模型: E:\CUG\Spatial_time_BigdataAnalysis\project\spatial_time_bigdata_analysis\data_vision\model\resnet18_0.01_source.pth
+2025-06-17 13:00:27,472 - data_vision.utils - INFO - 文本类型下拉框初始化完成
+2025-06-17 13:00:27,473 - data_vision.utils - INFO - 主窗口初始化完成
+2025-06-17 13:00:28,124 - data_vision.utils - INFO - 应用程序启动成功

@@ -117,3 +117,10 @@ spark-submit china_model_trainning.py
 spark-submit global_model_trainning.py
 spark-submit strong_model_trainning.py
 ```
+
+可视化展示
+
+```shell
+cd spatial_time_bigdata_analysis
+python -m data_vision.main_entry
+```
